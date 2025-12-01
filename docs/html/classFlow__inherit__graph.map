@@ -1,0 +1,5 @@
+<map id="Flow" name="Flow">
+<area shape="rect" id="node1" title="Classe base abstrata que define um fluxo entre dois Systems." alt="" coords="99,5,200,229"/>
+<area shape="rect" id="node2" href="$classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="5,277,144,384"/>
+<area shape="rect" id="node3" href="$classLogisticFlow.html" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="168,277,283,384"/>
+</map>

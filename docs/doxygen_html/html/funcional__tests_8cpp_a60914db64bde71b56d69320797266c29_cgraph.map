@@ -1,0 +1,11 @@
+<map id="logisticalFuncionalTest" name="logisticalFuncionalTest">
+<area shape="rect" id="node1" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="5,107,160,133"/>
+<area shape="rect" id="node2" href="$classModel.html#a2a340ed8a558aedcfbf7c1bdaff90c56" title="Adiciona um novo sistema ao modelo." alt="" coords="223,5,310,32"/>
+<area shape="rect" id="node3" href="$classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="373,56,499,83"/>
+<area shape="rect" id="node4" href="$classModel.html#ad31ab57899deb9e33c9fd0312553383c" title="Executa a simulação completa." alt="" coords="225,107,308,133"/>
+<area shape="rect" id="node8" href="$classFlow.html#adf0c62a2efb7f4733e4c289bfb3d1dc3" title="Define o sistema de origem do fluxo." alt="" coords="208,157,325,184"/>
+<area shape="rect" id="node9" href="$classFlow.html#ac325afb7bff8a1b67618a1aa088618ee" title="Define o sistema de destino do fluxo." alt="" coords="211,208,323,235"/>
+<area shape="rect" id="node5" href="$classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="377,107,495,133"/>
+<area shape="rect" id="node6" href="$classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="380,157,492,184"/>
+<area shape="rect" id="node7" href="$classSystem.html#aa3dee10a22a9f908a87f84917857d2f0" title="Define um novo valor para o sistema." alt="" coords="373,208,499,235"/>
+</map>

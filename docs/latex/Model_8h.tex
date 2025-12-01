@@ -1,0 +1,52 @@
+\hypertarget{Model_8h}{}\doxysection{src/\+Model.h File Reference}
+\label{Model_8h}\index{src/Model.h@{src/Model.h}}
+
+
+Declaração da classe \mbox{\hyperlink{classModel}{Model}}, responsável pelo gerenciamento da simulação.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}System.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Flow.\+h\char`\"{}}\newline
+Include dependency graph for Model.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{Model_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Model_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classModel}{Model}}
+\begin{DoxyCompactList}\small\item\em Classe responsável por gerenciar sistemas, fluxos e a simulação completa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaração da classe \mbox{\hyperlink{classModel}{Model}}, responsável pelo gerenciamento da simulação. 
+
+A classe \mbox{\hyperlink{classModel}{Model}} é o núcleo do simulador baseado na Teoria Geral de Sistemas. Ela armazena e controla coleções de objetos do tipo \mbox{\hyperlink{classSystem}{System}} e \mbox{\hyperlink{classFlow}{Flow}}, executando a evolução temporal do sistema através da aplicação dos fluxos sobre os sistemas.
+
+O \mbox{\hyperlink{classModel}{Model}} funciona como um \char`\"{}ambiente de execução\char`\"{}, coordenando\+:
+\begin{DoxyItemize}
+\item A lista de sistemas presentes no modelo
+\item A lista de fluxos conectando esses sistemas
+\item O processo de execução (simulação) no tempo
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Samuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}

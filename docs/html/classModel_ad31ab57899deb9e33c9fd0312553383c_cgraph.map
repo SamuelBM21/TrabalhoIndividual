@@ -1,0 +1,7 @@
+<map id="Model::run" name="Model::run">
+<area shape="rect" id="node1" title="Executa a simulação completa." alt="" coords="5,81,88,108"/>
+<area shape="rect" id="node2" href="$classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="140,5,257,32"/>
+<area shape="rect" id="node3" href="$classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="143,56,255,83"/>
+<area shape="rect" id="node4" href="$classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="136,107,261,133"/>
+<area shape="rect" id="node5" href="$classSystem.html#aa3dee10a22a9f908a87f84917857d2f0" title="Define um novo valor para o sistema." alt="" coords="136,157,261,184"/>
+</map>

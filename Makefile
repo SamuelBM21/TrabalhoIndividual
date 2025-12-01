@@ -1,48 +1,75 @@
-# Makefile simples para sua estrutura
+# Compilador
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++11
 
+# Diretórios
 SRCDIR = src
-TESTDIR = test/funcional
+FUNCTESTDIR = test/funcional
+UNITTESTDIR = test/unit
 BINDIR = bin
+OBJDIR = $(BINDIR)/obj
 
+# Fontes principais
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
-OBJS = $(patsubst $(SRCDIR)/%.cpp,$(BINDIR)/%.o,$(SRCS))
+OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/src_%.o,$(SRCS))
 
-TEST_SRCS = $(wildcard $(TESTDIR)/*.cpp)
-TEST_OBJS = $(patsubst $(TESTDIR)/%.cpp,$(BINDIR)/%.o,$(TEST_SRCS))
+# Testes funcionais
+FUNC_TEST_SRCS = $(wildcard $(FUNCTESTDIR)/*.cpp)
+FUNC_TEST_OBJS = $(patsubst $(FUNCTESTDIR)/%.cpp,$(OBJDIR)/func_%.o,$(FUNC_TEST_SRCS))
+FUNC_TEST_EXE = $(BINDIR)/funcional_tests
 
+# Testes unitários
+UNIT_TEST_SRCS = $(wildcard $(UNITTESTDIR)/*.cpp)
+UNIT_TEST_OBJS = $(patsubst $(UNITTESTDIR)/%.cpp,$(OBJDIR)/unit_%.o,$(UNIT_TEST_SRCS))
+UNIT_TEST_EXE = $(BINDIR)/unit_tests
+
+# Biblioteca
 LIB = $(BINDIR)/libmylib.a
-TEST_EXE = $(BINDIR)/funcional_tests
 
-.PHONY: all test clean
+.PHONY: all test unit clean
 
-all: $(LIB) $(TEST_EXE)
+all: $(LIB) $(FUNC_TEST_EXE) $(UNIT_TEST_EXE)
 
-# cria biblioteca estática com os objetos de src
+# cria biblioteca com os .o principais
 $(LIB): $(OBJS) | $(BINDIR)
 	ar rcs $@ $^
 
-# executável de testes: linka os objetos de src + os objetos dos testes
-$(TEST_EXE): $(OBJS) $(TEST_OBJS) | $(BINDIR)
+# executável de testes funcionais
+$(FUNC_TEST_EXE): $(OBJS) $(FUNC_TEST_OBJS) | $(BINDIR)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-# regra genérica para compilar src/*.cpp -> bin/*.o
-$(BINDIR)/%.o: $(SRCDIR)/%.cpp | $(BINDIR)
+# executável de testes unitários
+$(UNIT_TEST_EXE): $(OBJS) $(UNIT_TEST_OBJS) | $(BINDIR)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# regra para src → bin/obj com prefixo src_
+$(OBJDIR)/src_%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# regra para compilar test/funcional/*.cpp -> bin/*.o
-$(BINDIR)/%.o: $(TESTDIR)/%.cpp | $(BINDIR)
+# regra para testes funcionais → bin/obj com prefixo func_
+$(OBJDIR)/func_%.o: $(FUNCTESTDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# garante existência do diretório bin
+# regra para testes unitários → bin/obj com prefixo unit_
+$(OBJDIR)/unit_%.o: $(UNITTESTDIR)/%.cpp | $(OBJDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# cria diretórios
 $(BINDIR):
 	mkdir -p $(BINDIR)
 
-# target para rodar os testes (opcional)
-test: $(TEST_EXE)
+$(OBJDIR): | $(BINDIR)
+	mkdir -p $(OBJDIR)
+
+# rodar testes funcionais
+test: $(FUNC_TEST_EXE)
 	@echo "Executando testes funcionais..."
-	./$(TEST_EXE)
+	./$(FUNC_TEST_EXE)
+
+# rodar testes unitários
+unit: $(UNIT_TEST_EXE)
+	@echo "Executando testes unitários..."
+	./$(UNIT_TEST_EXE)
 
 clean:
-	rm -rf $(BINDIR)/*.o $(LIB) $(TEST_EXE)
+	rm -rf $(BINDIR)

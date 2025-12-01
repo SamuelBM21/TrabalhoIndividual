@@ -1,0 +1,127 @@
+\hypertarget{classLogisticFlow}{}\doxysection{Logistic\+Flow Class Reference}
+\label{classLogisticFlow}\index{LogisticFlow@{LogisticFlow}}
+
+
+Implementação de \mbox{\hyperlink{classFlow}{Flow}} para teste\+: crescimento logístico no target.  
+
+
+
+
+{\ttfamily \#include $<$funcional\+\_\+tests.\+h$>$}
+
+
+
+Inheritance diagram for Logistic\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classLogisticFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Logistic\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classLogisticFlow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLogisticFlow_ab0f7906cfe1a27e18a4f558124e53ee0}{Logistic\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLogisticFlow_adc3a6b5b8b8d94f7b02547f0a2a49e9e}{Logistic\+Flow}} (\mbox{\hyperlink{classSystem}{System}} $\ast$\mbox{\hyperlink{classFlow_a963ca162995d112f0f30322e2bb9de63}{source}}, \mbox{\hyperlink{classSystem}{System}} $\ast$\mbox{\hyperlink{classFlow_a87be88d9bae4e927b29205faabeaf387}{target}})
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLogisticFlow_afdc1e2ec0eb61b71b367f8fc2677e371}{execute}} ()
+\begin{DoxyCompactList}\small\item\em Calcula o valor do fluxo (crescimento logístico baseado no target). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementação de \mbox{\hyperlink{classFlow}{Flow}} para teste\+: crescimento logístico no target. 
+
+Classe de teste que implementa uma taxa dependente do valor do sistema de destino (target) seguindo uma forma logística discreta.
+
+Fórmula usada (no método execute)\+: $ value = 0.01 \times target->getValue() \times \left(1 - \frac{target->getValue()}{70.0}\right) $ 
+
+Definition at line 68 of file funcional\+\_\+tests.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLogisticFlow_ab0f7906cfe1a27e18a4f558124e53ee0}\label{classLogisticFlow_ab0f7906cfe1a27e18a4f558124e53ee0}} 
+\index{LogisticFlow@{LogisticFlow}!LogisticFlow@{LogisticFlow}}
+\index{LogisticFlow@{LogisticFlow}!LogisticFlow@{LogisticFlow}}
+\doxysubsubsection{\texorpdfstring{LogisticFlow()}{LogisticFlow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Logistic\+Flow\+::\+Logistic\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor padrão. 
+
+
+
+Definition at line 71 of file funcional\+\_\+tests.\+h.
+
+\mbox{\Hypertarget{classLogisticFlow_adc3a6b5b8b8d94f7b02547f0a2a49e9e}\label{classLogisticFlow_adc3a6b5b8b8d94f7b02547f0a2a49e9e}} 
+\index{LogisticFlow@{LogisticFlow}!LogisticFlow@{LogisticFlow}}
+\index{LogisticFlow@{LogisticFlow}!LogisticFlow@{LogisticFlow}}
+\doxysubsubsection{\texorpdfstring{LogisticFlow()}{LogisticFlow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Logistic\+Flow\+::\+Logistic\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{source,  }\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor parametrizado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Ponteiro para o \mbox{\hyperlink{classSystem}{System}} de origem. \\
+\hline
+{\em target} & Ponteiro para o \mbox{\hyperlink{classSystem}{System}} de destino. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file funcional\+\_\+tests.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLogisticFlow_afdc1e2ec0eb61b71b367f8fc2677e371}\label{classLogisticFlow_afdc1e2ec0eb61b71b367f8fc2677e371}} 
+\index{LogisticFlow@{LogisticFlow}!execute@{execute}}
+\index{execute@{execute}!LogisticFlow@{LogisticFlow}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily double Logistic\+Flow\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calcula o valor do fluxo (crescimento logístico baseado no target). 
+
+\begin{DoxyReturn}{Returns}
+Valor do fluxo calculado. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFlow_a619be0b590c78202127bc6ac7fb04029}{Flow}}.
+
+
+
+Definition at line 85 of file funcional\+\_\+tests.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classLogisticFlow_afdc1e2ec0eb61b71b367f8fc2677e371_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+test/funcional/\mbox{\hyperlink{funcional__tests_8h}{funcional\+\_\+tests.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="Flow::Flow" name="Flow::Flow">
+<area shape="rect" id="node1" title="Construtor de cópia." alt="" coords="5,31,92,57"/>
+<area shape="rect" id="node2" href="$classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="140,5,257,32"/>
+<area shape="rect" id="node3" href="$classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="143,56,255,83"/>
+</map>

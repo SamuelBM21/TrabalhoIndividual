@@ -1,0 +1,340 @@
+\hypertarget{classModel}{}\doxysection{Model Class Reference}
+\label{classModel}\index{Model@{Model}}
+
+
+Classe responsável por gerenciar sistemas, fluxos e a simulação completa.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+
+
+Collaboration diagram for Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classModel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classModel_ae3b375de5f6df4faf74a95d64748e048}{Model}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classModel_a48858e5f328ba822b430d86a76a6ceeb}{Model}} (const \mbox{\hyperlink{classModel}{Model}} \&other)
+\begin{DoxyCompactList}\small\item\em Construtor de cópia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classModel}{Model}} \& \mbox{\hyperlink{classModel_aaa76b9c72b66fa245f6b7b92d1ecc032}{operator=}} (const \mbox{\hyperlink{classModel}{Model}} \&other)
+\begin{DoxyCompactList}\small\item\em Operador de atribuição. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classModel_ad6ebd2062a0b823db841a0b88baac4c0}{$\sim$\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classModel_a2a340ed8a558aedcfbf7c1bdaff90c56}{add}} (\mbox{\hyperlink{classSystem}{System}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo sistema ao modelo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classModel_ab37b76dc12eb35fa4ed53d46c91cdd03}{add}} (\mbox{\hyperlink{classFlow}{Flow}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo fluxo ao modelo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classModel_afdcd018900cf5f303b06c01822a2121b}{remove}} (\mbox{\hyperlink{classSystem}{System}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Remove um sistema existente do modelo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classModel_a7fe39a686cb2d9d6255f36b377155b74}{remove}} (\mbox{\hyperlink{classFlow}{Flow}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Remove um fluxo existente do modelo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classModel_ad31ab57899deb9e33c9fd0312553383c}{run}} (int start\+Time, int end\+Time)
+\begin{DoxyCompactList}\small\item\em Executa a simulação completa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classSystem}{System}} $\ast$ $>$ \mbox{\hyperlink{classModel_a706374e5cb9ad9949996cfbd9538cead}{systems}}
+\begin{DoxyCompactList}\small\item\em Lista de sistemas pertencentes ao modelo. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classFlow}{Flow}} $\ast$ $>$ \mbox{\hyperlink{classModel_a508721af4b8ed362217dff0c6732d8dc}{flows}}
+\begin{DoxyCompactList}\small\item\em Lista de fluxos pertencentes ao modelo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável por gerenciar sistemas, fluxos e a simulação completa. 
+
+O \mbox{\hyperlink{classModel}{Model}} armazena dois conjuntos principais\+:
+\begin{DoxyItemize}
+\item Uma lista de objetos \mbox{\hyperlink{classSystem}{System}}, representando entidades com um valor armazenado.
+\item Uma lista de objetos \mbox{\hyperlink{classFlow}{Flow}}, que representem operações de transferência de valor entre Systems.
+\end{DoxyItemize}
+
+A função principal do \mbox{\hyperlink{classModel}{Model}} é executar a simulação entre um tempo inicial e final, aplicando todos os fluxos existentes a cada passo. 
+
+Definition at line 37 of file Model.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classModel_ae3b375de5f6df4faf74a95d64748e048}\label{classModel_ae3b375de5f6df4faf74a95d64748e048}} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. 
+
+Inicializa o modelo vazio, sem sistemas e sem fluxos. 
+
+Definition at line 22 of file Model.\+cpp.
+
+\mbox{\Hypertarget{classModel_a48858e5f328ba822b430d86a76a6ceeb}\label{classModel_a48858e5f328ba822b430d86a76a6ceeb}} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classModel}{Model}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construtor de cópia. 
+
+Cria um novo \mbox{\hyperlink{classModel}{Model}} copiando listas de sistemas e fluxos do modelo original.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Referência para o modelo a ser copiado. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Model.\+cpp.
+
+\mbox{\Hypertarget{classModel_ad6ebd2062a0b823db841a0b88baac4c0}\label{classModel_ad6ebd2062a0b823db841a0b88baac4c0}} 
+\index{Model@{Model}!````~Model@{$\sim$Model}}
+\index{````~Model@{$\sim$Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{$\sim$Model()}{~Model()}}
+{\footnotesize\ttfamily Model\+::$\sim$\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor. 
+
+Realiza a limpeza das listas de Systems e Flows, quando necessário. 
+
+Definition at line 24 of file Model.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classModel_ab37b76dc12eb35fa4ed53d46c91cdd03}\label{classModel_ab37b76dc12eb35fa4ed53d46c91cdd03}} 
+\index{Model@{Model}!add@{add}}
+\index{add@{add}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlow}{Flow}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo fluxo ao modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Ponteiro para o \mbox{\hyperlink{classFlow}{Flow}} a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o fluxo foi adicionado com sucesso, false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Model.\+cpp.
+
+\mbox{\Hypertarget{classModel_a2a340ed8a558aedcfbf7c1bdaff90c56}\label{classModel_a2a340ed8a558aedcfbf7c1bdaff90c56}} 
+\index{Model@{Model}!add@{add}}
+\index{add@{add}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo sistema ao modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Ponteiro para o \mbox{\hyperlink{classSystem}{System}} a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o sistema foi adicionado com sucesso, false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Model.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModel_a2a340ed8a558aedcfbf7c1bdaff90c56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classModel_aaa76b9c72b66fa245f6b7b92d1ecc032}\label{classModel_aaa76b9c72b66fa245f6b7b92d1ecc032}} 
+\index{Model@{Model}!operator=@{operator=}}
+\index{operator=@{operator=}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classModel}{Model}} \& Model\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classModel}{Model}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Operador de atribuição. 
+
+Permite copiar modelos de forma segura, substituindo o conteúdo atual.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Modelo a ser atribuído. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência para o objeto atual, após a operação. 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Model.\+cpp.
+
+\mbox{\Hypertarget{classModel_a7fe39a686cb2d9d6255f36b377155b74}\label{classModel_a7fe39a686cb2d9d6255f36b377155b74}} 
+\index{Model@{Model}!remove@{remove}}
+\index{remove@{remove}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Model\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlow}{Flow}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Remove um fluxo existente do modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Ponteiro para o \mbox{\hyperlink{classFlow}{Flow}} a ser removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o fluxo foi removido, false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Model.\+cpp.
+
+\mbox{\Hypertarget{classModel_afdcd018900cf5f303b06c01822a2121b}\label{classModel_afdcd018900cf5f303b06c01822a2121b}} 
+\index{Model@{Model}!remove@{remove}}
+\index{remove@{remove}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Model\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Remove um sistema existente do modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Ponteiro para o \mbox{\hyperlink{classSystem}{System}} a ser removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o sistema foi removido, false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Model.\+cpp.
+
+\mbox{\Hypertarget{classModel_ad31ab57899deb9e33c9fd0312553383c}\label{classModel_ad31ab57899deb9e33c9fd0312553383c}} 
+\index{Model@{Model}!run@{run}}
+\index{run@{run}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Model\+::run (\begin{DoxyParamCaption}\item[{int}]{start\+Time,  }\item[{int}]{end\+Time }\end{DoxyParamCaption})}
+
+
+
+Executa a simulação completa. 
+
+Executa a simulação do modelo entre dois instantes de tempo.
+
+A simulação ocorre aplicando todos os fluxos do modelo entre as iterações de tempo fornecidas. O comportamento detalhado depende da implementação de cada tipo concreto de \mbox{\hyperlink{classFlow}{Flow}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Tempo inicial da simulação. \\
+\hline
+{\em end\+Time} & Tempo final da simulação. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a simulação ocorreu normalmente, false caso haja falhas.
+\end{DoxyReturn}
+Este método percorre o intervalo de tempo definido por {\ttfamily start\+Time} e {\ttfamily end\+Time}, calculando primeiro o valor de todos os fluxos e depois aplicando esses valores aos sistemas associados. O processo ocorre em duas etapas a cada ciclo\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Cálculo dos fluxos\+:}} cada \mbox{\hyperlink{classFlow}{Flow}} executa seu método execute(), cujo resultado é armazenado em um vetor temporário. ~\newline
+ Isso garante que todos os fluxos sejam calculados antes de alterar qualquer \mbox{\hyperlink{classSystem}{System}}.
+\item {\bfseries{Atualização dos sistemas\+:}} para cada fluxo, subtrai-\/se o valor do fluxo do sistema de origem (source) e adiciona-\/se ao sistema de destino (target), caso existam. ~\newline
+ Essa abordagem evita dependências indesejadas entre fluxos e garante consistência durante a simulação.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Time} & Tempo inicial da simulação (inteiro). \\
+\hline
+{\em end\+Time} & Tempo final da simulação (inteiro). A simulação ocorre enquanto time $<$ end\+Time.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a simulação foi executada com sucesso. 
+\end{DoxyReturn}
+
+
+Definition at line 95 of file Model.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classModel_ad31ab57899deb9e33c9fd0312553383c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModel_ad31ab57899deb9e33c9fd0312553383c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classModel_a508721af4b8ed362217dff0c6732d8dc}\label{classModel_a508721af4b8ed362217dff0c6732d8dc}} 
+\index{Model@{Model}!flows@{flows}}
+\index{flows@{flows}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{flows}{flows}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classFlow}{Flow}}$\ast$$>$ Model\+::flows\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lista de fluxos pertencentes ao modelo. 
+
+Cada objeto \mbox{\hyperlink{classFlow}{Flow}} define como os valores dos sistemas passam de um para outro. 
+
+Definition at line 51 of file Model.\+h.
+
+\mbox{\Hypertarget{classModel_a706374e5cb9ad9949996cfbd9538cead}\label{classModel_a706374e5cb9ad9949996cfbd9538cead}} 
+\index{Model@{Model}!systems@{systems}}
+\index{systems@{systems}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{systems}{systems}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classSystem}{System}}$\ast$$>$ Model\+::systems\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lista de sistemas pertencentes ao modelo. 
+
+Cada ponteiro armazena um objeto do tipo \mbox{\hyperlink{classSystem}{System}} que participa da simulação. 
+
+Definition at line 44 of file Model.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Model_8h}{Model.\+h}}\item 
+src/\mbox{\hyperlink{Model_8cpp}{Model.\+cpp}}\end{DoxyCompactItemize}

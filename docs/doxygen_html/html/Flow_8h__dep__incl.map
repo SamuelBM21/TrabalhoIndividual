@@ -1,0 +1,9 @@
+<map id="src/Flow.h" name="src/Flow.h">
+<area shape="rect" id="node1" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="213,5,294,32"/>
+<area shape="rect" id="node2" href="$Flow_8cpp.html" title="Implementação da classe Flow." alt="" coords="89,80,183,107"/>
+<area shape="rect" id="node3" href="$Model_8h.html" title="Declaração da classe Model, responsável pelo gerenciamento da simulação." alt="" coords="208,80,299,107"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="275,251,432,278"/>
+<area shape="rect" id="node4" href="$Model_8cpp.html" title="Implementação da classe Model." alt="" coords="5,162,109,189"/>
+<area shape="rect" id="node5" href="$funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="134,155,290,196"/>
+<area shape="rect" id="node6" href="$funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="94,244,250,285"/>
+</map>

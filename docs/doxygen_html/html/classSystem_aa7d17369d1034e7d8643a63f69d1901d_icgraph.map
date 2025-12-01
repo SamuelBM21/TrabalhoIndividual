@@ -1,0 +1,10 @@
+<map id="System::getValue" name="System::getValue">
+<area shape="rect" id="node1" title="Obtém o valor atual armazenado." alt="" coords="541,115,667,142"/>
+<area shape="rect" id="node2" href="$funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="113,14,265,41"/>
+<area shape="rect" id="node4" href="$classExponentialFlow.html#a8ebb0c298d3bea1d30c48cd79f10ddb1" title="Calcula o valor do fluxo (proporcional ao source)." alt="" coords="321,191,493,218"/>
+<area shape="rect" id="node5" href="$classLogisticFlow.html#afdc1e2ec0eb61b71b367f8fc2677e371" title="Calcula o valor do fluxo (crescimento logístico baseado no target)." alt="" coords="333,242,482,269"/>
+<area shape="rect" id="node6" href="$funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="104,65,273,91"/>
+<area shape="rect" id="node7" href="$funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="111,115,266,142"/>
+<area shape="rect" id="node8" href="$classModel.html#ad31ab57899deb9e33c9fd0312553383c" title="Executa a simulação completa." alt="" coords="366,39,449,66"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,65,56,91"/>
+</map>

@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+$ value = 0.01 \times source->getValue() $
+\pagebreak
+
+$ value = 0.01 \times target->getValue() \times \left(1 - \frac{target->getValue()}{70.0}\right) $
+\pagebreak
+
+\end{document}

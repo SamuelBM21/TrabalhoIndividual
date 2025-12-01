@@ -1,0 +1,5 @@
+<map id="ExponentialFlow" name="ExponentialFlow">
+<area shape="rect" id="node1" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="5,185,124,212"/>
+<area shape="rect" id="node2" href="$classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems." alt="" coords="39,109,90,136"/>
+<area shape="rect" id="node3" href="$classSystem.html" title="Representa um elemento de armazenamento dentro do modelo." alt="" coords="31,5,98,32"/>
+</map>

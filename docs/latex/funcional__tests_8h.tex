@@ -1,0 +1,148 @@
+\hypertarget{funcional__tests_8h}{}\doxysection{test/funcional/funcional\+\_\+tests.h File Reference}
+\label{funcional__tests_8h}\index{test/funcional/funcional\_tests.h@{test/funcional/funcional\_tests.h}}
+
+
+Declaração de fluxos de teste e protótipos de testes funcionais.  
+
+
+{\ttfamily \#include \char`\"{}../../src/\+Model.\+h\char`\"{}}\newline
+Include dependency graph for funcional\+\_\+tests.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{funcional__tests_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{funcional__tests_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classExponentialFlow}{Exponential\+Flow}}
+\begin{DoxyCompactList}\small\item\em Implementação de \mbox{\hyperlink{classFlow}{Flow}} para teste\+: fluxo proporcional ao source. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLogisticFlow}{Logistic\+Flow}}
+\begin{DoxyCompactList}\small\item\em Implementação de \mbox{\hyperlink{classFlow}{Flow}} para teste\+: crescimento logístico no target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27}{exponential\+Funcional\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Teste funcional para verificar comportamento do fluxo exponencial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcional__tests_8h_a60914db64bde71b56d69320797266c29}{logistical\+Funcional\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Teste funcional para verificar comportamento do fluxo logístico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcional__tests_8h_a943dfe0c597a01c9760c140715fed527}{complex\+Funcional\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Teste funcional composto (cenário mais complexo). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaração de fluxos de teste e protótipos de testes funcionais. 
+
+Este arquivo contém implementações simples de subclasses de \mbox{\hyperlink{classFlow}{Flow}} usadas exclusivamente para testes funcionais do simulador (\mbox{\hyperlink{classExponentialFlow}{Exponential\+Flow}} e logistic\+Flow), bem como os protótipos das funções de teste que verificam cenários comportamentais do sistema/model.
+
+As classes aqui definidas são utilitárias para os testes e não fazem parte da API pública do simulador. Elas são usadas para validar a integração entre \mbox{\hyperlink{classModel}{Model}}, \mbox{\hyperlink{classSystem}{System}} e \mbox{\hyperlink{classFlow}{Flow}} durante execuções de teste automatizadas.
+
+\begin{DoxyAuthor}{Author}
+Samuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{funcional__tests_8h_a943dfe0c597a01c9760c140715fed527}\label{funcional__tests_8h_a943dfe0c597a01c9760c140715fed527}} 
+\index{funcional\_tests.h@{funcional\_tests.h}!complexFuncionalTest@{complexFuncionalTest}}
+\index{complexFuncionalTest@{complexFuncionalTest}!funcional\_tests.h@{funcional\_tests.h}}
+\doxysubsubsection{\texorpdfstring{complexFuncionalTest()}{complexFuncionalTest()}}
+{\footnotesize\ttfamily void complex\+Funcional\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste funcional composto (cenário mais complexo). 
+
+Este teste combina múltiplos Systems e Fluxos para validar interações e efeitos cumulativos dentro do \mbox{\hyperlink{classModel}{Model}} (sinergia/competição entre fluxos). 
+
+Definition at line 94 of file funcional\+\_\+tests.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funcional__tests_8h_a943dfe0c597a01c9760c140715fed527_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{funcional__tests_8h_a943dfe0c597a01c9760c140715fed527_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27}\label{funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27}} 
+\index{funcional\_tests.h@{funcional\_tests.h}!exponentialFuncionalTest@{exponentialFuncionalTest}}
+\index{exponentialFuncionalTest@{exponentialFuncionalTest}!funcional\_tests.h@{funcional\_tests.h}}
+\doxysubsubsection{\texorpdfstring{exponentialFuncionalTest()}{exponentialFuncionalTest()}}
+{\footnotesize\ttfamily void exponential\+Funcional\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste funcional para verificar comportamento do fluxo exponencial. 
+
+
+
+Definition at line 38 of file funcional\+\_\+tests.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{funcional__tests_8h_a60914db64bde71b56d69320797266c29}\label{funcional__tests_8h_a60914db64bde71b56d69320797266c29}} 
+\index{funcional\_tests.h@{funcional\_tests.h}!logisticalFuncionalTest@{logisticalFuncionalTest}}
+\index{logisticalFuncionalTest@{logisticalFuncionalTest}!funcional\_tests.h@{funcional\_tests.h}}
+\doxysubsubsection{\texorpdfstring{logisticalFuncionalTest()}{logisticalFuncionalTest()}}
+{\footnotesize\ttfamily void logistical\+Funcional\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teste funcional para verificar comportamento do fluxo logístico. 
+
+
+
+Definition at line 70 of file funcional\+\_\+tests.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funcional__tests_8h_a60914db64bde71b56d69320797266c29_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{funcional__tests_8h_a60914db64bde71b56d69320797266c29_icgraph}
+\end{center}
+\end{figure}
