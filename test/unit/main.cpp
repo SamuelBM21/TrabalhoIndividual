@@ -1,3 +1,16 @@
+/**
+ * @file main.cpp
+ * @brief Arquivo principal responsável por executar os testes funcionais do simulador.
+ *
+ * Este arquivo contém apenas a função `main()`, cuja função é chamar
+ * os testes funcionais implementados em `unit_Classe.cpp`.
+ * Ele serve como ponto de entrada para validar o comportamento de cada
+ * método das classes Model, System e Flow.
+ *
+ * @author Samuel
+ * @date 2025
+ */
+
 #include "unit_Flow.h"
 #include "unit_Model.h"
 #include "unit_System.h"
@@ -5,52 +18,30 @@
 using namespace std;
 
 int main(void){
-    cout << "===== SystemUnitTests =====\n";
-    unit_System_constructor_default();
+    cout << "SystemUnitTests:\n";
 
-    unit_system_copy_constructor();
-
-    unit_System_destructor();
-
-    unit_System_getValue();
-    unit_System_setValue();
-
-    unit_System_assignOverload();
-
-    cout << "OK\n" << endl;
+    unit_System test_unit_system;
+    test_unit_system.unit_System_runUnitTests();
+    
+    cout << "Passou! \n" << endl;
         
     // ------------------------------------------------------------------
 
-    cout << "===== FlowUnitTests =====\n";
-    unit_Flow_constructor_default();
-    
-    unit_Flow_copy_constructor();
+    cout << "FlowUnitTests:\n";
 
-    unit_Flow_destructor();
+    unit_Flow test_unit_flow;
+    test_unit_flow.unit_Flow_runUnitTests();
 
-    unit_Flow_getSource();
-    unit_Flow_setSource();
-
-    unit_Flow_getTarget();
-    unit_Flow_setTarget();
-
-    cout << "OK\n" << endl;
+    cout << "Passou! \n" << endl;
 
     // ------------------------------------------------------------------
     
-    cout << "===== ModelUnitTests =====\n";
-    unit_Model_constructor_default();
+    cout << "ModelUnitTests:\n";
+
+    unit_Model test_unit_model;
+    test_unit_model.unit_Model_runUnitTests();
     
-    unit_Model_destructor();
-
-    unit_Model_systemsBegin();
-    unit_Model_systemsEnd();
-
-
-    unit_Model_flowsBegin();
-    unit_Model_flowsEnd();
-    
-    cout << "OK\n" << endl;
+    cout << "Passou! \n" << endl;
 
     return 0;
 }

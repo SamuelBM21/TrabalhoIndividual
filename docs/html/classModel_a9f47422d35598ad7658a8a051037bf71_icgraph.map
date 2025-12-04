@@ -1,0 +1,5 @@
+<map id="Model::systemsBegin" name="Model::systemsBegin">
+<area shape="rect" id="node1" title="Retorna iterador para o início da lista de sistemas." alt="" coords="204,31,352,57"/>
+<area shape="rect" id="node2" href="$classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node3" href="$classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="8,56,153,83"/>
+</map>

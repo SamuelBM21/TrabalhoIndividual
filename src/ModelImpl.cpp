@@ -1,18 +1,24 @@
 /**
- * @file Model.cpp
- * @brief Implementação da classe Model.
+ * @file ModelImpl.cpp
+ * @brief Implementação da classe ModelImpl.
  *
- * O Model gerencia os sistemas e fluxos que compõem o simulador baseado na
- * Teoria Geral de Sistemas. Ele armazena coleções de Systems e Flows, além
- * de controlar a execução temporal da simulação.
+ * Este arquivo contém a implementação da estrutura principal do simulador:
+ * a classe ModelImpl. Ela gerencia coleções de Systems e Flows, controla
+ * a evolução temporal da simulação e coordena a execução dos fluxos.
  *
- * Este arquivo contém a implementação das funções que manipulam a estrutura
- * interna do modelo, adicionam/removem elementos e executam o ciclo principal
- * de simulação.
+ * Entre as responsabilidades implementadas aqui estão:
+ *  - Armazenar e organizar Systems e Flows;
+ *  - Realizar o loop de simulação passo a passo;
+ *  - Garantir que os fluxos sejam aplicados corretamente;
+ *  - Manter consistência e gerenciamento de memória.
+ *
+ * ModelImpl constitui o núcleo coordenador da Teoria Geral de Sistemas
+ * dentro deste software, realizando a integração entre suas entidades.
  *
  * @author Samuel
  * @date 2025
  */
+
 
 #include "ModelImpl.h"
 #include <algorithm> 
@@ -22,10 +28,6 @@ using namespace std;
 ModelImpl::ModelImpl() : systems(), flows() {}
 
 ModelImpl::~ModelImpl() {
-}
-
-int ModelImpl::getClock() {
-    return clock;
 }
 
 ModelImpl::ModelImpl(const Model& other) {
@@ -51,6 +53,10 @@ ModelImpl& ModelImpl::operator=(const Model& other) {
     }
 
     return *this;
+}
+
+int ModelImpl :: getClock() const {
+    return clock;
 }
 
 ModelImpl::iteratorSystem ModelImpl::systemsBegin() const { 
@@ -99,7 +105,7 @@ bool ModelImpl::remove(Flow* f) {
 
 bool ModelImpl::run(int startTime, int endTime) {
     for (int time = startTime; time < endTime; time++) {
-
+        clock = time;
         int n = flows.size();
         vector<double> results(n);
 
@@ -116,5 +122,6 @@ bool ModelImpl::run(int startTime, int endTime) {
                 f->getTarget()->setValue(f->getTarget()->getValue() + results[i]);
         }
     }
+    clock++;
     return true;
 }

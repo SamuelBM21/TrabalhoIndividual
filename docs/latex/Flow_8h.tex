@@ -6,8 +6,7 @@ Declaração da classe abstrata \mbox{\hyperlink{classFlow}{Flow}}, que modela u
 
 
 {\ttfamily \#include \char`\"{}System.\+h\char`\"{}}\newline
-Include dependency graph for Flow.\+h\+:
-\nopagebreak
+Include dependency graph for Flow.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,13 +25,17 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classFlow}{Flow}}
-\begin{DoxyCompactList}\small\item\em Classe base abstrata que define um fluxo entre dois Systems. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Interface abstrata que define um fluxo entre dois Systems. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Declaração da classe abstrata \mbox{\hyperlink{classFlow}{Flow}}, que modela um fluxo entre dois Systems. 
 
-A classe \mbox{\hyperlink{classFlow}{Flow}} representa uma transferência de valor entre um sistema de origem (source) e um sistema de destino (target). Ela é a classe base para todas as implementações concretas de fluxos do simulador (por exemplo\+: fluxo linear, fluxo logístico, etc.). Subclasses devem implementar o método virtual puro execute(), que calcula o valor do fluxo em um determinado passo de simulação.
+Um \mbox{\hyperlink{classFlow}{Flow}} representa a transferência de valor entre um \mbox{\hyperlink{classSystem}{System}} de origem (source) e um \mbox{\hyperlink{classSystem}{System}} de destino (target). O comportamento do fluxo é definido pela implementação concreta do método execute(), que calcula quanto valor deve ser transferido em um passo da simulação.
+
+Esta classe funciona como interface base para fluxos específicos, como fluxos exponenciais, logísticos, lineares etc.
+
+A classe não possui responsabilidade sobre o ciclo de vida dos Systems\+: ela apenas mantém ponteiros (non-\/owning pointers).
 
 \begin{DoxyAuthor}{Author}
 Samuel 

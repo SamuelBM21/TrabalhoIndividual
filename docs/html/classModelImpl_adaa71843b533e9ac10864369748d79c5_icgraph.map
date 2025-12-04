@@ -1,0 +1,4 @@
+<map id="ModelImpl::getClock" name="ModelImpl::getClock">
+<area shape="rect" id="node1" title="Retorna o valor atual do relógio do modelo." alt="" coords="209,13,352,39"/>
+<area shape="rect" id="node2" href="$classunit__Model.html#a8e4cc0ff57fcbf3e9e5b967e9e5c8107" title="Testa o método getClock()." alt="" coords="5,5,161,47"/>
+</map>

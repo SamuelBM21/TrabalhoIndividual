@@ -1,0 +1,4 @@
+<map id="FlowImpl::getSource" name="FlowImpl::getSource">
+<area shape="rect" id="node1" title="Retorna o sistema de origem." alt="" coords="225,5,368,32"/>
+<area shape="rect" id="node2" href="$classExponentialFlow.html#a8ebb0c298d3bea1d30c48cd79f10ddb1" title="Calcula o valor do fluxo (proporcional ao source)." alt="" coords="5,5,177,32"/>
+</map>

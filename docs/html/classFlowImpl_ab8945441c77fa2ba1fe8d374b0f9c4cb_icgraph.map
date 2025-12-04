@@ -1,0 +1,8 @@
+<map id="FlowImpl::setTarget" name="FlowImpl::setTarget">
+<area shape="rect" id="node1" title="Define o sistema de destino do fluxo." alt="" coords="321,81,459,108"/>
+<area shape="rect" id="node2" href="$funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="113,5,265,32"/>
+<area shape="rect" id="node4" href="$funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="104,56,273,83"/>
+<area shape="rect" id="node5" href="$funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="111,107,266,133"/>
+<area shape="rect" id="node6" href="$classunit__Flow.html#a30be3b81041c0f1143437777a05c4668" title="Testa o método setTarget()." alt="" coords="117,158,260,199"/>
+<area shape="rect" id="node3" href="$funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,56,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ModelImpl::systemsBegin" name="ModelImpl::systemsBegin">
+<area shape="rect" id="node1" title="Retorna iterador para o início da lista de sistemas." alt="" coords="209,13,383,39"/>
+<area shape="rect" id="node2" href="$classunit__Model.html#ae9e34ffeeccf8508705337dba816a1bb" title="Testa o iterador systemsBegin()." alt="" coords="5,5,161,47"/>
+</map>

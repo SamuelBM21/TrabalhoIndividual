@@ -21,11 +21,7 @@
  * @date 2025
  */
 
- #include "funcional_tests.h"
-
-#include "../../src/Model.h"
-#include "../../src/Flow.h"
-#include <assert.h>
+#include "funcional_tests.h"
 
 using namespace std;
 

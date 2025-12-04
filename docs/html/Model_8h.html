@@ -72,22 +72,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Declaração da classe <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a>, responsável pelo gerenciamento da simulação.  
+<p>Interface abstrata para representação e execução de modelos na simulação.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="System_8h_source.html">System.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Flow_8h_source.html">Flow.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Model.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Model_8h__incl.png" border="0" usemap="#asrc_2Model_8h" alt=""/></div>
 <map name="asrc_2Model_8h" id="asrc_2Model_8h">
-<area shape="rect" title="Declaração da classe Model, responsável pelo gerenciamento da simulação." alt="" coords="119,5,209,32"/>
+<area shape="rect" title="Interface abstrata para representação e execução de modelos na simulação." alt="" coords="85,5,176,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,77,107"/>
 <area shape="rect" title=" " alt="" coords="101,80,160,107"/>
-<area shape="rect" href="System_8h.html" title="Declaração da classe System, que representa um elemento básico do modelo." alt="" coords="191,155,270,181"/>
-<area shape="rect" href="Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="235,80,293,107"/>
+<area shape="rect" href="Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="184,80,243,107"/>
+<area shape="rect" href="System_8h.html" title="Interface abstrata que representa um elemento de armazenamento do modelo." alt="" coords="174,155,253,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -95,11 +94,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Model_8h__dep__incl.png" border="0" usemap="#asrc_2Model_8hdep" alt=""/></div>
 <map name="asrc_2Model_8hdep" id="asrc_2Model_8hdep">
-<area shape="rect" title="Declaração da classe Model, responsável pelo gerenciamento da simulação." alt="" coords="167,5,257,32"/>
-<area shape="rect" href="Model_8cpp.html" title="Implementação da classe Model." alt="" coords="5,87,109,114"/>
-<area shape="rect" href="funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="134,80,290,121"/>
-<area shape="rect" href="main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="249,177,407,203"/>
-<area shape="rect" href="funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="69,169,225,211"/>
+<area shape="rect" title="Interface abstrata para representação e execução de modelos na simulação." alt="" coords="191,5,282,32"/>
+<area shape="rect" href="ModelImpl_8h.html" title="Implementação concreta da interface Model." alt="" coords="179,80,294,107"/>
+<area shape="rect" href="ModelImpl_8cpp.html" title="Implementação da classe ModelImpl." alt="" coords="5,162,135,189"/>
+<area shape="rect" href="funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="159,155,315,196"/>
+<area shape="rect" href="unit__Model_8cpp.html" title="Implementação dos testes unitários da classe ModelImpl." alt="" coords="339,162,500,189"/>
+<area shape="rect" href="funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="68,244,224,285"/>
+<area shape="rect" href="funcional_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="249,251,406,278"/>
 </map>
 </div>
 </div>
@@ -108,17 +109,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html">Model</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe responsável por gerenciar sistemas, fluxos e a simulação completa.  <a href="classModel.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.  <a href="classModel.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaração da classe <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a>, responsável pelo gerenciamento da simulação. </p>
-<p>A classe <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a> é o núcleo do simulador baseado na Teoria Geral de Sistemas. Ela armazena e controla coleções de objetos do tipo <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> e <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a>, executando a evolução temporal do sistema através da aplicação dos fluxos sobre os sistemas.</p>
-<p>O <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a> funciona como um "ambiente de execução", coordenando:</p><ul>
-<li>A lista de sistemas presentes no modelo</li>
-<li>A lista de fluxos conectando esses sistemas</li>
-<li>O processo de execução (simulação) no tempo</li>
+<div class="textblock"><p>Interface abstrata para representação e execução de modelos na simulação. </p>
+<p>A classe <a class="el" href="classModel.html" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.">Model</a> define a estrutura básica para implementação de modelos baseados na Teoria Geral de Sistemas (TGS). <br  />
+</p>
+<p>Um <a class="el" href="classModel.html" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.">Model</a> é responsável por:</p><ul>
+<li>Gerenciar coleções de objetos <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> (entidades que armazenam valores).</li>
+<li>Gerenciar coleções de objetos <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a> (relações que transferem valores entre systems).</li>
+<li>Coordenar o processo de simulação ao longo do tempo.</li>
 </ul>
+<p>Esta classe funciona como o núcleo lógico da simulação, servindo de base para implementações concretas como <a class="el" href="classModelImpl.html" title="Implementação concreta da classe Model.">ModelImpl</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>Samuel </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 

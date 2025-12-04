@@ -1,23 +1,33 @@
-#include <iostream>
+/**
+ * @file unit_Model.cpp
+ * @brief Implementação dos testes unitários da classe ModelImpl.
+ *
+ * Cada função aqui valida um aspecto específico do comportamento de ModelImpl,
+ * garantindo que construtores, métodos de acesso, modificadores e operadores
+ * funcionem corretamente.
+ *
+ * @author Samuel
+ * @date 2025
+ */
+
 #include <math.h>
 #include <assert.h>
 
-#include "unit_Model.h"
 #include "../../src/ModelImpl.h"
 #include "../../src/SystemImpl.h"
-#include "../../src/FlowImpl.h"
+#include "unit_Model.h"
 
 using namespace std;
 
-class FlowTest : public FlowImpl {
+class ComplexTest : public FlowImpl {
     public:
-        FlowTest():
+        ComplexTest():
             FlowImpl() {}
             
-        FlowTest(System *source, System *target): 
+        ComplexTest(System *source, System *target): 
             FlowImpl(source, target){}
 
-        FlowTest(const Flow& flow): FlowImpl(flow) {}
+        ComplexTest(const Flow& flow): FlowImpl(flow) {}
             
         double execute(){
             return (getSource()->getValue())/2;
@@ -25,68 +35,59 @@ class FlowTest : public FlowImpl {
     
 };
 
-void unit_Model_constructor_default(){
+void unit_Model :: unit_Model_constructor_default(){
 
-
-    Model *model = new ModelImpl();
+    ModelImpl *model = new ModelImpl();
     assert(sizeof(*model) > 0);
+    assert(model->clock == 0);
+    assert(model->flows.size() == 0);
+    assert(model->systems.size() == 0);
+    delete model;
+}
+
+void unit_Model :: unit_Model_getClock(){
+    ModelImpl *model = new ModelImpl();
+
+    assert(model->getClock() == 0);
 
     delete model;
 }
 
+void unit_Model :: unit_Model_destructor(){}
 
-void unit_Model_destructor(){}
+void unit_Model :: unit_Model_removeSystem(){
 
-void unit_Model_removeSystem(){
-
-    Model *model = new ModelImpl();
+    ModelImpl *model = new ModelImpl();
     System *system = new SystemImpl();
     model->add(system);
 
-    assert(*(model->systemsBegin()) == system); 
+    assert(model->systems.size() == 1); 
 
     model->remove(system);
-    assert(*(model->systemsBegin()) == NULL); 
+    assert(model->systems.size() == 0); 
 
     delete system;
     delete model;
 }
 
-void unit_Model_removeFlow(){
+void unit_Model :: unit_Model_removeFlow(){
 
-    Model *model = new ModelImpl();
-
-    Flow *flow = new FlowTest();
+    ModelImpl *model = new ModelImpl();
+    Flow *flow = new ComplexTest();
     model->add(flow);
 
-    assert(*(model->flowsBegin()) == flow);
+    assert(model->flows.size() == 1);
 
     model->remove(flow);
-    assert(*(model->flowsBegin()) == NULL);
+    assert(model->flows.size() == 0);
 
     delete flow;
     delete model;
-
 }
-// /*
-void unit_Model_run(){
+
+void unit_Model :: unit_Model_systemsBegin(){
 
     ModelImpl *model = new ModelImpl();
-
-    int startTime = 0;
-    int endTime = 100;
-
-    model->run(startTime, endTime);
-
-    assert(model->getClock() == (endTime - startTime));
-
-    delete model;
-}
-// */
-
-void unit_Model_systemsBegin(){
-
-    Model *model = new ModelImpl();
 
     System *system = new SystemImpl();
     System *system2 = new SystemImpl();
@@ -94,17 +95,17 @@ void unit_Model_systemsBegin(){
     model->add(system);
     model->add(system2);
 
-    assert(*(model->systemsBegin()) != system2); 
-    assert(*(model->systemsBegin()) == system); 
+    assert(*(model->systemsBegin()) == system);
+    assert(*(model->systemsBegin()) != system2);
 
     delete system;
     delete system2;
     delete model;
 }
 
-void unit_Model_systemsEnd(){
+void unit_Model :: unit_Model_systemsEnd(){
 
-    Model *model = new ModelImpl();
+    ModelImpl *model = new ModelImpl();
 
     System *system = new SystemImpl();
     System *system2 = new SystemImpl();
@@ -124,12 +125,12 @@ void unit_Model_systemsEnd(){
     delete model;
 }
 
-void unit_Model_flowsBegin(){
+void unit_Model :: unit_Model_flowsBegin(){
 
     Model *model = new ModelImpl();
 
-    Flow *flow = new FlowTest();
-    Flow *flow2 = new FlowTest();
+    Flow *flow = new ComplexTest();
+    Flow *flow2 = new ComplexTest();
 
     model->add(flow);
     model->add(flow2);
@@ -141,12 +142,12 @@ void unit_Model_flowsBegin(){
     delete flow2;
     delete model;
 }
-void unit_Model_flowsEnd(){
+void unit_Model :: unit_Model_flowsEnd(){
 
     Model *model = new ModelImpl();
 
-    Flow *flow = new FlowTest();
-    Flow *flow2 = new FlowTest();
+    Flow *flow = new ComplexTest();
+    Flow *flow2 = new ComplexTest();
 
     model->add(flow);
     model->add(flow2);
@@ -162,5 +163,39 @@ void unit_Model_flowsEnd(){
     delete model;
 }
 
-void unit_Model_assignOverload();
+void unit_Model :: unit_Model_run(){
 
+    ModelImpl *model = new ModelImpl();
+
+    System *system1 = new SystemImpl(100.0);
+    System *system2 = new SystemImpl(0.0);
+
+    Flow *flow = new ComplexTest(system1, system2);
+
+    model->add(system1);
+    model->add(system2);
+    model->add(flow);
+
+    model->run(0,1);
+
+    assert(model->clock == 1);
+    assert(fabs(system1->getValue() - 50.0) < 0.0001);
+    assert(fabs(system2->getValue() - 50.0) < 0.0001);
+
+    delete flow;
+    delete system1;
+    delete system2;
+    delete model;
+}
+void unit_Model :: unit_Model_runUnitTests(){
+    unit_Model_constructor_default();
+    unit_Model_destructor();
+    unit_Model_getClock();
+    unit_Model_removeSystem();
+    unit_Model_removeFlow();
+    unit_Model_systemsBegin();
+    unit_Model_systemsEnd();
+    unit_Model_flowsBegin();
+    unit_Model_flowsEnd();
+    unit_Model_run();
+}

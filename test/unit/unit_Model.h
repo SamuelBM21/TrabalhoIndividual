@@ -1,82 +1,87 @@
+/**
+ * @file unit_Model.h
+ * @brief Declaração dos testes unitários para a classe Model e ModelImpl.
+ *
+ * Este arquivo contém as assinaturas das funções responsáveis por testar
+ * o funcionamento interno da classe ModelImpl, incluindo:
+ *  - Construtor e destrutor;
+ *  - Métodos de gerenciamento de Systems e Flows (add/remove);
+ *  - Métodos de iteração (begin, end, size);
+ *  - Execução da simulação (run);
+ *  - Validação do operador de atribuição (=).
+ *
+ * Cada função implementa um teste isolado, garantindo que ModelImpl
+ * mantenha o controle correto de seus componentes e funcione de forma
+ * consistente ao longo da execução da simulação.
+ *
+ * Os testes são implementados no arquivo unit_Model.cpp.
+ *
+ * @author Samuel
+ * @date 2025
+ */
+
 #ifndef _UNIT_MODEL_H_
 #define _UNIT_MODEL_H_
 
 #include "../../src/FlowImpl.h"
 
-/**
- * @brief A unitary test for asserting the default constructor of Model.
-*/
-void unit_Model_constructor_default();
+class unit_Model{
+public:
+    /**
+     * @brief Testa o construtor padrão de ModelImpl.
+     */
+    void unit_Model_constructor_default();
 
-/**
- * @brief A unitary test for asserting the destructor of Model.
-*/
-void unit_Model_destructor();
+    /**
+     * @brief Testa o destrutor de ModelImpl.
+     *
+     * Apenas verifica se a destruição ocorre sem erros.
+     */
+    void unit_Model_destructor();
 
+    /**
+     * @brief Testa o método getClock().
+     */
+    void unit_Model_getClock(); 
 
-/**
- * @brief A unitary test for asserting the getClock method.
-*/
-void unit_Model_getClock();
+    /**
+     * @brief Testa o método removeSystem().
+     */
+    void unit_Model_removeSystem();
 
-/**
- * @brief A unitary test for asserting the add method with the System* overload.
-*/
-// void unit_Model_add_System();
+    /**
+     * @brief Testa o método removeFlow().
+     */
+    void unit_Model_removeFlow();
 
-/**
- * @brief A unitary test for asserting the add method with the Flow* overload.
-*/
-// void unit_Model_add_Flow();
+    /**
+     * @brief Testa o iterador systemsBegin().
+     */
+    void unit_Model_systemsBegin();
 
-/**
- * @brief A unitary test for asserting the removeSystem method.
-*/
-void unit_Model_removeSystem();
+    /**
+     * @brief Testa o iterador systemsEnd().
+     */
+    void unit_Model_systemsEnd();
 
-/**
- * @brief A unitary test for asserting the removeFlow method.
-*/
-void unit_Model_removeFlow();
+    /**
+     * @brief Testa o iterador flowsBegin().
+     */
+    void unit_Model_flowsBegin();
 
-/**
- * @brief A unitary test for asserting the run method.
-*/
-// void unit_Model_run();
+    /**
+     * @brief Testa o iterador flowsEnd().
+     */
+    void unit_Model_flowsEnd();
 
-/**
- * @brief A unitary test for asserting the systemsBegin method.
-*/
-void unit_Model_systemsBegin();
+    /**
+     * @brief Testa o método run().
+     */
+    void unit_Model_run();
 
-/**
- * @brief A unitary test for asserting the systemsEnd method.
-*/
-void unit_Model_systemsEnd();
-
-/**
- * @brief A unitary test for asserting the systemsSize method.
-*/
-// void unit_Model_systemsSize();
-
-/**
- * @brief A unitary test for asserting the flowsBegin method.
-*/
-void unit_Model_flowsBegin();
-
-/**
- * @brief A unitary test for asserting the flowsEnd method.
-*/
-void unit_Model_flowsEnd();
-
-/**
- * @brief A unitary test for asserting the flowsSize method.
-*/
-// void unit_Model_flowsSize();
-
-/**
- * @brief A unitary test for asserting the overload of the assignment(=) operator.
-*/
-void unit_Model_assignOverload();
-
-#endif
+    /**
+     * @brief Executa todos os testes unitários da classe ModelImpl.
+     */
+    void unit_Model_runUnitTests();
+};
+#endif // _UNIT_MODEL_H_

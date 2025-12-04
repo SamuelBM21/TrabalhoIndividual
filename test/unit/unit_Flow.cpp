@@ -1,3 +1,15 @@
+/**
+ * @file unit_Flow.cpp
+ * @brief Implementação dos testes unitários da classe FlowImpl.
+ *
+ * Cada função aqui valida um aspecto específico do comportamento de FlowImpl,
+ * garantindo que construtores, métodos de acesso, modificadores e operadores
+ * funcionem corretamente.
+ *
+ * @author Samuel
+ * @date 2025
+ */
+
 #include <iostream>
 #include <assert.h>
 #include <math.h>
@@ -23,26 +35,24 @@ class FlowTest : public FlowImpl {
     
 };
 
-void unit_Flow_constructor_default(){
+void unit_Flow :: unit_Flow_constructor_default(){
 
-    Flow *flow = new FlowTest();
+    FlowTest flow;
 
-    assert(sizeof(*flow) > 0);
-    assert(flow->getTarget() == NULL);
-    assert(flow->getSource() == NULL);
-
-    delete flow;   
+    assert(flow.target == NULL);
+    assert(flow.source == NULL);
+  
 }
 
-void unit_Flow_constructor_with_source_target(){
+void unit_Flow :: unit_Flow_constructor_with_source_target(){
 
     System *system1 = new SystemImpl();
     System *system2 = new SystemImpl();
 
-    Flow *flow = new FlowTest(system1, system2);
+    FlowTest *flow = new FlowTest(system1, system2);
 
-    assert(flow->getSource() == system1);
-    assert(flow->getTarget() == system2);
+    assert(flow->source == system1);
+    assert(flow->target == system2);
 
     delete system1;
     delete system2;
@@ -51,16 +61,17 @@ void unit_Flow_constructor_with_source_target(){
 }
 
 
-void unit_Flow_copy_constructor(){
+void unit_Flow :: unit_Flow_copy_constructor(){
     System *system1 = new SystemImpl();
     System *system2 = new SystemImpl();
 
-    Flow *flow1 = new FlowTest(system1, system2);
-    Flow *flow2 = new FlowTest(*flow1);
+    FlowTest *flow1 = new FlowTest(system1, system2);
+    FlowTest *flow2 = new FlowTest(*flow1);
 
-    assert(flow1->getSource() == flow2->getSource());
-    assert(flow1->getTarget() == flow2->getTarget());
+    assert(flow1->source == flow2->source);
+    assert(flow1->target == flow2->target);
 
+    assert(flow1 != flow2);
 
     delete system1;
     delete system2;
@@ -69,41 +80,68 @@ void unit_Flow_copy_constructor(){
 }
 
 
-void unit_Flow_destructor(){}
+void unit_Flow :: unit_Flow_destructor(){}
 
-/* void unit_Flow_getValue(){
-
-    Flow *flow = new FlowTest();
-    flow->setValue(100.0);
-
-    assert(flow->getValue() == 100.0);
-
-    delete flow;
-}
-
-
-void unit_Flow_setValue(){
-
-    Flow *flow = new FlowTest();
-    flow->setValue(100.0);
-    
-    Flow *flow2 = new FlowTest(*flow);
-    flow2->setValue(0.0);
-
-    assert(flow2->getValue() == 0.0);
-
-    delete flow;
-
-} */
-
-void unit_Flow_getSource(){
+void unit_Flow :: unit_Flow_getSource(){
 
     System *system1 = new SystemImpl();
     System *system2 = new SystemImpl();
 
-    Flow *flow = new FlowTest(system1, system2);
+    FlowTest flow;
+    flow.source = system1;
+    assert(flow.getSource() == system1);
 
-    assert(flow->getSource() == system1);
+    delete system1;
+    delete system2;
+
+}
+
+
+void unit_Flow :: unit_Flow_setSource(){
+
+    System *system1 = new SystemImpl();
+
+    FlowTest flow;
+    flow.setSource(system1);
+
+    assert(flow.source == system1);
+
+    delete system1;
+}
+
+
+void unit_Flow :: unit_Flow_getTarget(){
+    System *system2 = new SystemImpl();
+
+    FlowTest flow;
+    flow.target = system2;
+    assert(flow.getTarget() == system2);
+
+    delete system2;
+}
+
+
+void unit_Flow :: unit_Flow_setTarget(){
+    System *system1 = new SystemImpl();
+
+    FlowTest flow;
+    flow.setTarget(system1);
+
+    assert(flow.target == system1);
+
+    delete system1;
+}
+
+void unit_Flow :: unit_Flow_execute(){
+
+    System *system1 = new SystemImpl(100.0);
+    System *system2 = new SystemImpl();
+
+    FlowTest *flow = new FlowTest(system1, system2);
+
+    double result = flow->execute();
+
+    assert(fabs(result - 50.0) < 0.0001);
 
     delete system1;
     delete system2;
@@ -111,46 +149,14 @@ void unit_Flow_getSource(){
 
 }
 
-
-void unit_Flow_setSource(){
-
-    System *system1 = new SystemImpl();
-
-    Flow *flow = new FlowTest();
-    flow->setSource(system1);
-
-    assert(flow->getSource() == system1);
-
-    delete system1;
-    delete flow;
-
-}
-
-
-void unit_Flow_getTarget(){
-
-    System *system1 = new SystemImpl();
-    System *system2 = new SystemImpl();
-
-    Flow *flow = new FlowTest(system1, system2);
-
-    assert(flow->getTarget() == system2);
-
-    delete system1;
-    delete system2;
-    delete flow;
-}
-
-
-void unit_Flow_setTarget(){
-    System *system1 = new SystemImpl();
-
-    Flow *flow = new FlowTest();
-    flow->setTarget(system1);
-
-    assert(flow->getTarget() == system1);
-
-    delete system1;
-    delete flow;
-
+void unit_Flow :: unit_Flow_runUnitTests(){
+    unit_Flow_constructor_default();
+    unit_Flow_constructor_with_source_target();
+    unit_Flow_copy_constructor();
+    unit_Flow_destructor();
+    unit_Flow_getSource();
+    unit_Flow_setSource();
+    unit_Flow_getTarget();
+    unit_Flow_setTarget();
+    unit_Flow_execute();
 }

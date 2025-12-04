@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['model_40',['Model',['../classModel.html',1,'']]]
+  ['logisticflow_98',['LogisticFlow',['../classLogisticFlow.html',1,'']]]
 ];

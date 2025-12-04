@@ -2,11 +2,16 @@
  * @file Flow.h
  * @brief Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems.
  *
- * A classe Flow representa uma transferência de valor entre um sistema de origem
- * (source) e um sistema de destino (target). Ela é a classe base para todas as
- * implementações concretas de fluxos do simulador (por exemplo: fluxo linear,
- * fluxo logístico, etc.). Subclasses devem implementar o método virtual puro
- * execute(), que calcula o valor do fluxo em um determinado passo de simulação.
+ * Um Flow representa a transferência de valor entre um System de origem (source)
+ * e um System de destino (target). O comportamento do fluxo é definido pela
+ * implementação concreta do método execute(), que calcula quanto valor deve
+ * ser transferido em um passo da simulação.
+ *
+ * Esta classe funciona como interface base para fluxos específicos, como
+ * fluxos exponenciais, logísticos, lineares etc.
+ *
+ * A classe não possui responsabilidade sobre o ciclo de vida dos Systems:
+ * ela apenas mantém ponteiros (non-owning pointers).
  *
  * @author Samuel
  * @date 2025
@@ -19,73 +24,41 @@
 
 /**
  * @class Flow
- * @brief Classe base abstrata que define um fluxo entre dois Systems.
+ * @brief Interface abstrata que define um fluxo entre dois Systems.
  *
- * Cada Flow contém ponteiros para um System de origem e um System de destino.
- * O Model utiliza objetos Flow para computar e aplicar transferências entre
- * Systems em cada iteração da simulação.
+ * Cada Flow conecta dois Systems por meio de ponteiros — source (origem)
+ * e target (destino). O Model executa todos os fluxos a cada iteração
+ * para calcular como os valores dos Systems devem evoluir.
  *
+ * Subclasses concretas devem implementar o método execute(), que define
+ * a regra do fluxo.
  */
 class Flow {
 public:
+    /// Destrutor virtual necessário para herança segura.
+    virtual ~Flow() {}
+/* 
+    /// @brief Operador de atribuição abstrato.
+    virtual Flow& operator=(const Flow& other) = 0; */
 
-    /**
-     * @brief Destrutor virtual.
-     *
-     * Declarado virtual para permitir herança segura. Flow não assume
-     * propriedade (exclusive ownership) dos Systems apontados.
-     */
-    virtual ~Flow() {};
-
-    /**
-     * @brief Operador de atribuição.
-     *
-     * Realiza cópia segura dos ponteiros source e target.
-     *
-     * @param other Objeto a ser atribuído.
-     * @return Referência para *this.
-     */
-    virtual Flow& operator=(const Flow& other) = 0;
-
-    /**
-     * @brief Define o sistema de origem do fluxo.
-     *
-     * @param s Ponteiro para o System de origem. Pode ser nullptr para indicar
-     *          que ainda não foi conectado.
-     * @return true se a operação ocorreu com sucesso.
-     */
+    /// @brief Define o sistema de origem do fluxo.
     virtual bool setSource(System* s) = 0;
 
-    /**
-     * @brief Retorna o sistema de origem.
-     *
-     * @return Ponteiro para o System de origem (pode ser nullptr).
-     */
+    /// @brief Retorna o sistema de origem.
     virtual System* getSource() const = 0;
 
-    /**
-     * @brief Define o sistema de destino do fluxo.
-     *
-     * @param t Ponteiro para o System de destino. Pode ser nullptr.
-     * @return true se a operação ocorreu com sucesso.
-     */
+    /// @brief Define o sistema de destino do fluxo.
     virtual bool setTarget(System* t) = 0;
 
-    /**
-     * @brief Retorna o sistema de destino.
-     *
-     * @return Ponteiro para o System de destino (pode ser nullptr).
-     */
+    /// @brief Retorna o sistema de destino.
     virtual System* getTarget() const = 0;
 
     /**
-     * @brief Calcula o valor do fluxo neste passo de simulação.
+     * @brief Calcula o valor do fluxo no estado atual.
      *
-     * Método abstrato que deve ser implementado por classes derivadas para
-     * definir a regra de transferência entre source e target.
+     * Subclasses implementam a equação matemática específica do fluxo.
      *
-     * @return Valor do fluxo calculado (double). A interpretação do valor
-     *         depende da semântica do modelo (por ex.: taxa por unidade de tempo).
+     * @return Valor numérico do fluxo.
      */
     virtual double execute() = 0;
 };

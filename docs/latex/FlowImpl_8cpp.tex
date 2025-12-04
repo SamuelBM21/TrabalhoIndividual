@@ -1,0 +1,39 @@
+\hypertarget{FlowImpl_8cpp}{}\doxysection{src/\+Flow\+Impl.cpp File Reference}
+\label{FlowImpl_8cpp}\index{src/FlowImpl.cpp@{src/FlowImpl.cpp}}
+
+
+Implementação parcial da classe \mbox{\hyperlink{classFlow}{Flow}}.  
+
+
+{\ttfamily \#include \char`\"{}Flow\+Impl.\+h\char`\"{}}\newline
+Include dependency graph for Flow\+Impl.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{FlowImpl_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementação parcial da classe \mbox{\hyperlink{classFlow}{Flow}}. 
+
+Este arquivo contém a implementação da classe \mbox{\hyperlink{classFlowImpl}{Flow\+Impl}}, que fornece a infraestrutura básica para representar um fluxo entre dois Systems.
+
+\mbox{\hyperlink{classFlowImpl}{Flow\+Impl}} implementa\+:
+\begin{DoxyItemize}
+\item Construtores (padrão, parametrizado e cópia);
+\item Operador de atribuição;
+\item Métodos de acesso e modificação de source e target.
+\end{DoxyItemize}
+
+O método execute() permanece abstrato, pois cada fluxo concreto deve definir sua própria equação matemática.
+
+\mbox{\hyperlink{classFlowImpl}{Flow\+Impl}} é usada como classe base para fluxos específicos utilizados pelo \mbox{\hyperlink{classModel}{Model}} durante a simulação.
+
+\begin{DoxyAuthor}{Author}
+Samuel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}

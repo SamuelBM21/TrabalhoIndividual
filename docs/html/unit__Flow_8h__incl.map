@@ -1,0 +1,6 @@
+<map id="test/unit/unit_Flow.h" name="test/unit/unit_Flow.h">
+<area shape="rect" id="node1" title="Declaração dos testes unitários para a classe Flow e FlowImpl." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$FlowImpl_8h.html" title="Implementação base concreta da interface Flow." alt="" coords="9,80,141,107"/>
+<area shape="rect" id="node3" href="$Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="45,155,104,181"/>
+<area shape="rect" id="node4" href="$System_8h.html" title="Interface abstrata que representa um elemento de armazenamento do modelo." alt="" coords="35,229,114,256"/>
+</map>

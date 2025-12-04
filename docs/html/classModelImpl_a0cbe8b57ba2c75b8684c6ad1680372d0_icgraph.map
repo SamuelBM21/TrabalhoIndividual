@@ -1,0 +1,5 @@
+<map id="ModelImpl::remove" name="ModelImpl::remove">
+<area shape="rect" id="node1" title="Remove um sistema do modelo." alt="" coords="209,46,343,73"/>
+<area shape="rect" id="node2" href="$classunit__Model.html#a3ecab106db06c39c132b2c6975b68111" title="Testa o método removeFlow()." alt="" coords="5,5,161,47"/>
+<area shape="rect" id="node3" href="$classunit__Model.html#a04aca41ead3d67231d0748bed24baf60" title="Testa o método removeSystem()." alt="" coords="5,71,161,112"/>
+</map>

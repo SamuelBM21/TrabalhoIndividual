@@ -1,0 +1,5 @@
+<map id="test/unit/unit_System.h" name="test/unit/unit_System.h">
+<area shape="rect" id="node1" title="Declaração dos testes unitários para a classe System e SystemImpl." alt="" coords="77,5,234,32"/>
+<area shape="rect" id="node2" href="$unit_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$unit__System_8cpp.html" title="Implementação dos testes unitários da classe SystemImpl." alt="" coords="157,80,327,107"/>
+</map>

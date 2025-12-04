@@ -1,0 +1,4 @@
+<map id="ModelImpl::systemsEnd" name="ModelImpl::systemsEnd">
+<area shape="rect" id="node1" title="Retorna iterador para o fim da lista de sistemas." alt="" coords="209,13,372,39"/>
+<area shape="rect" id="node2" href="$classunit__Model.html#a1ae23455bc760d45028b71066b3e54ba" title="Testa o iterador systemsEnd()." alt="" coords="5,5,161,47"/>
+</map>

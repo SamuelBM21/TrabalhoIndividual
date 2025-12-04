@@ -72,22 +72,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Declaração da classe <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a>, que representa um elemento básico do modelo.  
+<p>Interface abstrata que representa um elemento de armazenamento do modelo.  
 <a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="System_8h__dep__incl.png" border="0" usemap="#asrc_2System_8hdep" alt=""/></div>
 <map name="asrc_2System_8hdep" id="asrc_2System_8hdep">
-<area shape="rect" title="Declaração da classe System, que representa um elemento básico do modelo." alt="" coords="127,5,227,32"/>
-<area shape="rect" href="Flow_8cpp.html" title="Implementação da classe Flow." alt="" coords="5,155,100,181"/>
-<area shape="rect" href="Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="97,80,179,107"/>
-<area shape="rect" href="Model_8h.html" title="Declaração da classe Model, responsável pelo gerenciamento da simulação." alt="" coords="175,155,266,181"/>
-<area shape="rect" href="System_8cpp.html" title="Implementação da classe System." alt="" coords="254,80,369,107"/>
-<area shape="rect" href="main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="110,326,267,353"/>
-<area shape="rect" href="Model_8cpp.html" title="Implementação da classe Model." alt="" coords="226,237,330,263"/>
-<area shape="rect" href="funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="355,229,511,271"/>
-<area shape="rect" href="funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="355,319,511,360"/>
+<area shape="rect" title="Interface abstrata que representa um elemento de armazenamento do modelo." alt="" coords="355,5,455,32"/>
+<area shape="rect" href="Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="325,80,407,107"/>
+<area shape="rect" href="SystemImpl_8h.html" title="Implementação concreta da interface System." alt="" coords="661,155,786,181"/>
+<area shape="rect" href="FlowImpl_8h.html" title="Implementação base concreta da interface Flow." alt="" coords="188,155,296,181"/>
+<area shape="rect" href="Model_8h.html" title="Interface abstrata para representação e execução de modelos na simulação." alt="" coords="321,155,411,181"/>
+<area shape="rect" href="FlowImpl_8cpp.html" title="Implementação parcial da classe Flow." alt="" coords="14,229,137,256"/>
+<area shape="rect" href="funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="96,304,252,345"/>
+<area shape="rect" href="unit__Flow_8h.html" title="Declaração dos testes unitários para a classe Flow e FlowImpl." alt="" coords="622,229,761,256"/>
+<area shape="rect" href="unit__Model_8h.html" title="Declaração dos testes unitários para a classe Model e ModelImpl." alt="" coords="401,229,547,256"/>
+<area shape="rect" href="funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="5,393,161,435"/>
+<area shape="rect" href="funcional_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="186,401,343,427"/>
+<area shape="rect" href="unit_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="621,311,748,338"/>
+<area shape="rect" href="unit__Flow_8cpp.html" title="Implementação dos testes unitários da classe FlowImpl." alt="" coords="773,311,925,338"/>
+<area shape="rect" href="unit__Model_8cpp.html" title="Implementação dos testes unitários da classe ModelImpl." alt="" coords="429,311,591,338"/>
+<area shape="rect" href="ModelImpl_8h.html" title="Implementação concreta da interface Model." alt="" coords="262,229,377,256"/>
+<area shape="rect" href="ModelImpl_8cpp.html" title="Implementação da classe ModelImpl." alt="" coords="276,311,405,338"/>
+<area shape="rect" href="SystemImpl_8cpp.html" title="Implementação da classe SystemImpl." alt="" coords="1017,229,1155,256"/>
+<area shape="rect" href="unit__System_8h.html" title="Declaração dos testes unitários para a classe System e SystemImpl." alt="" coords="785,229,942,256"/>
+<area shape="rect" href="unit__System_8cpp.html" title="Implementação dos testes unitários da classe SystemImpl." alt="" coords="949,311,1119,338"/>
 </map>
 </div>
 </div>
@@ -96,12 +106,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystem.html">System</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um elemento de armazenamento dentro do modelo.  <a href="classSystem.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface para um elemento de armazenamento dentro do modelo.  <a href="classSystem.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaração da classe <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a>, que representa um elemento básico do modelo. </p>
-<p>A classe <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> é uma das estruturas fundamentais do simulador baseado na Teoria Geral de Sistemas. Um <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> representa um "estoque" (stock), isto é, uma entidade que possui um valor armazenado e que pode ser alterado ao longo da simulação por meio dos fluxos (Flows).</p>
+<div class="textblock"><p>Interface abstrata que representa um elemento de armazenamento do modelo. </p>
+<p>A classe <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> modela um "estoque" (stock) dentro da Teoria Geral de Sistemas. Cada <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> contém um valor numérico que pode ser modificado ao longo da simulação por meio de objetos <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Esta classe define a API básica para manipulação de sistemas e deve ser implementada por classes concretas como <a class="el" href="classSystemImpl.html" title="Implementação concreta da classe System.">SystemImpl</a>.</p>
 <dl class="section author"><dt>Author</dt><dd>Samuel </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 

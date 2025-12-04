@@ -2,23 +2,20 @@
 \label{Model_8h}\index{src/Model.h@{src/Model.h}}
 
 
-Declaração da classe \mbox{\hyperlink{classModel}{Model}}, responsável pelo gerenciamento da simulação.  
+Interface abstrata para representação e execução de modelos na simulação.  
 
 
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include \char`\"{}System.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Flow.\+h\char`\"{}}\newline
-Include dependency graph for Model.\+h\+:
-\nopagebreak
+Include dependency graph for Model.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{Model_8h__incl}
+\includegraphics[width=266pt]{Model_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,20 +26,23 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classModel}{Model}}
-\begin{DoxyCompactList}\small\item\em Classe responsável por gerenciar sistemas, fluxos e a simulação completa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Interface abstrata para o gerenciamento de sistemas, fluxos e simulação. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Declaração da classe \mbox{\hyperlink{classModel}{Model}}, responsável pelo gerenciamento da simulação. 
+Interface abstrata para representação e execução de modelos na simulação. 
 
-A classe \mbox{\hyperlink{classModel}{Model}} é o núcleo do simulador baseado na Teoria Geral de Sistemas. Ela armazena e controla coleções de objetos do tipo \mbox{\hyperlink{classSystem}{System}} e \mbox{\hyperlink{classFlow}{Flow}}, executando a evolução temporal do sistema através da aplicação dos fluxos sobre os sistemas.
+A classe \mbox{\hyperlink{classModel}{Model}} define a estrutura básica para implementação de modelos baseados na Teoria Geral de Sistemas (TGS). ~\newline
 
-O \mbox{\hyperlink{classModel}{Model}} funciona como um \char`\"{}ambiente de execução\char`\"{}, coordenando\+:
+
+Um \mbox{\hyperlink{classModel}{Model}} é responsável por\+:
 \begin{DoxyItemize}
-\item A lista de sistemas presentes no modelo
-\item A lista de fluxos conectando esses sistemas
-\item O processo de execução (simulação) no tempo
+\item Gerenciar coleções de objetos \mbox{\hyperlink{classSystem}{System}} (entidades que armazenam valores).
+\item Gerenciar coleções de objetos \mbox{\hyperlink{classFlow}{Flow}} (relações que transferem valores entre systems).
+\item Coordenar o processo de simulação ao longo do tempo.
 \end{DoxyItemize}
+
+Esta classe funciona como o núcleo lógico da simulação, servindo de base para implementações concretas como \mbox{\hyperlink{classModelImpl}{Model\+Impl}}.
 
 \begin{DoxyAuthor}{Author}
 Samuel 

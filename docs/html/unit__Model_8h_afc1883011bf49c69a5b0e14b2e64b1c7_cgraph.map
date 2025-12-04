@@ -1,0 +1,5 @@
+<map id="unit_Model_flowsEnd" name="unit_Model_flowsEnd">
+<area shape="rect" id="node1" title="Testa o iterador flowsEnd()." alt="" coords="5,31,152,57"/>
+<area shape="rect" id="node2" href="$classModel.html#abfb2ff6a7566fde6bea104ddd3c556ed" title="Adiciona um sistema ao modelo." alt="" coords="216,5,303,32"/>
+<area shape="rect" id="node3" href="$classModel.html#a96276bea30aebe88a14f67a17370bf1d" title="Retorna iterador para o fim da lista de fluxos." alt="" coords="200,56,319,83"/>
+</map>

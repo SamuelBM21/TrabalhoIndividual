@@ -1,13 +1,20 @@
 /**
- * @file Flow.cpp
- * @brief Implementação da classe Flow.
+ * @file FlowImpl.cpp
+ * @brief Implementação parcial da classe Flow.
  *
- * Implementa a infraestrutura básica para representar um fluxo entre dois
- * sistemas no simulador. Classes derivadas devem sobrescrever execute() para
- * definir o comportamento específico do fluxo.
+ * Este arquivo contém a implementação da classe FlowImpl, que fornece a
+ * infraestrutura básica para representar um fluxo entre dois Systems.
+ * 
+ * FlowImpl implementa:
+ *  - Construtores (padrão, parametrizado e cópia);
+ *  - Operador de atribuição;
+ *  - Métodos de acesso e modificação de source e target.
  *
- * O Flow é utilizado pelo Model para simular o comportamento dinâmico de um
- * sistema de acordo com a Teoria Geral de Sistemas.
+ * O método execute() permanece abstrato, pois cada fluxo concreto deve
+ * definir sua própria equação matemática.
+ *
+ * FlowImpl é usada como classe base para fluxos específicos utilizados pelo
+ * Model durante a simulação.
  *
  * @author Samuel
  * @date 2025
@@ -49,7 +56,7 @@ System* FlowImpl::getTarget() const {
     return target;
 }
 
-Flow& FlowImpl::operator= (const Flow &flow){
+FlowImpl& FlowImpl::operator= (const Flow &flow){
 
     if(this == &flow)
         return *this;

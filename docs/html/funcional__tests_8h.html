@@ -75,18 +75,23 @@ $(function() {
 
 <p>Declaração de fluxos de teste e protótipos de testes funcionais.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Model_8h_source.html">../../src/Model.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ModelImpl_8h_source.html">../../src/ModelImpl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FlowImpl_8h_source.html">../../src/FlowImpl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SystemImpl_8h_source.html">../../src/SystemImpl.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for funcional_tests.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="funcional__tests_8h__incl.png" border="0" usemap="#atest_2funcional_2funcional__tests_8h" alt=""/></div>
 <map name="atest_2funcional_2funcional__tests_8h" id="atest_2funcional_2funcional__tests_8h">
-<area shape="rect" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="86,5,242,47"/>
-<area shape="rect" href="Model_8h.html" title="Declaração da classe Model, responsável pelo gerenciamento da simulação." alt="" coords="107,95,221,121"/>
-<area shape="rect" title=" " alt="" coords="5,169,77,196"/>
-<area shape="rect" title=" " alt="" coords="101,169,160,196"/>
-<area shape="rect" href="System_8h.html" title="Declaração da classe System, que representa um elemento básico do modelo." alt="" coords="191,244,270,271"/>
-<area shape="rect" href="Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="235,169,293,196"/>
+<area shape="rect" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="161,5,317,47"/>
+<area shape="rect" href="ModelImpl_8h.html" title="Implementação concreta da interface Model." alt="" coords="9,95,148,121"/>
+<area shape="rect" href="FlowImpl_8h.html" title="Implementação base concreta da interface Flow." alt="" coords="173,95,305,121"/>
+<area shape="rect" href="SystemImpl_8h.html" title="Implementação concreta da interface System." alt="" coords="268,169,417,196"/>
+<area shape="rect" href="Model_8h.html" title="Interface abstrata para representação e execução de modelos na simulação." alt="" coords="79,169,147,196"/>
+<area shape="rect" title=" " alt="" coords="5,244,77,271"/>
+<area shape="rect" title=" " alt="" coords="101,244,160,271"/>
+<area shape="rect" href="Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="201,244,260,271"/>
+<area shape="rect" href="System_8h.html" title="Interface abstrata que representa um elemento de armazenamento do modelo." alt="" coords="247,319,326,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -96,7 +101,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="atest_2funcional_2funcional__tests_8hdep" id="atest_2funcional_2funcional__tests_8hdep">
 <area shape="rect" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="96,5,252,47"/>
 <area shape="rect" href="funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="5,95,161,136"/>
-<area shape="rect" href="main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="186,102,343,129"/>
+<area shape="rect" href="funcional_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="186,102,343,129"/>
 </map>
 </div>
 </div>
@@ -105,10 +110,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExponentialFlow.html">ExponentialFlow</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementação de <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> para teste: fluxo proporcional ao source.  <a href="classExponentialFlow.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementação de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a> para teste: fluxo proporcional ao source.  <a href="classExponentialFlow.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogisticFlow.html">LogisticFlow</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementação de <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> para teste: crescimento logístico no target.  <a href="classLogisticFlow.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementação de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a> para teste: crescimento logístico no target.  <a href="classLogisticFlow.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -125,8 +130,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Declaração de fluxos de teste e protótipos de testes funcionais. </p>
-<p>Este arquivo contém implementações simples de subclasses de <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> usadas exclusivamente para testes funcionais do simulador (<a class="el" href="classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source.">ExponentialFlow</a> e logisticFlow), bem como os protótipos das funções de teste que verificam cenários comportamentais do sistema/model.</p>
-<p>As classes aqui definidas são utilitárias para os testes e não fazem parte da API pública do simulador. Elas são usadas para validar a integração entre <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a>, <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> e <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> durante execuções de teste automatizadas.</p>
+<p>Este arquivo contém implementações simples de subclasses de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a> usadas exclusivamente para testes funcionais do simulador (<a class="el" href="classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source.">ExponentialFlow</a> e logisticFlow), bem como os protótipos das funções de teste que verificam cenários comportamentais do sistema/model.</p>
+<p>As classes aqui definidas são utilitárias para os testes e não fazem parte da API pública do simulador. Elas são usadas para validar a integração entre <a class="el" href="classModel.html" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.">Model</a>, <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> e <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a> durante execuções de teste automatizadas.</p>
 <dl class="section author"><dt>Author</dt><dd>Samuel </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
 
@@ -148,23 +153,41 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Teste funcional composto (cenário mais complexo). </p>
-<p>Este teste combina múltiplos Systems e Fluxos para validar interações e efeitos cumulativos dentro do <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a> (sinergia/competição entre fluxos). </p>
+<p>Este teste combina múltiplos Systems e Fluxos para validar interações e efeitos cumulativos dentro do <a class="el" href="classModel.html" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.">Model</a> (sinergia/competição entre fluxos). </p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 100.</p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 0.</p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 100.</p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 0.</p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 0.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Execução do programa realizando operacoes de 0 a 100.</p>
+<p>Conferindo o resultado final do primeiro sistema com o valor 31.8513.</p>
+<p>Conferindo o resultado final do segundo sistema com o valor 18.4003.</p>
+<p>Conferindo o resultado final do terceiro sistema com o valor 77.1143.</p>
+<p>Conferindo o resultado final do quarto sistema com o valor 56.1728.</p>
+<p>Conferindo o resultado final do quinto sistema com o valor 16.4612.</p>
 
-<p class="definition">Definition at line <a class="el" href="funcional__tests_8cpp_source.html#l00094">94</a> of file <a class="el" href="funcional__tests_8cpp_source.html">funcional_tests.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcional__tests_8cpp_source.html#l00128">128</a> of file <a class="el" href="funcional__tests_8cpp_source.html">funcional_tests.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="funcional__tests_8h_a943dfe0c597a01c9760c140715fed527_cgraph.png" border="0" usemap="#afuncional__tests_8h_a943dfe0c597a01c9760c140715fed527_cgraph" alt=""/></div>
 <map name="afuncional__tests_8h_a943dfe0c597a01c9760c140715fed527_cgraph" id="afuncional__tests_8h_a943dfe0c597a01c9760c140715fed527_cgraph">
 <area shape="rect" title="Teste funcional composto (cenário mais complexo)." alt="" coords="5,107,157,133"/>
-<area shape="rect" href="classModel.html#a2a340ed8a558aedcfbf7c1bdaff90c56" title="Adiciona um novo sistema ao modelo." alt="" coords="221,5,307,32"/>
-<area shape="rect" href="classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="371,56,496,83"/>
-<area shape="rect" href="classModel.html#ad31ab57899deb9e33c9fd0312553383c" title="Executa a simulação completa." alt="" coords="223,107,305,133"/>
-<area shape="rect" href="classFlow.html#adf0c62a2efb7f4733e4c289bfb3d1dc3" title="Define o sistema de origem do fluxo." alt="" coords="205,157,323,184"/>
-<area shape="rect" href="classFlow.html#ac325afb7bff8a1b67618a1aa088618ee" title="Define o sistema de destino do fluxo." alt="" coords="208,208,320,235"/>
-<area shape="rect" href="classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="375,107,492,133"/>
-<area shape="rect" href="classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="377,157,489,184"/>
-<area shape="rect" href="classSystem.html#aa3dee10a22a9f908a87f84917857d2f0" title="Define um novo valor para o sistema." alt="" coords="371,208,496,235"/>
+<area shape="rect" href="classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77" title="Adiciona um sistema ao modelo." alt="" coords="225,5,336,32"/>
+<area shape="rect" href="classSystemImpl.html#abd3ff91586d4474c0a747dc5dd6e0268" title="Obtém o valor atual." alt="" coords="205,56,356,83"/>
+<area shape="rect" href="classModelImpl.html#a1087acda33cd4b26099cd383286a7175" title="Executa a simulação entre dois instantes de tempo." alt="" coords="227,107,335,133"/>
+<area shape="rect" href="classFlowImpl.html#a00a33fe932fa19ac9e4568e78f39f2da" title="Define o sistema de origem do fluxo." alt="" coords="209,157,352,184"/>
+<area shape="rect" href="classFlowImpl.html#ab8945441c77fa2ba1fe8d374b0f9c4cb" title="Define o sistema de destino do fluxo." alt="" coords="212,208,349,235"/>
+<area shape="rect" href="classFlow.html#aff381195663a5028494e3de9c6194f2c" title="Retorna o sistema de origem." alt="" coords="408,31,525,57"/>
+<area shape="rect" href="classFlow.html#a81aeceffcb2b425af124c3b0d1962786" title="Retorna o sistema de destino." alt="" coords="411,81,523,108"/>
+<area shape="rect" href="classSystem.html#a41b673faa6c199eb8e4f204639fab4f2" title="Retorna o valor atual armazenado no sistema." alt="" coords="404,132,529,159"/>
+<area shape="rect" href="classSystem.html#a6c88754c7762750119ca9b0b77453a5f" title="Define um novo valor para o sistema." alt="" coords="404,183,529,209"/>
 </map>
 </div>
 <div class="dynheader">
@@ -173,7 +196,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="funcional__tests_8h_a943dfe0c597a01c9760c140715fed527_icgraph.png" border="0" usemap="#afuncional__tests_8h_a943dfe0c597a01c9760c140715fed527_icgraph" alt=""/></div>
 <map name="afuncional__tests_8h_a943dfe0c597a01c9760c140715fed527_icgraph" id="afuncional__tests_8h_a943dfe0c597a01c9760c140715fed527_icgraph">
 <area shape="rect" title="Teste funcional composto (cenário mais complexo)." alt="" coords="104,5,256,32"/>
-<area shape="rect" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" href="funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 
@@ -195,6 +218,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Teste funcional para verificar comportamento do fluxo exponencial. </p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 100.</p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 0.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Execução do programa realizando operacoes de 0 a 100.</p>
+<p>Conferindo o resultado final do primeiro sistema com o valor 36.6032.</p>
+<p>Conferindo o resultado final do segundo sistema com o valor 63.3968.</p>
 
 <p class="definition">Definition at line <a class="el" href="funcional__tests_8cpp_source.html#l00038">38</a> of file <a class="el" href="funcional__tests_8cpp_source.html">funcional_tests.cpp</a>.</p>
 <div class="dynheader">
@@ -203,14 +232,14 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_cgraph.png" border="0" usemap="#afuncional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_cgraph" alt=""/></div>
 <map name="afuncional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_cgraph" id="afuncional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_cgraph">
 <area shape="rect" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="5,132,175,159"/>
-<area shape="rect" href="classModel.html#a2a340ed8a558aedcfbf7c1bdaff90c56" title="Adiciona um novo sistema ao modelo." alt="" coords="238,5,325,32"/>
-<area shape="rect" href="classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="388,31,513,57"/>
-<area shape="rect" href="classModel.html#ad31ab57899deb9e33c9fd0312553383c" title="Executa a simulação completa." alt="" coords="240,107,323,133"/>
-<area shape="rect" href="classSystem.html#aa3dee10a22a9f908a87f84917857d2f0" title="Define um novo valor para o sistema." alt="" coords="388,183,513,209"/>
-<area shape="rect" href="classFlow.html#adf0c62a2efb7f4733e4c289bfb3d1dc3" title="Define o sistema de origem do fluxo." alt="" coords="223,208,340,235"/>
-<area shape="rect" href="classFlow.html#ac325afb7bff8a1b67618a1aa088618ee" title="Define o sistema de destino do fluxo." alt="" coords="225,259,337,285"/>
-<area shape="rect" href="classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="392,81,509,108"/>
-<area shape="rect" href="classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="395,132,507,159"/>
+<area shape="rect" href="classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77" title="Adiciona um sistema ao modelo." alt="" coords="239,5,349,32"/>
+<area shape="rect" href="classSystem.html#a41b673faa6c199eb8e4f204639fab4f2" title="Retorna o valor atual armazenado no sistema." alt="" coords="413,31,539,57"/>
+<area shape="rect" href="classModelImpl.html#a1087acda33cd4b26099cd383286a7175" title="Executa a simulação entre dois instantes de tempo." alt="" coords="240,107,348,133"/>
+<area shape="rect" href="classSystem.html#a6c88754c7762750119ca9b0b77453a5f" title="Define um novo valor para o sistema." alt="" coords="413,183,539,209"/>
+<area shape="rect" href="classFlowImpl.html#a00a33fe932fa19ac9e4568e78f39f2da" title="Define o sistema de origem do fluxo." alt="" coords="223,208,365,235"/>
+<area shape="rect" href="classFlowImpl.html#ab8945441c77fa2ba1fe8d374b0f9c4cb" title="Define o sistema de destino do fluxo." alt="" coords="225,259,363,285"/>
+<area shape="rect" href="classFlow.html#aff381195663a5028494e3de9c6194f2c" title="Retorna o sistema de origem." alt="" coords="417,81,535,108"/>
+<area shape="rect" href="classFlow.html#a81aeceffcb2b425af124c3b0d1962786" title="Retorna o sistema de destino." alt="" coords="420,132,532,159"/>
 </map>
 </div>
 <div class="dynheader">
@@ -219,7 +248,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="funcional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_icgraph.png" border="0" usemap="#afuncional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_icgraph" alt=""/></div>
 <map name="afuncional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_icgraph" id="afuncional__tests_8h_a2c448ffaffdff4b03c825a01dffa6f27_icgraph">
 <area shape="rect" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="104,5,273,32"/>
-<area shape="rect" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" href="funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 
@@ -241,22 +270,25 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Teste funcional para verificar comportamento do fluxo logístico. </p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 100.</p>
+<p>Ponteiro de <a class="el" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo.">System</a> iniciado como 10.</p>
+<p>Ponteiro de <a class="el" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Execução do programa realizando operacoes de 0 a 100.</p>
+<p>Conferindo o resultado final do primeiro sistema com o valor 88.2167.</p>
+<p>Conferindo o resultado final do segundo sistema com o valor 21.7833.</p>
 
-<p class="definition">Definition at line <a class="el" href="funcional__tests_8cpp_source.html#l00070">70</a> of file <a class="el" href="funcional__tests_8cpp_source.html">funcional_tests.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="funcional__tests_8cpp_source.html#l00085">85</a> of file <a class="el" href="funcional__tests_8cpp_source.html">funcional_tests.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="funcional__tests_8h_a60914db64bde71b56d69320797266c29_cgraph.png" border="0" usemap="#afuncional__tests_8h_a60914db64bde71b56d69320797266c29_cgraph" alt=""/></div>
 <map name="afuncional__tests_8h_a60914db64bde71b56d69320797266c29_cgraph" id="afuncional__tests_8h_a60914db64bde71b56d69320797266c29_cgraph">
 <area shape="rect" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="5,107,160,133"/>
-<area shape="rect" href="classModel.html#a2a340ed8a558aedcfbf7c1bdaff90c56" title="Adiciona um novo sistema ao modelo." alt="" coords="223,5,310,32"/>
-<area shape="rect" href="classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="373,56,499,83"/>
-<area shape="rect" href="classModel.html#ad31ab57899deb9e33c9fd0312553383c" title="Executa a simulação completa." alt="" coords="225,107,308,133"/>
-<area shape="rect" href="classFlow.html#adf0c62a2efb7f4733e4c289bfb3d1dc3" title="Define o sistema de origem do fluxo." alt="" coords="208,157,325,184"/>
-<area shape="rect" href="classFlow.html#ac325afb7bff8a1b67618a1aa088618ee" title="Define o sistema de destino do fluxo." alt="" coords="211,208,323,235"/>
-<area shape="rect" href="classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="377,107,495,133"/>
-<area shape="rect" href="classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="380,157,492,184"/>
-<area shape="rect" href="classSystem.html#aa3dee10a22a9f908a87f84917857d2f0" title="Define um novo valor para o sistema." alt="" coords="373,208,499,235"/>
+<area shape="rect" href="classModel.html#abfb2ff6a7566fde6bea104ddd3c556ed" title="Adiciona um sistema ao modelo." alt="" coords="236,5,323,32"/>
+<area shape="rect" href="classSystem.html#a41b673faa6c199eb8e4f204639fab4f2" title="Retorna o valor atual armazenado no sistema." alt="" coords="217,56,342,83"/>
+<area shape="rect" href="classModel.html#aa2c58d924e023fe497cefbc6547dbea6" title="Executa a simulação entre dois instantes de tempo." alt="" coords="238,107,321,133"/>
+<area shape="rect" href="classFlowImpl.html#a00a33fe932fa19ac9e4568e78f39f2da" title="Define o sistema de origem do fluxo." alt="" coords="208,157,351,184"/>
+<area shape="rect" href="classFlowImpl.html#ab8945441c77fa2ba1fe8d374b0f9c4cb" title="Define o sistema de destino do fluxo." alt="" coords="211,208,348,235"/>
 </map>
 </div>
 <div class="dynheader">
@@ -265,7 +297,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="funcional__tests_8h_a60914db64bde71b56d69320797266c29_icgraph.png" border="0" usemap="#afuncional__tests_8h_a60914db64bde71b56d69320797266c29_icgraph" alt=""/></div>
 <map name="afuncional__tests_8h_a60914db64bde71b56d69320797266c29_icgraph" id="afuncional__tests_8h_a60914db64bde71b56d69320797266c29_icgraph">
 <area shape="rect" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="104,5,259,32"/>
-<area shape="rect" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" href="funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 

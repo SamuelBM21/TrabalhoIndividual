@@ -1,0 +1,5 @@
+<map id="unit_Model::unit_Model_systemsEnd" name="unit_Model::unit_Model_systemsEnd">
+<area shape="rect" id="node1" title="Testa o iterador systemsEnd()." alt="" coords="5,23,161,65"/>
+<area shape="rect" id="node2" href="$classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77" title="Adiciona um sistema ao modelo." alt="" coords="235,5,346,32"/>
+<area shape="rect" id="node3" href="$classModelImpl.html#ab632e73ed2777d17835527ac105848a9" title="Retorna iterador para o fim da lista de sistemas." alt="" coords="209,56,372,83"/>
+</map>

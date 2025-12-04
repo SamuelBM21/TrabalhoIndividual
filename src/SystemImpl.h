@@ -1,12 +1,16 @@
 /**
- * @file System.h
- * @brief Declaração da classe System, que representa um elemento básico do modelo.
+ * @file SystemImpl.h
+ * @brief Implementação concreta da interface System.
  *
- * A classe System é uma das estruturas fundamentais do simulador baseado na
- * Teoria Geral de Sistemas. Um System representa um "estoque" (stock), isto é,
- * uma entidade que possui um valor armazenado e que pode ser alterado ao longo
- * da simulação por meio dos fluxos (Flows).
- * 
+ * A classe SystemImpl representa a implementação padrão de um "estoque" dentro
+ * do simulador baseado na Teoria Geral de Sistemas. Ela armazena internamente
+ * um valor numérico que pode ser modificado por Flows e consultado pelo Model.
+ *
+ * Esta implementação fornece:
+ *  - Armazenamento seguro do valor;
+ *  - Operações básicas de leitura e escrita;
+ *  - Mecanismos de cópia e atribuição seguros.
+ *
  * @author Samuel
  * @date 2025
  */
@@ -15,24 +19,22 @@
 #define SYSTEMIMPL_H_
 
 #include "System.h"
+
 /**
- * @class System
- * @brief Representa um elemento de armazenamento dentro do modelo.
+ * @class SystemImpl
+ * @brief Implementação concreta da classe System.
  *
- * Um System contém um único valor numérico, que representa a quantidade atual
- * de um recurso, população, nível, concentração etc., dependendo do contexto
- * do modelo sendo simulado.
- *
- * Essa classe é manipulada pela classe Model e pelos objetos Flow, que
- * alteram seu valor ao longo da execução da simulação.
+ * Armazena um único valor numérico, representando o estado atual de um
+ * elemento do modelo. A classe oferece métodos para definição, obtenção
+ * e cópia desse valor.
  */
 class SystemImpl : public System {
 private:
     /**
-     * @brief Valor atual armazenado pelo sistema.
+     * @brief Valor numérico armazenado pelo sistema.
      *
-     * Este valor pode ser modificado diretamente pelo Model ou indiretamente
-     * pelos Flows durante a simulação.
+     * Representa o estado atual de um estoque. Pode ser modificado diretamente
+     * pelo Model ou indiretamente pelos Flows.
      */
     double value;
 
@@ -40,62 +42,51 @@ public:
     /**
      * @brief Construtor padrão.
      *
-     * Inicializa o sistema com valor igual a 0.
+     * Inicializa o sistema com valor zero.
      */
     SystemImpl();
 
     /**
      * @brief Construtor com valor inicial.
      *
-     * Permite criar um System já com um valor definido.
-     *
-     * @param value Valor inicial do sistema.
+     * @param value Valor inicial a ser atribuído ao sistema.
      */
     SystemImpl(double value);
 
     /**
      * @brief Construtor de cópia.
      *
-     * Copia o valor de outro System.
+     * Copia o valor armazenado em outro System.
      *
-     * @param other Objeto System a ser copiado.
+     * @param other Referência para o objeto System a ser copiado.
      */
     SystemImpl(const System& other);
 
-
     /**
-     * @brief Destrutor virtual.
-     *
-     * Mantido virtual para permitir herança segura caso a classe seja estendida.
+     * @brief Destrutor.
      */
     virtual ~SystemImpl();
 
     /**
      * @brief Define um novo valor para o sistema.
-     *
-     * @param v Novo valor.
-     * @return true se o valor foi definido com sucesso.
+     * @copydoc System::setValue()
      */
-    bool setValue(double v);
+    bool setValue(double v) override;
 
     /**
-     * @brief Obtém o valor atual armazenado.
-     *
-     * @return O valor atual do System.
+     * @brief Obtém o valor atual.
+     * @copydoc System::getValue()
      */
-    double getValue() const;
+    double getValue() const override;
 
 private:
     /**
      * @brief Operador de atribuição.
-     *
-     * Substitui o valor atual pelo valor do outro System.
-     *
-     * @param other Objeto System a ser atribuído.
-     * @return Referência para o próprio objeto.
+     * @copydoc System::operator=()
      */
     SystemImpl& operator=(const System& other);
-
+    
+    friend class unit_System;
 };
 
-#endif // SYSTEM_H_
+#endif // SYSTEMIMPL_H_

@@ -1,14 +1,24 @@
 /**
- * @file System.cpp
- * @brief Implementação da classe System.
+ * @file SystemImpl.cpp
+ * @brief Implementação da classe SystemImpl.
  *
- * Define os métodos responsáveis por armazenar e manipular o valor interno
- * de um sistema no simulador baseado na Teoria Geral de Sistemas. Esta classe
- * é utilizada pelo Model e pelos Flow para compor a dinâmica do sistema.
+ * Este arquivo contém a implementação da classe SystemImpl, responsável por
+ * armazenar e manipular o valor interno de um System no simulador.
+ *
+ * SystemImpl fornece:
+ *  - Construtores (padrão, parametrizado e cópia);
+ *  - Operador de atribuição;
+ *  - Métodos setValue() e getValue();
+ *  - Regras básicas de consistência e encapsulamento.
+ *
+ * Esta classe é utilizada diretamente pelo Model e pelos Flows para compor
+ * a dinâmica dos estoques durante a simulação baseada na Teoria Geral de
+ * Sistemas.
  *
  * @author Samuel
  * @date 2025
  */
+
 
 #include "SystemImpl.h"
 

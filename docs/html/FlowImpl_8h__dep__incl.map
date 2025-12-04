@@ -1,0 +1,12 @@
+<map id="src/FlowImpl.h" name="src/FlowImpl.h">
+<area shape="rect" id="node1" title="Implementação base concreta da interface Flow." alt="" coords="300,5,408,32"/>
+<area shape="rect" id="node2" href="$FlowImpl_8cpp.html" title="Implementação parcial da classe Flow." alt="" coords="41,87,163,114"/>
+<area shape="rect" id="node3" href="$funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="188,80,344,121"/>
+<area shape="rect" id="node6" href="$unit__Flow_8h.html" title="Declaração dos testes unitários para a classe Flow e FlowImpl." alt="" coords="373,87,511,114"/>
+<area shape="rect" id="node9" href="$unit__Model_8h.html" title="Declaração dos testes unitários para a classe Model e ModelImpl." alt="" coords="535,87,682,114"/>
+<area shape="rect" id="node4" href="$funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="5,169,161,211"/>
+<area shape="rect" id="node5" href="$funcional_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="186,177,343,203"/>
+<area shape="rect" id="node7" href="$unit_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="544,177,671,203"/>
+<area shape="rect" id="node8" href="$unit__Flow_8cpp.html" title="Implementação dos testes unitários da classe FlowImpl." alt="" coords="367,177,519,203"/>
+<area shape="rect" id="node10" href="$unit__Model_8cpp.html" title="Implementação dos testes unitários da classe ModelImpl." alt="" coords="695,177,856,203"/>
+</map>

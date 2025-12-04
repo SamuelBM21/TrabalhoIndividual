@@ -1,0 +1,6 @@
+<map id="unit_Model_removeSystem" name="unit_Model_removeSystem">
+<area shape="rect" id="node1" title="Testa o método removeSystem()." alt="" coords="5,56,185,83"/>
+<area shape="rect" id="node2" href="$classModel.html#abfb2ff6a7566fde6bea104ddd3c556ed" title="Adiciona um sistema ao modelo." alt="" coords="264,5,351,32"/>
+<area shape="rect" id="node3" href="$classModel.html#aab07c39ea01c4296097674893858f12f" title="Remove um sistema do modelo." alt="" coords="253,56,361,83"/>
+<area shape="rect" id="node4" href="$classModel.html#a9f47422d35598ad7658a8a051037bf71" title="Retorna iterador para o início da lista de sistemas." alt="" coords="233,107,381,133"/>
+</map>

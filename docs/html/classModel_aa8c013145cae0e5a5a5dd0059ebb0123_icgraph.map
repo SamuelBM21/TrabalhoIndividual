@@ -1,0 +1,6 @@
+<map id="Model::flowsBegin" name="Model::flowsBegin">
+<area shape="rect" id="node1" title="Retorna iterador para o início da lista de fluxos." alt="" coords="209,56,339,83"/>
+<area shape="rect" id="node2" href="$classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="8,5,159,32"/>
+<area shape="rect" id="node3" href="$classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="11,56,156,83"/>
+<area shape="rect" id="node4" href="$classunit__Model.html#acf138c79bbe68951f2036115e2fb2f65" title="Testa o iterador flowsBegin()." alt="" coords="5,107,161,149"/>
+</map>

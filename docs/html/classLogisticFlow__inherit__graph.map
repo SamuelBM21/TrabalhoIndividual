@@ -1,4 +1,5 @@
 <map id="LogisticFlow" name="LogisticFlow">
-<area shape="rect" id="node1" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="5,277,120,384"/>
-<area shape="rect" id="node2" href="$classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems." alt="" coords="12,5,113,229"/>
+<area shape="rect" id="node1" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="5,476,120,583"/>
+<area shape="rect" id="node2" href="$classFlowImpl.html" title="Implementação parcial da classe Flow." alt="" coords="11,204,114,428"/>
+<area shape="rect" id="node3" href="$classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems." alt="" coords="12,5,113,156"/>
 </map>

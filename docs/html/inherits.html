@@ -70,19 +70,39 @@ $(function() {
 </div><table border="0" cellspacing="10" cellpadding="0">
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#aFlow" alt=""/>
 <map name="aFlow" id="aFlow">
-<area shape="rect" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems." alt="" coords="5,31,56,57"/>
-<area shape="rect" href="classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="104,5,223,32"/>
-<area shape="rect" href="classLogisticFlow.html" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="116,56,211,83"/>
+<area shape="rect" href="classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems." alt="" coords="5,81,56,108"/>
+<area shape="rect" href="classFlowImpl.html" title="Implementação parcial da classe Flow." alt="" coords="104,81,179,108"/>
+<area shape="rect" href="classComplexTest.html" title=" " alt="" coords="237,5,335,32"/>
+<area shape="rect" href="classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="227,56,345,83"/>
+<area shape="rect" href="classFlowTest.html" title=" " alt="" coords="249,107,323,133"/>
+<area shape="rect" href="classLogisticFlow.html" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="239,157,333,184"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_1.png" border="0" usemap="#aModel" alt=""/>
 <map name="aModel" id="aModel">
-<area shape="rect" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa." alt="" coords="5,5,63,32"/>
+<area shape="rect" href="classModel.html" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação." alt="" coords="5,5,63,32"/>
+<area shape="rect" href="classModelImpl.html" title="Implementação concreta da classe Model." alt="" coords="111,5,193,32"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#aSystem" alt=""/>
 <map name="aSystem" id="aSystem">
-<area shape="rect" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo." alt="" coords="5,5,72,32"/>
+<area shape="rect" href="classSystem.html" title="Interface para um elemento de armazenamento dentro do modelo." alt="" coords="5,5,72,32"/>
+<area shape="rect" href="classSystemImpl.html" title="Implementação concreta da classe System." alt="" coords="120,5,212,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#aunit__Flow" alt=""/>
+<map name="aunit__Flow" id="aunit__Flow">
+<area shape="rect" href="classunit__Flow.html" title=" " alt="" coords="5,5,84,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aunit__Model" alt=""/>
+<map name="aunit__Model" id="aunit__Model">
+<area shape="rect" href="classunit__Model.html" title=" " alt="" coords="5,5,91,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aunit__System" alt=""/>
+<map name="aunit__System" id="aunit__System">
+<area shape="rect" href="classunit__System.html" title=" " alt="" coords="5,5,100,32"/>
 </map>
 </td></tr>
 </table>

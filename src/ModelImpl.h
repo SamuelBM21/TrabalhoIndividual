@@ -1,15 +1,14 @@
 /**
- * @file Model.h
- * @brief Declaração da classe Model, responsável pelo gerenciamento da simulação.
+ * @file ModelImpl.h
+ * @brief Implementação concreta da interface Model.
  *
- * A classe Model é o núcleo do simulador baseado na Teoria Geral de Sistemas.
- * Ela armazena e controla coleções de objetos do tipo System e Flow, executando
- * a evolução temporal do sistema através da aplicação dos fluxos sobre os sistemas.
+ * A classe ModelImpl fornece uma implementação padrão do mecanismo de simulação,
+ * armazenando listas de Systems e Flows e aplicando os fluxos ao longo do tempo.
  *
- * O Model funciona como um "ambiente de execução", coordenando:
- *  - A lista de sistemas presentes no modelo
- *  - A lista de fluxos conectando esses sistemas
- *  - O processo de execução (simulação) no tempo
+ * Esta classe é responsável por:
+ *  - Gerenciar a memória e organização interna dos objetos do modelo;
+ *  - Fornecer iteradores constantes para acesso às coleções;
+ *  - Executar a simulação conforme a lógica definida nos Flows.
  *
  * @author Samuel
  * @date 2025
@@ -18,38 +17,28 @@
 #ifndef MODELIMPL_H_
 #define MODELIMPL_H_
 
-#include <iostream>
-#include <vector>
 #include "Model.h"
 
 /**
- * @class Model
- * @brief Classe responsável por gerenciar sistemas, fluxos e a simulação completa.
+ * @class ModelImpl
+ * @brief Implementação concreta da classe Model.
  *
- * O Model armazena dois conjuntos principais:
- *  - Uma lista de objetos System, representando entidades com um valor armazenado.
- *  - Uma lista de objetos Flow, que representem operações de transferência de valor entre Systems.
- *
- * A função principal do Model é executar a simulação entre um tempo inicial e
- * final, aplicando todos os fluxos existentes a cada passo.
+ * Armazena e manipula conjuntos de Systems e Flows, além de executar o
+ * processo de simulação. É a implementação padrão usada na aplicação.
  */
-class ModelImpl : public Model{
+class ModelImpl : public Model {
 protected:
     /**
      * @brief Lista de sistemas pertencentes ao modelo.
-     *
-     * Cada ponteiro armazena um objeto do tipo System que participa da simulação.
      */
     std::vector<System*> systems;
 
     /**
      * @brief Lista de fluxos pertencentes ao modelo.
-     *
-     * Cada objeto Flow define como os valores dos sistemas passam de um para outro.
      */
     std::vector<Flow*> flows;
 
-    /** @brief  */
+    /// Relógio interno do modelo, representando o tempo atual da simulação.
     int clock = 0;
 
 public:
@@ -63,104 +52,64 @@ public:
     /**
      * @brief Destrutor.
      *
-     * Realiza a limpeza das listas de Systems e Flows, quando necessário.
+     * Realiza a liberação dos sistemas e fluxos associados ao modelo.
      */
     ~ModelImpl();
 
     /**
-     * @brief Get the clock field on Flow. 
-     * @return return a integer with the clock value.
-    */
-    int getClock();
-
-    /**
-     * @brief Gets the iterator pointing to the beginning of the systems in the ModelImp.
-     * @return Iterator pointing to the beginning of the systems.
+     * @copydoc Model::getClock()
      */
-    iteratorSystem systemsBegin() const;
+    int getClock() const override;
 
-    /**
-     * @brief Gets the iterator pointing to the end of the systems in the ModelImp.
-     * @return Iterator pointing to the end of the systems.
-     */
-    iteratorSystem systemsEnd() const;
+    /** @copydoc Model::systemsBegin() */
+    iteratorSystem systemsBegin() const override;
 
-    /**
-     * @brief Gets the iterator pointing to the beginning of the flows in the ModelImp.
-     * @return Iterator pointing to the beginning of the flows.
-     */
-    iteratorFlow flowsBegin() const;
+    /** @copydoc Model::systemsEnd() */
+    iteratorSystem systemsEnd() const override;
 
-    /**
-     * @brief Gets the iterator pointing to the end of the flows in the ModelImp.
-     * @return Iterator pointing to the end of the flows.
-     */
-    iteratorFlow flowsEnd() const;
+    /** @copydoc Model::flowsBegin() */
+    iteratorFlow flowsBegin() const override;
 
-    /**
-     * @brief Adiciona um novo sistema ao modelo.
-     *
-     * @param s Ponteiro para o System a ser adicionado.
-     * @return true se o sistema foi adicionado com sucesso, false caso contrário.
-     */
-    bool add(System* s);
+    /** @copydoc Model::flowsEnd() */
+    iteratorFlow flowsEnd() const override;
 
-    /**
-     * @brief Adiciona um novo fluxo ao modelo.
-     *
-     * @param f Ponteiro para o Flow a ser adicionado.
-     * @return true se o fluxo foi adicionado com sucesso, false caso contrário.
-     */
-    bool add(Flow* f);
+    /** @copydoc Model::add(System*) */
+    bool add(System* s) override;
 
-    /**
-     * @brief Remove um sistema existente do modelo.
-     *
-     * @param s Ponteiro para o System a ser removido.
-     * @return true se o sistema foi removido, false caso contrário.
-     */
-    bool remove(System* s);
+    /** @copydoc Model::add(Flow*) */
+    bool add(Flow* f) override;
 
-    /**
-     * @brief Remove um fluxo existente do modelo.
-     *
-     * @param f Ponteiro para o Flow a ser removido.
-     * @return true se o fluxo foi removido, false caso contrário.
-     */
-    bool remove(Flow* f);
+    /** @copydoc Model::remove(System*) */
+    bool remove(System* s) override;
 
-    /**
-     * @brief Executa a simulação completa.
-     *
-     * A simulação ocorre aplicando todos os fluxos do modelo entre as iterações
-     * de tempo fornecidas. O comportamento detalhado depende da implementação
-     * de cada tipo concreto de Flow.
-     *
-     * @param startTime Tempo inicial da simulação.
-     * @param endTime Tempo final da simulação.
-     * @return true se a simulação ocorreu normalmente, false caso haja falhas.
-     */
-    bool run(int startTime, int endTime);
+    /** @copydoc Model::remove(Flow*) */
+    bool remove(Flow* f) override;
+
+    /** @copydoc Model::run(int,int) */
+    bool run(int startTime, int endTime) override;
 
 private:
     /**
-     * @brief Construtor de cópia.
+     * @brief Construtor de cópia privado.
      *
-     * Cria um novo Model copiando listas de sistemas e fluxos do modelo original.
+     * Impede cópia direta fora da classe.  
+     * Implementações internas podem utilizá-lo para duplicar modelos.
      *
-     * @param other Referência para o modelo a ser copiado.
+     * @param other Modelo a ser copiado.
      */
     ModelImpl(const Model& other);
 
     /**
-     * @brief Operador de atribuição.
+     * @brief Operador de atribuição privado.
      *
-     * Permite copiar modelos de forma segura, substituindo o conteúdo atual.
+     * Utilizado internamente para redefinir o conteúdo do modelo.
      *
-     * @param other Modelo a ser atribuído.
-     * @return Referência para o objeto atual, após a operação.
+     * @param other Modelo a ser copiado.
+     * @return Referência para o objeto atual.
      */
     ModelImpl& operator=(const Model& other);
+
+    friend class unit_Model;
 };
 
-#endif
+#endif // MODELIMPL_H_

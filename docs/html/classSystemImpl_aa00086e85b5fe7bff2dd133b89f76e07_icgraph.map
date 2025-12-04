@@ -1,0 +1,4 @@
+<map id="SystemImpl::setValue" name="SystemImpl::setValue">
+<area shape="rect" id="node1" title="Define um novo valor para o sistema." alt="" coords="229,13,380,39"/>
+<area shape="rect" id="node2" href="$classunit__System.html#a87340756c64075eb2006233567b0aa40" title="Testa o método setValue()." alt="" coords="5,5,181,47"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="ModelImpl::add" name="ModelImpl::add">
+<area shape="rect" id="node1" title="Adiciona um sistema ao modelo." alt="" coords="333,216,444,243"/>
+<area shape="rect" id="node2" href="$funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="119,5,271,32"/>
+<area shape="rect" id="node4" href="$funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="110,56,279,83"/>
+<area shape="rect" id="node5" href="$classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="119,107,270,133"/>
+<area shape="rect" id="node6" href="$classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="122,157,267,184"/>
+<area shape="rect" id="node7" href="$classunit__Model.html#a3ecab106db06c39c132b2c6975b68111" title="Testa o método removeFlow()." alt="" coords="117,209,273,250"/>
+<area shape="rect" id="node8" href="$classunit__Model.html#a04aca41ead3d67231d0748bed24baf60" title="Testa o método removeSystem()." alt="" coords="117,274,273,315"/>
+<area shape="rect" id="node9" href="$classunit__Model.html#ae903f6b0a917230da1e158eca7905122" title="Testa o método run()." alt="" coords="104,340,285,367"/>
+<area shape="rect" id="node10" href="$classunit__Model.html#ae9e34ffeeccf8508705337dba816a1bb" title="Testa o iterador systemsBegin()." alt="" coords="117,391,273,433"/>
+<area shape="rect" id="node11" href="$classunit__Model.html#a1ae23455bc760d45028b71066b3e54ba" title="Testa o iterador systemsEnd()." alt="" coords="117,457,273,498"/>
+<area shape="rect" id="node3" href="$funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,31,56,57"/>
+</map>

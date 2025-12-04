@@ -62,316 +62,436 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classModel-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Model Class Reference</div>  </div>
+<div class="title">Model Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Classe responsável por gerenciar sistemas, fluxos e a simulação completa.  
+<p>Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.  
  <a href="classModel.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Model_8h_source.html">Model.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Model:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModel__inherit__graph.png" border="0" usemap="#aModel_inherit__map" alt="Inheritance graph"/></div>
+<map name="aModel_inherit__map" id="aModel_inherit__map">
+<area shape="rect" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação." alt="" coords="5,5,131,229"/>
+<area shape="rect" href="classModelImpl.html" title="Implementação concreta da classe Model." alt="" coords="5,277,131,575"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for Model:</div>
 <div class="dyncontent">
 <div class="center"><img src="classModel__coll__graph.png" border="0" usemap="#aModel_coll__map" alt="Collaboration graph"/></div>
 <map name="aModel_coll__map" id="aModel_coll__map">
-<area shape="rect" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa." alt="" coords="5,5,103,215"/>
+<area shape="rect" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação." alt="" coords="5,5,131,229"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:af722034dd4df4405686a8eb0b723c736"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classSystem.html">System</a> * &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#af722034dd4df4405686a8eb0b723c736">iteratorSystem</a></td></tr>
+<tr class="memdesc:af722034dd4df4405686a8eb0b723c736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de iterador constante para percorrer Systems.  <a href="classModel.html#af722034dd4df4405686a8eb0b723c736">More...</a><br /></td></tr>
+<tr class="separator:af722034dd4df4405686a8eb0b723c736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63fe04a4350cf4b85b955a583a3c0bf4"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classFlow.html">Flow</a> * &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">iteratorFlow</a></td></tr>
+<tr class="memdesc:a63fe04a4350cf4b85b955a583a3c0bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de iterador constante para percorrer Flows.  <a href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">More...</a><br /></td></tr>
+<tr class="separator:a63fe04a4350cf4b85b955a583a3c0bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae3b375de5f6df4faf74a95d64748e048"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#ae3b375de5f6df4faf74a95d64748e048">Model</a> ()</td></tr>
-<tr class="memdesc:ae3b375de5f6df4faf74a95d64748e048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão.  <a href="classModel.html#ae3b375de5f6df4faf74a95d64748e048">More...</a><br /></td></tr>
-<tr class="separator:ae3b375de5f6df4faf74a95d64748e048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48858e5f328ba822b430d86a76a6ceeb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a48858e5f328ba822b430d86a76a6ceeb">Model</a> (const <a class="el" href="classModel.html">Model</a> &amp;other)</td></tr>
-<tr class="memdesc:a48858e5f328ba822b430d86a76a6ceeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor de cópia.  <a href="classModel.html#a48858e5f328ba822b430d86a76a6ceeb">More...</a><br /></td></tr>
-<tr class="separator:a48858e5f328ba822b430d86a76a6ceeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa76b9c72b66fa245f6b7b92d1ecc032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classModel.html">Model</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#aaa76b9c72b66fa245f6b7b92d1ecc032">operator=</a> (const <a class="el" href="classModel.html">Model</a> &amp;other)</td></tr>
-<tr class="memdesc:aaa76b9c72b66fa245f6b7b92d1ecc032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operador de atribuição.  <a href="classModel.html#aaa76b9c72b66fa245f6b7b92d1ecc032">More...</a><br /></td></tr>
-<tr class="separator:aaa76b9c72b66fa245f6b7b92d1ecc032"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ebd2062a0b823db841a0b88baac4c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#ad6ebd2062a0b823db841a0b88baac4c0">~Model</a> ()</td></tr>
-<tr class="memdesc:ad6ebd2062a0b823db841a0b88baac4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor.  <a href="classModel.html#ad6ebd2062a0b823db841a0b88baac4c0">More...</a><br /></td></tr>
-<tr class="separator:ad6ebd2062a0b823db841a0b88baac4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a340ed8a558aedcfbf7c1bdaff90c56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a2a340ed8a558aedcfbf7c1bdaff90c56">add</a> (<a class="el" href="classSystem.html">System</a> *s)</td></tr>
-<tr class="memdesc:a2a340ed8a558aedcfbf7c1bdaff90c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um novo sistema ao modelo.  <a href="classModel.html#a2a340ed8a558aedcfbf7c1bdaff90c56">More...</a><br /></td></tr>
-<tr class="separator:a2a340ed8a558aedcfbf7c1bdaff90c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab37b76dc12eb35fa4ed53d46c91cdd03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#ab37b76dc12eb35fa4ed53d46c91cdd03">add</a> (<a class="el" href="classFlow.html">Flow</a> *f)</td></tr>
-<tr class="memdesc:ab37b76dc12eb35fa4ed53d46c91cdd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um novo fluxo ao modelo.  <a href="classModel.html#ab37b76dc12eb35fa4ed53d46c91cdd03">More...</a><br /></td></tr>
-<tr class="separator:ab37b76dc12eb35fa4ed53d46c91cdd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdcd018900cf5f303b06c01822a2121b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#afdcd018900cf5f303b06c01822a2121b">remove</a> (<a class="el" href="classSystem.html">System</a> *s)</td></tr>
-<tr class="memdesc:afdcd018900cf5f303b06c01822a2121b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um sistema existente do modelo.  <a href="classModel.html#afdcd018900cf5f303b06c01822a2121b">More...</a><br /></td></tr>
-<tr class="separator:afdcd018900cf5f303b06c01822a2121b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fe39a686cb2d9d6255f36b377155b74"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a7fe39a686cb2d9d6255f36b377155b74">remove</a> (<a class="el" href="classFlow.html">Flow</a> *f)</td></tr>
-<tr class="memdesc:a7fe39a686cb2d9d6255f36b377155b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um fluxo existente do modelo.  <a href="classModel.html#a7fe39a686cb2d9d6255f36b377155b74">More...</a><br /></td></tr>
-<tr class="separator:a7fe39a686cb2d9d6255f36b377155b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad31ab57899deb9e33c9fd0312553383c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#ad31ab57899deb9e33c9fd0312553383c">run</a> (int startTime, int endTime)</td></tr>
-<tr class="memdesc:ad31ab57899deb9e33c9fd0312553383c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa a simulação completa.  <a href="classModel.html#ad31ab57899deb9e33c9fd0312553383c">More...</a><br /></td></tr>
-<tr class="separator:ad31ab57899deb9e33c9fd0312553383c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a706374e5cb9ad9949996cfbd9538cead"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classSystem.html">System</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a706374e5cb9ad9949996cfbd9538cead">systems</a></td></tr>
-<tr class="memdesc:a706374e5cb9ad9949996cfbd9538cead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de sistemas pertencentes ao modelo.  <a href="classModel.html#a706374e5cb9ad9949996cfbd9538cead">More...</a><br /></td></tr>
-<tr class="separator:a706374e5cb9ad9949996cfbd9538cead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a508721af4b8ed362217dff0c6732d8dc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classFlow.html">Flow</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a508721af4b8ed362217dff0c6732d8dc">flows</a></td></tr>
-<tr class="memdesc:a508721af4b8ed362217dff0c6732d8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de fluxos pertencentes ao modelo.  <a href="classModel.html#a508721af4b8ed362217dff0c6732d8dc">More...</a><br /></td></tr>
-<tr class="separator:a508721af4b8ed362217dff0c6732d8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af032d8433c87a0a3a431faf6563a1f03"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#af032d8433c87a0a3a431faf6563a1f03">~Model</a> ()</td></tr>
+<tr class="memdesc:af032d8433c87a0a3a431faf6563a1f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual padrão.  <a href="classModel.html#af032d8433c87a0a3a431faf6563a1f03">More...</a><br /></td></tr>
+<tr class="separator:af032d8433c87a0a3a431faf6563a1f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a045ebb69213ab666550edaac1f207c"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a7a045ebb69213ab666550edaac1f207c">getClock</a> () const =0</td></tr>
+<tr class="memdesc:a7a045ebb69213ab666550edaac1f207c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o valor atual do relógio do modelo.  <a href="classModel.html#a7a045ebb69213ab666550edaac1f207c">More...</a><br /></td></tr>
+<tr class="separator:a7a045ebb69213ab666550edaac1f207c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f47422d35598ad7658a8a051037bf71"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classModel.html#af722034dd4df4405686a8eb0b723c736">iteratorSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a9f47422d35598ad7658a8a051037bf71">systemsBegin</a> () const =0</td></tr>
+<tr class="memdesc:a9f47422d35598ad7658a8a051037bf71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna iterador para o início da lista de sistemas.  <a href="classModel.html#a9f47422d35598ad7658a8a051037bf71">More...</a><br /></td></tr>
+<tr class="separator:a9f47422d35598ad7658a8a051037bf71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e7dfe80b7f6601152b1c47dd78a22d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classModel.html#af722034dd4df4405686a8eb0b723c736">iteratorSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#ad1e7dfe80b7f6601152b1c47dd78a22d">systemsEnd</a> () const =0</td></tr>
+<tr class="memdesc:ad1e7dfe80b7f6601152b1c47dd78a22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna iterador para o fim da lista de sistemas.  <a href="classModel.html#ad1e7dfe80b7f6601152b1c47dd78a22d">More...</a><br /></td></tr>
+<tr class="separator:ad1e7dfe80b7f6601152b1c47dd78a22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c013145cae0e5a5a5dd0059ebb0123"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">iteratorFlow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#aa8c013145cae0e5a5a5dd0059ebb0123">flowsBegin</a> () const =0</td></tr>
+<tr class="memdesc:aa8c013145cae0e5a5a5dd0059ebb0123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna iterador para o início da lista de fluxos.  <a href="classModel.html#aa8c013145cae0e5a5a5dd0059ebb0123">More...</a><br /></td></tr>
+<tr class="separator:aa8c013145cae0e5a5a5dd0059ebb0123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96276bea30aebe88a14f67a17370bf1d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">iteratorFlow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a96276bea30aebe88a14f67a17370bf1d">flowsEnd</a> () const =0</td></tr>
+<tr class="memdesc:a96276bea30aebe88a14f67a17370bf1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna iterador para o fim da lista de fluxos.  <a href="classModel.html#a96276bea30aebe88a14f67a17370bf1d">More...</a><br /></td></tr>
+<tr class="separator:a96276bea30aebe88a14f67a17370bf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb2ff6a7566fde6bea104ddd3c556ed"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#abfb2ff6a7566fde6bea104ddd3c556ed">add</a> (<a class="el" href="classSystem.html">System</a> *s)=0</td></tr>
+<tr class="memdesc:abfb2ff6a7566fde6bea104ddd3c556ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um sistema ao modelo.  <a href="classModel.html#abfb2ff6a7566fde6bea104ddd3c556ed">More...</a><br /></td></tr>
+<tr class="separator:abfb2ff6a7566fde6bea104ddd3c556ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7224e4a5be42bd0d56f6781fc82f084"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#ac7224e4a5be42bd0d56f6781fc82f084">add</a> (<a class="el" href="classFlow.html">Flow</a> *f)=0</td></tr>
+<tr class="memdesc:ac7224e4a5be42bd0d56f6781fc82f084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um fluxo ao modelo.  <a href="classModel.html#ac7224e4a5be42bd0d56f6781fc82f084">More...</a><br /></td></tr>
+<tr class="separator:ac7224e4a5be42bd0d56f6781fc82f084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab07c39ea01c4296097674893858f12f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#aab07c39ea01c4296097674893858f12f">remove</a> (<a class="el" href="classSystem.html">System</a> *s)=0</td></tr>
+<tr class="memdesc:aab07c39ea01c4296097674893858f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um sistema do modelo.  <a href="classModel.html#aab07c39ea01c4296097674893858f12f">More...</a><br /></td></tr>
+<tr class="separator:aab07c39ea01c4296097674893858f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8568b21dec4f8781179a64b44826e029"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#a8568b21dec4f8781179a64b44826e029">remove</a> (<a class="el" href="classFlow.html">Flow</a> *f)=0</td></tr>
+<tr class="memdesc:a8568b21dec4f8781179a64b44826e029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um fluxo do modelo.  <a href="classModel.html#a8568b21dec4f8781179a64b44826e029">More...</a><br /></td></tr>
+<tr class="separator:a8568b21dec4f8781179a64b44826e029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c58d924e023fe497cefbc6547dbea6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModel.html#aa2c58d924e023fe497cefbc6547dbea6">run</a> (int startTime, int endTime)=0</td></tr>
+<tr class="memdesc:aa2c58d924e023fe497cefbc6547dbea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa a simulação entre dois instantes de tempo.  <a href="classModel.html#aa2c58d924e023fe497cefbc6547dbea6">More...</a><br /></td></tr>
+<tr class="separator:aa2c58d924e023fe497cefbc6547dbea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classe responsável por gerenciar sistemas, fluxos e a simulação completa. </p>
-<p>O <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a> armazena dois conjuntos principais:</p><ul>
-<li>Uma lista de objetos <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a>, representando entidades com um valor armazenado.</li>
-<li>Uma lista de objetos <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a>, que representem operações de transferência de valor entre Systems.</li>
-</ul>
-<p>A função principal do <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a> é executar a simulação entre um tempo inicial e final, aplicando todos os fluxos existentes a cada passo. </p>
+<div class="textblock"><p>Interface abstrata para o gerenciamento de sistemas, fluxos e simulação. </p>
+<p>Esta classe define a API principal utilizada para manipulação de models dentro do simulador. Implementações concretas devem herdar desta classe e fornecer comportamento específico para armazenamento, remoção e execução. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00037">37</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae3b375de5f6df4faf74a95d64748e048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3b375de5f6df4faf74a95d64748e048">&#9670;&nbsp;</a></span>Model() <span class="overload">[1/2]</span></h2>
+<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00035">35</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a63fe04a4350cf4b85b955a583a3c0bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63fe04a4350cf4b85b955a583a3c0bf4">&#9670;&nbsp;</a></span>iteratorFlow</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Model::Model </td>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="classFlow.html">Flow</a>*&gt;::const_iterator <a class="el" href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">Model::iteratorFlow</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de iterador constante para percorrer Flows. </p>
+
+<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00061">61</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
+
+</div>
+</div>
+<a id="af722034dd4df4405686a8eb0b723c736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af722034dd4df4405686a8eb0b723c736">&#9670;&nbsp;</a></span>iteratorSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="classSystem.html">System</a>*&gt;::const_iterator <a class="el" href="classModel.html#af722034dd4df4405686a8eb0b723c736">Model::iteratorSystem</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo de iterador constante para percorrer Systems. </p>
+
+<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00052">52</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af032d8433c87a0a3a431faf6563a1f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af032d8433c87a0a3a431faf6563a1f03">&#9670;&nbsp;</a></span>~Model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Model::~Model </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Construtor padrão. </p>
-<p>Inicializa o modelo vazio, sem sistemas e sem fluxos. </p>
+<p>Destrutor virtual padrão. </p>
+<p>Permite a destruição apropriada via ponteiros para <a class="el" href="classModel.html" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação.">Model</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00022">22</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a48858e5f328ba822b430d86a76a6ceeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48858e5f328ba822b430d86a76a6ceeb">&#9670;&nbsp;</a></span>Model() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Model::Model </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classModel.html">Model</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Construtor de cópia. </p>
-<p>Cria um novo <a class="el" href="classModel.html" title="Classe responsável por gerenciar sistemas, fluxos e a simulação completa.">Model</a> copiando listas de sistemas e fluxos do modelo original.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Referência para o modelo a ser copiado. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00027">27</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad6ebd2062a0b823db841a0b88baac4c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6ebd2062a0b823db841a0b88baac4c0">&#9670;&nbsp;</a></span>~Model()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Model::~Model </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destrutor. </p>
-<p>Realiza a limpeza das listas de Systems e Flows, quando necessário. </p>
-
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00024">24</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00042">42</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab37b76dc12eb35fa4ed53d46c91cdd03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab37b76dc12eb35fa4ed53d46c91cdd03">&#9670;&nbsp;</a></span>add() <span class="overload">[1/2]</span></h2>
+<a id="ac7224e4a5be42bd0d56f6781fc82f084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7224e4a5be42bd0d56f6781fc82f084">&#9670;&nbsp;</a></span>add() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Model::add </td>
+          <td class="memname">virtual bool Model::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classFlow.html">Flow</a> *&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Adiciona um novo fluxo ao modelo. </p>
+<p>Adiciona um fluxo ao modelo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td>Ponteiro para o <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> a ser adicionado. </td></tr>
+    <tr><td class="paramname">f</td><td>Ponteiro para o fluxo a ser inserido. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se o fluxo foi adicionado com sucesso, false caso contrário. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true se o fluxo foi adicionado; false caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00046">46</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#aa65432347b0310d8aea16a728c896309">ModelImpl</a>.</p>
 
 </div>
 </div>
-<a id="a2a340ed8a558aedcfbf7c1bdaff90c56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a340ed8a558aedcfbf7c1bdaff90c56">&#9670;&nbsp;</a></span>add() <span class="overload">[2/2]</span></h2>
+<a id="abfb2ff6a7566fde6bea104ddd3c556ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb2ff6a7566fde6bea104ddd3c556ed">&#9670;&nbsp;</a></span>add() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Model::add </td>
+          <td class="memname">virtual bool Model::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classSystem.html">System</a> *&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Adiciona um novo sistema ao modelo. </p>
+<p>Adiciona um sistema ao modelo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>Ponteiro para o <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> a ser adicionado. </td></tr>
+    <tr><td class="paramname">s</td><td>Ponteiro para o sistema a ser inserido. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se o sistema foi adicionado com sucesso, false caso contrário. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true se o sistema foi adicionado; false caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00041">41</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77">ModelImpl</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classModel_a2a340ed8a558aedcfbf7c1bdaff90c56_icgraph.png" border="0" usemap="#aclassModel_a2a340ed8a558aedcfbf7c1bdaff90c56_icgraph" alt=""/></div>
-<map name="aclassModel_a2a340ed8a558aedcfbf7c1bdaff90c56_icgraph" id="aclassModel_a2a340ed8a558aedcfbf7c1bdaff90c56_icgraph">
-<area shape="rect" title="Adiciona um novo sistema ao modelo." alt="" coords="321,56,408,83"/>
-<area shape="rect" href="funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="113,5,265,32"/>
-<area shape="rect" href="funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="104,56,273,83"/>
-<area shape="rect" href="funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="111,107,266,133"/>
-<area shape="rect" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,56,83"/>
+<div class="center"><img src="classModel_abfb2ff6a7566fde6bea104ddd3c556ed_icgraph.png" border="0" usemap="#aclassModel_abfb2ff6a7566fde6bea104ddd3c556ed_icgraph" alt=""/></div>
+<map name="aclassModel_abfb2ff6a7566fde6bea104ddd3c556ed_icgraph" id="aclassModel_abfb2ff6a7566fde6bea104ddd3c556ed_icgraph">
+<area shape="rect" title="Adiciona um sistema ao modelo." alt="" coords="308,64,395,91"/>
+<area shape="rect" href="funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="105,5,259,32"/>
+<area shape="rect" href="classunit__Model.html#acf138c79bbe68951f2036115e2fb2f65" title="Testa o iterador flowsBegin()." alt="" coords="104,57,260,98"/>
+<area shape="rect" href="classunit__Model.html#a6f9f52f2280812e2925b92cf9c18775e" title="Testa o iterador flowsEnd()." alt="" coords="104,122,260,163"/>
+<area shape="rect" href="funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aaa76b9c72b66fa245f6b7b92d1ecc032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa76b9c72b66fa245f6b7b92d1ecc032">&#9670;&nbsp;</a></span>operator=()</h2>
+<a id="aa8c013145cae0e5a5a5dd0059ebb0123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c013145cae0e5a5a5dd0059ebb0123">&#9670;&nbsp;</a></span>flowsBegin()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classModel.html">Model</a> &amp; Model::operator= </td>
+          <td class="memname">virtual <a class="el" href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">iteratorFlow</a> Model::flowsBegin </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classModel.html">Model</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Operador de atribuição. </p>
-<p>Permite copiar modelos de forma segura, substituindo o conteúdo atual.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Modelo a ser atribuído. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Referência para o objeto atual, após a operação. </dd></dl>
+<p>Retorna iterador para o início da lista de fluxos. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00032">32</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#a2a6e066a3a470106fbf99bd485b67ef9">ModelImpl</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModel_aa8c013145cae0e5a5a5dd0059ebb0123_icgraph.png" border="0" usemap="#aclassModel_aa8c013145cae0e5a5a5dd0059ebb0123_icgraph" alt=""/></div>
+<map name="aclassModel_aa8c013145cae0e5a5a5dd0059ebb0123_icgraph" id="aclassModel_aa8c013145cae0e5a5a5dd0059ebb0123_icgraph">
+<area shape="rect" title="Retorna iterador para o início da lista de fluxos." alt="" coords="209,56,339,83"/>
+<area shape="rect" href="classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="8,5,159,32"/>
+<area shape="rect" href="classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="11,56,156,83"/>
+<area shape="rect" href="classunit__Model.html#acf138c79bbe68951f2036115e2fb2f65" title="Testa o iterador flowsBegin()." alt="" coords="5,107,161,149"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a7fe39a686cb2d9d6255f36b377155b74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fe39a686cb2d9d6255f36b377155b74">&#9670;&nbsp;</a></span>remove() <span class="overload">[1/2]</span></h2>
+<a id="a96276bea30aebe88a14f67a17370bf1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96276bea30aebe88a14f67a17370bf1d">&#9670;&nbsp;</a></span>flowsEnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Model::remove </td>
+          <td class="memname">virtual <a class="el" href="classModel.html#a63fe04a4350cf4b85b955a583a3c0bf4">iteratorFlow</a> Model::flowsEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna iterador para o fim da lista de fluxos. </p>
+
+<p>Implemented in <a class="el" href="classModelImpl.html#af5311086b20279ff6a7f6f0c2ee610cd">ModelImpl</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModel_a96276bea30aebe88a14f67a17370bf1d_icgraph.png" border="0" usemap="#aclassModel_a96276bea30aebe88a14f67a17370bf1d_icgraph" alt=""/></div>
+<map name="aclassModel_a96276bea30aebe88a14f67a17370bf1d_icgraph" id="aclassModel_a96276bea30aebe88a14f67a17370bf1d_icgraph">
+<area shape="rect" title="Retorna iterador para o fim da lista de fluxos." alt="" coords="209,56,328,83"/>
+<area shape="rect" href="classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="8,5,159,32"/>
+<area shape="rect" href="classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="11,56,156,83"/>
+<area shape="rect" href="classunit__Model.html#a6f9f52f2280812e2925b92cf9c18775e" title="Testa o iterador flowsEnd()." alt="" coords="5,107,161,149"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a045ebb69213ab666550edaac1f207c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a045ebb69213ab666550edaac1f207c">&#9670;&nbsp;</a></span>getClock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Model::getClock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna o valor atual do relógio do modelo. </p>
+<dl class="section return"><dt>Returns</dt><dd>Tempo atual da simulação. </dd></dl>
+
+<p>Implemented in <a class="el" href="classModelImpl.html#adaa71843b533e9ac10864369748d79c5">ModelImpl</a>.</p>
+
+</div>
+</div>
+<a id="a8568b21dec4f8781179a64b44826e029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8568b21dec4f8781179a64b44826e029">&#9670;&nbsp;</a></span>remove() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Model::remove </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classFlow.html">Flow</a> *&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Remove um fluxo existente do modelo. </p>
+<p>Remove um fluxo do modelo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td>Ponteiro para o <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> a ser removido. </td></tr>
+    <tr><td class="paramname">f</td><td>Ponteiro para o fluxo a ser removido. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se o fluxo foi removido, false caso contrário. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true se o fluxo foi removido; false caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00060">60</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#aa03c8ba5c436a6d7bad5ef26994450b4">ModelImpl</a>.</p>
 
 </div>
 </div>
-<a id="afdcd018900cf5f303b06c01822a2121b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdcd018900cf5f303b06c01822a2121b">&#9670;&nbsp;</a></span>remove() <span class="overload">[2/2]</span></h2>
+<a id="aab07c39ea01c4296097674893858f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab07c39ea01c4296097674893858f12f">&#9670;&nbsp;</a></span>remove() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Model::remove </td>
+          <td class="memname">virtual bool Model::remove </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classSystem.html">System</a> *&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Remove um sistema existente do modelo. </p>
+<p>Remove um sistema do modelo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>Ponteiro para o <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> a ser removido. </td></tr>
+    <tr><td class="paramname">s</td><td>Ponteiro para o sistema a ser removido. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se o sistema foi removido, false caso contrário. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true se o sistema foi removido; false caso contrário. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00051">51</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#a0cbe8b57ba2c75b8684c6ad1680372d0">ModelImpl</a>.</p>
 
 </div>
 </div>
-<a id="ad31ab57899deb9e33c9fd0312553383c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad31ab57899deb9e33c9fd0312553383c">&#9670;&nbsp;</a></span>run()</h2>
+<a id="aa2c58d924e023fe497cefbc6547dbea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c58d924e023fe497cefbc6547dbea6">&#9670;&nbsp;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Model::run </td>
+          <td class="memname">virtual bool Model::run </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>startTime</em>, </td>
@@ -388,66 +508,40 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Executa a simulação completa. </p>
-<p>Executa a simulação do modelo entre dois instantes de tempo.</p>
-<p>A simulação ocorre aplicando todos os fluxos do modelo entre as iterações de tempo fornecidas. O comportamento detalhado depende da implementação de cada tipo concreto de <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a>.</p>
+<p>Executa a simulação entre dois instantes de tempo. </p>
+<p>Para cada unidade de tempo entre startTime e endTime, todos os fluxos são processados, atualizando seus sistemas correspondentes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">startTime</td><td>Tempo inicial da simulação. </td></tr>
-    <tr><td class="paramname">endTime</td><td>Tempo final da simulação. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true se a simulação ocorreu normalmente, false caso haja falhas.</dd></dl>
-<p>Este método percorre o intervalo de tempo definido por <code>startTime</code> e <code>endTime</code>, calculando primeiro o valor de todos os fluxos e depois aplicando esses valores aos sistemas associados. O processo ocorre em duas etapas a cada ciclo:</p>
-<ol type="1">
-<li><b>Cálculo dos fluxos:</b> cada <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> executa seu método execute(), cujo resultado é armazenado em um vetor temporário. <br  />
- Isso garante que todos os fluxos sejam calculados antes de alterar qualquer <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a>.</li>
-<li><b>Atualização dos sistemas:</b> para cada fluxo, subtrai-se o valor do fluxo do sistema de origem (source) e adiciona-se ao sistema de destino (target), caso existam. <br  />
- Essa abordagem evita dependências indesejadas entre fluxos e garante consistência durante a simulação.</li>
-</ol>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">startTime</td><td>Tempo inicial da simulação (inteiro). </td></tr>
-    <tr><td class="paramname">endTime</td><td>Tempo final da simulação (inteiro). A simulação ocorre enquanto time &lt; endTime.</td></tr>
+    <tr><td class="paramname">startTime</td><td>Tempo inicial. </td></tr>
+    <tr><td class="paramname">endTime</td><td>Tempo final. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true se a simulação foi executada com sucesso. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00095">95</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classModel_ad31ab57899deb9e33c9fd0312553383c_cgraph.png" border="0" usemap="#aclassModel_ad31ab57899deb9e33c9fd0312553383c_cgraph" alt=""/></div>
-<map name="aclassModel_ad31ab57899deb9e33c9fd0312553383c_cgraph" id="aclassModel_ad31ab57899deb9e33c9fd0312553383c_cgraph">
-<area shape="rect" title="Executa a simulação completa." alt="" coords="5,81,88,108"/>
-<area shape="rect" href="classFlow.html#a1f3858f90d141807377c2640fb5dd0fc" title="Retorna o sistema de origem." alt="" coords="140,5,257,32"/>
-<area shape="rect" href="classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="143,56,255,83"/>
-<area shape="rect" href="classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="136,107,261,133"/>
-<area shape="rect" href="classSystem.html#aa3dee10a22a9f908a87f84917857d2f0" title="Define um novo valor para o sistema." alt="" coords="136,157,261,184"/>
-</map>
-</div>
+<p>Implemented in <a class="el" href="classModelImpl.html#a1087acda33cd4b26099cd383286a7175">ModelImpl</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classModel_ad31ab57899deb9e33c9fd0312553383c_icgraph.png" border="0" usemap="#aclassModel_ad31ab57899deb9e33c9fd0312553383c_icgraph" alt=""/></div>
-<map name="aclassModel_ad31ab57899deb9e33c9fd0312553383c_icgraph" id="aclassModel_ad31ab57899deb9e33c9fd0312553383c_icgraph">
-<area shape="rect" title="Executa a simulação completa." alt="" coords="321,56,404,83"/>
-<area shape="rect" href="funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="113,5,265,32"/>
-<area shape="rect" href="funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="104,56,273,83"/>
-<area shape="rect" href="funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="111,107,266,133"/>
-<area shape="rect" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,56,83"/>
+<div class="center"><img src="classModel_aa2c58d924e023fe497cefbc6547dbea6_icgraph.png" border="0" usemap="#aclassModel_aa2c58d924e023fe497cefbc6547dbea6_icgraph" alt=""/></div>
+<map name="aclassModel_aa2c58d924e023fe497cefbc6547dbea6_icgraph" id="aclassModel_aa2c58d924e023fe497cefbc6547dbea6_icgraph">
+<area shape="rect" title="Executa a simulação entre dois instantes de tempo." alt="" coords="307,5,389,32"/>
+<area shape="rect" href="funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="104,5,259,32"/>
+<area shape="rect" href="funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a508721af4b8ed362217dff0c6732d8dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a508721af4b8ed362217dff0c6732d8dc">&#9670;&nbsp;</a></span>flows</h2>
+<a id="a9f47422d35598ad7658a8a051037bf71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f47422d35598ad7658a8a051037bf71">&#9670;&nbsp;</a></span>systemsBegin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -456,25 +550,37 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classFlow.html">Flow</a>*&gt; Model::flows</td>
+          <td class="memname">virtual <a class="el" href="classModel.html#af722034dd4df4405686a8eb0b723c736">iteratorSystem</a> Model::systemsBegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Lista de fluxos pertencentes ao modelo. </p>
-<p>Cada objeto <a class="el" href="classFlow.html" title="Classe base abstrata que define um fluxo entre dois Systems.">Flow</a> define como os valores dos sistemas passam de um para outro. </p>
+<p>Retorna iterador para o início da lista de sistemas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00051">51</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#ade1473052ede72a75c7768e8d4bc7e1e">ModelImpl</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModel_a9f47422d35598ad7658a8a051037bf71_icgraph.png" border="0" usemap="#aclassModel_a9f47422d35598ad7658a8a051037bf71_icgraph" alt=""/></div>
+<map name="aclassModel_a9f47422d35598ad7658a8a051037bf71_icgraph" id="aclassModel_a9f47422d35598ad7658a8a051037bf71_icgraph">
+<area shape="rect" title="Retorna iterador para o início da lista de sistemas." alt="" coords="204,31,352,57"/>
+<area shape="rect" href="classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="5,5,156,32"/>
+<area shape="rect" href="classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="8,56,153,83"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a706374e5cb9ad9949996cfbd9538cead"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a706374e5cb9ad9949996cfbd9538cead">&#9670;&nbsp;</a></span>systems</h2>
+<a id="ad1e7dfe80b7f6601152b1c47dd78a22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e7dfe80b7f6601152b1c47dd78a22d">&#9670;&nbsp;</a></span>systemsEnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -483,26 +589,37 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classSystem.html">System</a>*&gt; Model::systems</td>
+          <td class="memname">virtual <a class="el" href="classModel.html#af722034dd4df4405686a8eb0b723c736">iteratorSystem</a> Model::systemsEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Lista de sistemas pertencentes ao modelo. </p>
-<p>Cada ponteiro armazena um objeto do tipo <a class="el" href="classSystem.html" title="Representa um elemento de armazenamento dentro do modelo.">System</a> que participa da simulação. </p>
+<p>Retorna iterador para o fim da lista de sistemas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8h_source.html#l00044">44</a> of file <a class="el" href="Model_8h_source.html">Model.h</a>.</p>
+<p>Implemented in <a class="el" href="classModelImpl.html#ab632e73ed2777d17835527ac105848a9">ModelImpl</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classModel_ad1e7dfe80b7f6601152b1c47dd78a22d_icgraph.png" border="0" usemap="#aclassModel_ad1e7dfe80b7f6601152b1c47dd78a22d_icgraph" alt=""/></div>
+<map name="aclassModel_ad1e7dfe80b7f6601152b1c47dd78a22d_icgraph" id="aclassModel_ad1e7dfe80b7f6601152b1c47dd78a22d_icgraph">
+<area shape="rect" title="Retorna iterador para o fim da lista de sistemas." alt="" coords="204,31,343,57"/>
+<area shape="rect" href="classModelImpl.html#a3c033ed72da1dd33a8292078f0ebb8e9" title="Construtor de cópia privado." alt="" coords="5,5,156,32"/>
+<area shape="rect" href="classModelImpl.html#aeff4820dad51184595b32161b913b71f" title="Operador de atribuição privado." alt="" coords="8,56,153,83"/>
+</map>
+</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="Model_8h_source.html">Model.h</a></li>
-<li>src/<a class="el" href="Model_8cpp_source.html">Model.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

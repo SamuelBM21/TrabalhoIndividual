@@ -1,12 +1,14 @@
 /**
  * @file System.h
- * @brief Declaração da classe System, que representa um elemento básico do modelo.
+ * @brief Interface abstrata que representa um elemento de armazenamento do modelo.
  *
- * A classe System é uma das estruturas fundamentais do simulador baseado na
- * Teoria Geral de Sistemas. Um System representa um "estoque" (stock), isto é,
- * uma entidade que possui um valor armazenado e que pode ser alterado ao longo
- * da simulação por meio dos fluxos (Flows).
- * 
+ * A classe System modela um "estoque" (stock) dentro da Teoria Geral de Sistemas.
+ * Cada System contém um valor numérico que pode ser modificado ao longo da simulação
+ * por meio de objetos Flow.
+ *
+ * Esta classe define a API básica para manipulação de sistemas e deve ser
+ * implementada por classes concretas como SystemImpl.
+ *
  * @author Samuel
  * @date 2025
  */
@@ -16,46 +18,35 @@
 
 /**
  * @class System
- * @brief Representa um elemento de armazenamento dentro do modelo.
+ * @brief Interface para um elemento de armazenamento dentro do modelo.
  *
- * Um System contém um único valor numérico, que representa a quantidade atual
- * de um recurso, população, nível, concentração etc., dependendo do contexto
- * do modelo sendo simulado.
+ * Representa uma entidade que possui um único valor numérico, o qual é
+ * atualizado conforme os fluxos que incidem sobre ela durante a simulação.
  *
- * Essa classe é manipulada pela classe Model e pelos objetos Flow, que
- * alteram seu valor ao longo da execução da simulação.
+ * Implementações concretas (como SystemImpl) devem fornecer mecanismos
+ * para armazenamento e atualização de valores.
  */
 class System {
 public:
     /**
-     * @brief Destrutor virtual.
+     * @brief Destrutor virtual padrão.
      *
-     * Mantido virtual para permitir herança segura caso a classe seja estendida.
+     * Necessário para permitir destruição correta via ponteiros para System.
      */
-    virtual ~System() {};
-
-    /**
-     * @brief Operador de atribuição.
-     *
-     * Substitui o valor atual pelo valor do outro System.
-     *
-     * @param other Objeto System a ser atribuído.
-     * @return Referência para o próprio objeto.
-     */
-    virtual System& operator=(const System& other) = 0;
+    virtual ~System() {}
 
     /**
      * @brief Define um novo valor para o sistema.
      *
-     * @param v Novo valor.
-     * @return true se o valor foi definido com sucesso.
+     * @param v Valor numérico a ser usado.
+     * @return true se o valor foi atualizado corretamente.
      */
     virtual bool setValue(double v) = 0;
 
     /**
-     * @brief Obtém o valor atual armazenado.
+     * @brief Retorna o valor atual armazenado no sistema.
      *
-     * @return O valor atual do System.
+     * @return Valor numérico atual.
      */
     virtual double getValue() const = 0;
 };
