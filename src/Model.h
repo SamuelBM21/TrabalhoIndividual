@@ -33,6 +33,23 @@
  * e fornecer comportamento específico para armazenamento, remoção e execução.
  */
 class Model {
+protected:
+    /**
+     * @brief Adiciona um sistema ao modelo.
+     *
+     * @param s Ponteiro para o sistema a ser inserido.
+     * @return true se o sistema foi adicionado; false caso contrário.
+     */
+    virtual bool add(System* s) = 0;
+
+    /**
+     * @brief Adiciona um fluxo ao modelo.
+     *
+     * @param f Ponteiro para o fluxo a ser inserido.
+     * @return true se o fluxo foi adicionado; false caso contrário.
+     */
+    virtual bool add(Flow* f) = 0;
+    
 public:
     /**
      * @brief Destrutor virtual padrão.
@@ -67,21 +84,37 @@ public:
     virtual iteratorFlow flowsEnd() const = 0;
 
     /**
-     * @brief Adiciona um sistema ao modelo.
-     *
-     * @param s Ponteiro para o sistema a ser inserido.
-     * @return true se o sistema foi adicionado; false caso contrário.
-     */
-    virtual bool add(System* s) = 0;
+     * @brief Método estático para criar uma instância de Model.
+     * @return retorna um ponteiro para o Model criado.
+    */
+    static Model* createModel();
 
     /**
-     * @brief Adiciona um fluxo ao modelo.
-     *
-     * @param f Ponteiro para o fluxo a ser inserido.
-     * @return true se o fluxo foi adicionado; false caso contrário.
-     */
-    virtual bool add(Flow* f) = 0;
+     * @brief Método para criar um System.
+     * @param valor Valor inicial do System.
+     * @return retorna um ponteiro para o System criado.
+    */
+    virtual System* createSystem(double = 0.0) = 0;
 
+    /**
+     * @brief Método template para criar um Flow de tipo específico.
+     * 
+     * Este método cria uma instância de Flow do tipo T, configurando
+     * opcionalmente os sistemas de origem e destino. O fluxo criado
+     * é automaticamente adicionado ao modelo.
+     * 
+     * @tparam T Tipo concreto de Flow a ser criado (deve herdar de Flow).
+     * @param source Ponteiro para o sistema de origem (padrão: NULL).
+     * @param target Ponteiro para o sistema de destino (padrão: NULL).
+     * @return Ponteiro para o Flow criado.
+     */
+    template <typename T>
+    Flow* createFlow(System * source = NULL, System * target = NULL){
+        Flow* flow = new T(source, target);
+        add(flow);
+        return flow;
+    }
+    
     /**
      * @brief Remove um sistema do modelo.
      *

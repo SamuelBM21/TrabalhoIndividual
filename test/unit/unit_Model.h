@@ -25,6 +25,14 @@
 
 #include "../../src/FlowImpl.h"
 
+/**
+ * @class unit_Model
+ * @brief Classe que encapsula os testes unitários para ModelImpl.
+ *
+ * Cada método desta classe implementa um teste específico para validar
+ * o comportamento da classe ModelImpl, garantindo que seus construtores,
+ * métodos de acesso, modificadores e destrutor funcionem conforme esperado.
+ */
 class unit_Model{
 public:
     /**

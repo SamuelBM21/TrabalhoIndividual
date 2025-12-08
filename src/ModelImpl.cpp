@@ -21,9 +21,12 @@
 
 
 #include "ModelImpl.h"
+#include "SystemImpl.h"
 #include <algorithm> 
 
 using namespace std;
+
+vector<Model*> ModelImpl::models;
 
 ModelImpl::ModelImpl() : systems(), flows() {}
 
@@ -75,6 +78,24 @@ ModelImpl::iteratorFlow ModelImpl::flowsEnd() const {
     return flows.end(); 
 }
 
+Model* ModelImpl::createModel(){
+    Model* model = new ModelImpl();
+    add(model); 
+    return model;
+}
+
+Model* Model::createModel(){
+    return ModelImpl::createModel();
+}
+
+
+System* ModelImpl::createSystem(double value){
+    System* system = new SystemImpl(value);
+    add(system);
+    return system;
+}
+
+
 bool ModelImpl::add(System* s) {
     systems.push_back(s);
     return true;
@@ -82,6 +103,11 @@ bool ModelImpl::add(System* s) {
 
 bool ModelImpl::add(Flow* f) {
     flows.push_back(f);
+    return true;
+}
+
+bool ModelImpl::add(Model* m) {
+    models.push_back(m);
     return true;
 }
 

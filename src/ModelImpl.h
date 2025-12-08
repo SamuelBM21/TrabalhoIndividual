@@ -38,8 +38,27 @@ protected:
      */
     std::vector<Flow*> flows;
 
+    /*
+    * @brief Lista estática de todos os modelos criados.
+    */
+    static std::vector<Model*> models;
+
     /// Relógio interno do modelo, representando o tempo atual da simulação.
     int clock = 0;
+
+    /** @copydoc Model::add(System*) */
+    bool add(System* s) override;
+
+    /** @copydoc Model::add(Flow*) */
+    bool add(Flow* f) override;
+
+    /**
+     * @brief Adiciona um modelo ao conjunto de modelos.
+     *
+     * @param m Ponteiro para o modelo a ser inserido.
+     * @return true se o modelo foi adicionado; false caso contrário.
+     */
+    static bool add(Model* m);
 
 public:
     /**
@@ -73,11 +92,15 @@ public:
     /** @copydoc Model::flowsEnd() */
     iteratorFlow flowsEnd() const override;
 
-    /** @copydoc Model::add(System*) */
-    bool add(System* s) override;
+    /**
+     * @copydoc Model::createModel()
+     */
+    static Model* createModel();
 
-    /** @copydoc Model::add(Flow*) */
-    bool add(Flow* f) override;
+    /**
+     * @copydoc Model::createSystem(double)
+     */
+    System* createSystem(double value = 0.0) override;  
 
     /** @copydoc Model::remove(System*) */
     bool remove(System* s) override;

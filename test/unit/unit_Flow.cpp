@@ -141,7 +141,7 @@ void unit_Flow :: unit_Flow_execute(){
 
     double result = flow->execute();
 
-    assert(fabs(result - 50.0) < 0.0001);
+    assert(round(fabs(result - 50.0) < 0.0001));
 
     delete system1;
     delete system2;

@@ -1,7 +1,6 @@
 <map id="test/funcional/main.cpp" name="test/funcional/main.cpp">
-<area shape="rect" id="node1" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="220,5,377,32"/>
+<area shape="rect" id="node1" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="160,5,317,32"/>
 <area shape="rect" id="node2" href="$funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="178,80,299,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="324,80,393,107"/>
 <area shape="rect" id="node3" href="$ModelImpl_8h.html" title="Implementação concreta da interface Model." alt="" coords="9,155,148,181"/>
 <area shape="rect" id="node9" href="$FlowImpl_8h.html" title="Implementação base concreta da interface Flow." alt="" coords="173,155,305,181"/>
 <area shape="rect" id="node10" href="$SystemImpl_8h.html" title="Implementação concreta da interface System." alt="" coords="268,229,417,256"/>

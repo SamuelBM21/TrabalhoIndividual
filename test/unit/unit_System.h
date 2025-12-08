@@ -22,6 +22,15 @@
 
 #include "../../src/SystemImpl.h"
 
+/**
+ * @class unit_System
+ * @brief Classe que encapsula os testes unitários para SystemImpl.
+ *
+ * Cada método desta classe implementa um teste específico para validar
+ * o comportamento da classe SystemImpl, garantindo que seus construtores,
+ * métodos de acesso, modificadores e operador de atribuição funcionem
+ * conforme esperado.
+ */
 class unit_System{
 public:
     /**
