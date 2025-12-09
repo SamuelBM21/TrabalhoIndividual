@@ -1,5 +1,5 @@
 <map id="Model::remove" name="Model::remove">
-<area shape="rect" id="node1" title="Remove um sistema do modelo." alt="" coords="233,31,341,57"/>
-<area shape="rect" id="node2" href="$unit__Model_8cpp.html#a9558a5ae2be456fcc8c7a3b1ecd5f3cb" title="Testa o método removeFlow()." alt="" coords="14,5,177,32"/>
-<area shape="rect" id="node3" href="$unit__Model_8cpp.html#ad30b83679de39115af7c05c286ed505b" title="Testa o método removeSystem()." alt="" coords="5,56,185,83"/>
+<area shape="rect" id="node1" title="Remove um sistema do modelo." alt="" coords="209,46,317,73"/>
+<area shape="rect" id="node2" href="$classunit__Model.html#a3ecab106db06c39c132b2c6975b68111" title="Testa o método removeFlow()." alt="" coords="5,5,161,47"/>
+<area shape="rect" id="node3" href="$classunit__Model.html#a04aca41ead3d67231d0748bed24baf60" title="Testa o método removeSystem()." alt="" coords="5,71,161,112"/>
 </map>

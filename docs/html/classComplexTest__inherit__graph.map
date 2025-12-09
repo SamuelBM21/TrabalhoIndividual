@@ -1,5 +1,5 @@
 <map id="ComplexTest" name="ComplexTest">
-<area shape="rect" id="node1" title=" " alt="" coords="5,476,124,597"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,476,124,583"/>
 <area shape="rect" id="node2" href="$classFlowImpl.html" title="Implementação parcial da classe Flow." alt="" coords="13,204,116,428"/>
 <area shape="rect" id="node3" href="$classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems." alt="" coords="14,5,115,156"/>
 </map>

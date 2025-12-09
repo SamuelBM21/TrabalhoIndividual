@@ -1,7 +1,0 @@
-<map id="ModelImpl::run" name="ModelImpl::run">
-<area shape="rect" id="node1" title="Executa a simulação entre dois instantes de tempo." alt="" coords="333,56,441,83"/>
-<area shape="rect" id="node2" href="$funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="119,5,271,32"/>
-<area shape="rect" id="node4" href="$funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="110,56,279,83"/>
-<area shape="rect" id="node5" href="$classunit__Model.html#ae903f6b0a917230da1e158eca7905122" title="Testa o método run()." alt="" coords="104,107,285,133"/>
-<area shape="rect" id="node3" href="$funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,31,56,57"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="unit_Flow_setTarget" name="unit_Flow_setTarget">
-<area shape="rect" id="node1" title="Testa o método setTarget()." alt="" coords="5,31,144,57"/>
-<area shape="rect" id="node2" href="$classFlow.html#a81aeceffcb2b425af124c3b0d1962786" title="Retorna o sistema de destino." alt="" coords="192,5,304,32"/>
-<area shape="rect" id="node3" href="$classFlow.html#a7bd9be309d259aa59e685a8ea2e735e6" title="Define o sistema de destino do fluxo." alt="" coords="192,56,304,83"/>
-</map>

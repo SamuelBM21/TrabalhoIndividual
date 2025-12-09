@@ -47,8 +47,8 @@ void exponentialFuncionalTest(){
 
     model->run(0, 100);
 
-    assert(round(fabs(pop1->getValue() - 36.6032) < 0.0001));
-    assert(round(fabs(pop2->getValue() - 63.3968) < 0.0001));
+    assert(round(fabs(pop1->getValue() - 36.6032)*10000) < 1);
+    assert(round(fabs(pop2->getValue() - 63.3968)*10000) < 1);
 
     cout << "Passou!\n" << endl;
 }
@@ -65,8 +65,8 @@ void logisticalFuncionalTest(){
     
     model->run(0, 100);
     
-    assert(round(fabs(pop1->getValue() - 88.2167) < 0.0001));
-    assert(round(fabs(pop2->getValue() - 21.7833) < 0.0001));
+    assert(round(fabs(pop1->getValue() - 88.2167)*10000) < 1);
+    assert(round(fabs(pop2->getValue() - 21.7833)*10000) < 1);
 
     cout << "Passou!\n" << endl;
 }
@@ -92,11 +92,11 @@ void complexFuncionalTest(){
 
     model->run(0, 100);
 
-    assert(round(fabs(pop1->getValue() - 31.8513) < 0.0001));
-    assert(round(fabs(pop2->getValue() - 18.4003) < 0.0001));
-    assert(round(fabs(pop3->getValue() - 77.1143) < 0.0001));
-    assert(round(fabs(pop4->getValue() - 56.1728) < 0.0001));
-    assert(round(fabs(pop5->getValue() - 16.4612) < 0.0001));
+    assert(round(fabs(pop1->getValue() - 31.8513)*10000) < 1);
+    assert(round(fabs(pop2->getValue() - 18.4003)*10000) < 1);
+    assert(round(fabs(pop3->getValue() - 77.1143)*10000) < 1);
+    assert(round(fabs(pop4->getValue() - 56.1728)*10000) < 1);
+    assert(round(fabs(pop5->getValue() - 16.4612)*10000) < 1);
 
     cout << "Passou!\n" << endl;
 }

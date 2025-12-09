@@ -7,20 +7,17 @@
 
 #include <math.h>
 #include <assert.h>
-#include <iostream>
 
 #include "../../src/ModelImpl.h"
-#include "../../src/SystemImpl.h"
-#include "../../src/FlowImpl.h" // Necessário para herdar FlowImpl
+#include "../../src/SystemImpl.h" 
 #include "unit_Model.h"
 
 using namespace std;
 
-// Classe auxiliar para teste de fluxo (Mock)
-class ComplexTest : public FlowImpl {
+class UnitTestFlow : public FlowImpl {
 public:
-    ComplexTest() : FlowImpl() {}
-    ComplexTest(System *source, System *target) : FlowImpl(source, target) {}
+    UnitTestFlow() : FlowImpl() {}
+    UnitTestFlow(System *source, System *target) : FlowImpl(source, target) {}
 
     double execute() {
         if (getSource())
@@ -72,7 +69,7 @@ void unit_Model::unit_Model_removeSystem() {
 void unit_Model::unit_Model_removeFlow() {
     Model *model = Model::createModel();
 
-    Flow *flow = model->createFlow<ComplexTest>();
+    Flow *flow = model->createFlow<UnitTestFlow>();
 
     assert(model->flowsBegin() != model->flowsEnd());
 
@@ -116,8 +113,8 @@ void unit_Model::unit_Model_systemsEnd() {
 
 void unit_Model::unit_Model_flowsBegin() {
     Model *model = Model::createModel();
-    Flow *f1 = model->createFlow<ComplexTest>();
-    Flow *f2 = model->createFlow<ComplexTest>();
+    Flow *f1 = model->createFlow<UnitTestFlow>();
+    Flow *f2 = model->createFlow<UnitTestFlow>();
 
     assert(*(model->flowsBegin()) == f1);
     assert(*(model->flowsBegin()) != f2);
@@ -129,8 +126,8 @@ void unit_Model::unit_Model_flowsBegin() {
 
 void unit_Model::unit_Model_flowsEnd() {
     Model *model = Model::createModel();
-    Flow *f1 = model->createFlow<ComplexTest>();
-    Flow *f2 = model->createFlow<ComplexTest>();
+    Flow *f1 = model->createFlow<UnitTestFlow>();
+    Flow *f2 = model->createFlow<UnitTestFlow>();
 
     Model::iteratorFlow it = model->flowsEnd();
     it--;
@@ -150,13 +147,13 @@ void unit_Model::unit_Model_run() {
     System *system1 = model->createSystem(100.0);
     System *system2 = model->createSystem(0.0);
 
-    Flow *flow = model->createFlow<ComplexTest>(system1, system2);
+    Flow *flow = model->createFlow<UnitTestFlow>(system1, system2);
 
     model->run(0, 1);
 
     assert(model->getClock() == 1);
-    assert(round(fabs(system1->getValue() - 50.0) < 0.0001));
-    assert(round(fabs(system2->getValue() - 50.0) < 0.0001));
+    assert(round(fabs(system1->getValue() - 50.0)*10000) < 1);
+    assert(round(fabs(system2->getValue() - 50.0)*10000) < 1);
 
     delete flow;
     delete system1;

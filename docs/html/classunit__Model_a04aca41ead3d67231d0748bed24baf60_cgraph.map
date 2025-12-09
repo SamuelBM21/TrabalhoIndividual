@@ -1,5 +1,11 @@
 <map id="unit_Model::unit_Model_removeSystem" name="unit_Model::unit_Model_removeSystem">
-<area shape="rect" id="node1" title="Testa o método removeSystem()." alt="" coords="5,23,161,65"/>
-<area shape="rect" id="node2" href="$classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77" title="Adiciona um sistema ao modelo." alt="" coords="221,5,331,32"/>
-<area shape="rect" id="node3" href="$classModelImpl.html#a0cbe8b57ba2c75b8684c6ad1680372d0" title="Remove um sistema do modelo." alt="" coords="209,56,343,83"/>
+<area shape="rect" id="node1" title="Testa o método removeSystem()." alt="" coords="5,125,161,166"/>
+<area shape="rect" id="node2" href="$classModel.html#accd28300871325fce68d551cebf27220" title="Método estático para criar uma instância de Model." alt="" coords="215,31,351,57"/>
+<area shape="rect" id="node6" href="$classModel.html#a78fee10a8de9b9e62d590584fdab68fc" title="Método para criar um System." alt="" coords="210,81,357,108"/>
+<area shape="rect" id="node7" href="$classModel.html#aab07c39ea01c4296097674893858f12f" title="Remove um sistema do modelo." alt="" coords="229,132,337,159"/>
+<area shape="rect" id="node8" href="$classModel.html#a9f47422d35598ad7658a8a051037bf71" title="Retorna iterador para o início da lista de sistemas." alt="" coords="209,183,357,209"/>
+<area shape="rect" id="node9" href="$classModel.html#ad1e7dfe80b7f6601152b1c47dd78a22d" title="Retorna iterador para o fim da lista de sistemas." alt="" coords="214,233,353,260"/>
+<area shape="rect" id="node3" href="$classModelImpl.html#a8a9167b35336431e394f0042271620cb" title="Método estático para criar uma instância de Model." alt="" coords="405,31,567,57"/>
+<area shape="rect" id="node4" href="$classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77" title="Adiciona um sistema ao modelo." alt="" coords="635,5,745,32"/>
+<area shape="rect" id="node5" href="$classModelImpl.html#a081505846c37ce9928f2176d77db4bc8" title="Construtor padrão." alt="" coords="615,56,765,83"/>
 </map>

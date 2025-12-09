@@ -15,7 +15,7 @@ Inheritance diagram for Model\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=174pt]{classModel__inherit__graph}
+\includegraphics[height=550pt]{classModel__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -49,16 +49,28 @@ virtual \mbox{\hyperlink{classModel_a63fe04a4350cf4b85b955a583a3c0bf4}{iterator\
 \begin{DoxyCompactList}\small\item\em Retorna iterador para o início da lista de fluxos. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classModel_a63fe04a4350cf4b85b955a583a3c0bf4}{iterator\+Flow}} \mbox{\hyperlink{classModel_a96276bea30aebe88a14f67a17370bf1d}{flows\+End}} () const =0
 \begin{DoxyCompactList}\small\item\em Retorna iterador para o fim da lista de fluxos. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classModel_abfb2ff6a7566fde6bea104ddd3c556ed}{add}} (\mbox{\hyperlink{classSystem}{System}} $\ast$s)=0
-\begin{DoxyCompactList}\small\item\em Adiciona um sistema ao modelo. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classModel_ac7224e4a5be42bd0d56f6781fc82f084}{add}} (\mbox{\hyperlink{classFlow}{Flow}} $\ast$f)=0
-\begin{DoxyCompactList}\small\item\em Adiciona um fluxo ao modelo. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSystem}{System}} $\ast$ \mbox{\hyperlink{classModel_a78fee10a8de9b9e62d590584fdab68fc}{create\+System}} (double=0.\+0)=0
+\begin{DoxyCompactList}\small\item\em Método para criar um \mbox{\hyperlink{classSystem}{System}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classFlow}{Flow}} $\ast$ \mbox{\hyperlink{classModel_a1120194b6bc1d4438e5d80039b493e49}{create\+Flow}} (\mbox{\hyperlink{classSystem}{System}} $\ast$source=NULL, \mbox{\hyperlink{classSystem}{System}} $\ast$target=NULL)
+\begin{DoxyCompactList}\small\item\em Método template para criar um \mbox{\hyperlink{classFlow}{Flow}} de tipo específico. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classModel_aab07c39ea01c4296097674893858f12f}{remove}} (\mbox{\hyperlink{classSystem}{System}} $\ast$s)=0
 \begin{DoxyCompactList}\small\item\em Remove um sistema do modelo. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classModel_a8568b21dec4f8781179a64b44826e029}{remove}} (\mbox{\hyperlink{classFlow}{Flow}} $\ast$f)=0
 \begin{DoxyCompactList}\small\item\em Remove um fluxo do modelo. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classModel_aa2c58d924e023fe497cefbc6547dbea6}{run}} (int start\+Time, int end\+Time)=0
 \begin{DoxyCompactList}\small\item\em Executa a simulação entre dois instantes de tempo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classModel}{Model}} $\ast$ \mbox{\hyperlink{classModel_accd28300871325fce68d551cebf27220}{create\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Método estático para criar uma instância de \mbox{\hyperlink{classModel}{Model}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classModel_abfb2ff6a7566fde6bea104ddd3c556ed}{add}} (\mbox{\hyperlink{classSystem}{System}} $\ast$s)=0
+\begin{DoxyCompactList}\small\item\em Adiciona um sistema ao modelo. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classModel_ac7224e4a5be42bd0d56f6781fc82f084}{add}} (\mbox{\hyperlink{classFlow}{Flow}} $\ast$f)=0
+\begin{DoxyCompactList}\small\item\em Adiciona um fluxo ao modelo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -83,7 +95,7 @@ Tipo de iterador constante para percorrer Flows.
 
 
 
-Definition at line 61 of file Model.\+h.
+Definition at line 78 of file Model.\+h.
 
 \mbox{\Hypertarget{classModel_af722034dd4df4405686a8eb0b723c736}\label{classModel_af722034dd4df4405686a8eb0b723c736}} 
 \index{Model@{Model}!iteratorSystem@{iteratorSystem}}
@@ -97,7 +109,7 @@ Tipo de iterador constante para percorrer Systems.
 
 
 
-Definition at line 52 of file Model.\+h.
+Definition at line 69 of file Model.\+h.
 
 
 
@@ -114,7 +126,7 @@ Destrutor virtual padrão.
 
 Permite a destruição apropriada via ponteiros para \mbox{\hyperlink{classModel}{Model}}. 
 
-Definition at line 42 of file Model.\+h.
+Definition at line 59 of file Model.\+h.
 
 
 
@@ -123,7 +135,7 @@ Definition at line 42 of file Model.\+h.
 \index{Model@{Model}!add@{add}}
 \index{add@{add}!Model@{Model}}
 \doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual bool Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlow}{Flow}} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual bool Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlow}{Flow}} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
 
@@ -145,7 +157,7 @@ Implemented in \mbox{\hyperlink{classModelImpl_aa65432347b0310d8aea16a728c896309
 \index{Model@{Model}!add@{add}}
 \index{add@{add}!Model@{Model}}
 \doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily virtual bool Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual bool Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
 
@@ -168,6 +180,112 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classModel_abfb2ff6a7566fde6bea104ddd3c556ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classModel_a1120194b6bc1d4438e5d80039b493e49}\label{classModel_a1120194b6bc1d4438e5d80039b493e49}} 
+\index{Model@{Model}!createFlow@{createFlow}}
+\index{createFlow@{createFlow}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{createFlow()}{createFlow()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classFlow}{Flow}}$\ast$ Model\+::create\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{source = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{classSystem}{System}} $\ast$}]{target = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método template para criar um \mbox{\hyperlink{classFlow}{Flow}} de tipo específico. 
+
+Este método cria uma instância de \mbox{\hyperlink{classFlow}{Flow}} do tipo T, configurando opcionalmente os sistemas de origem e destino. O fluxo criado é automaticamente adicionado ao modelo.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo concreto de \mbox{\hyperlink{classFlow}{Flow}} a ser criado (deve herdar de \mbox{\hyperlink{classFlow}{Flow}}). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Ponteiro para o sistema de origem (padrão\+: NULL). \\
+\hline
+{\em target} & Ponteiro para o sistema de destino (padrão\+: NULL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o \mbox{\hyperlink{classFlow}{Flow}} criado. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file Model.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classModel_a1120194b6bc1d4438e5d80039b493e49_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModel_a1120194b6bc1d4438e5d80039b493e49_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classModel_accd28300871325fce68d551cebf27220}\label{classModel_accd28300871325fce68d551cebf27220}} 
+\index{Model@{Model}!createModel@{createModel}}
+\index{createModel@{createModel}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{createModel()}{createModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classModel}{Model}} $\ast$ Model\+::create\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método estático para criar uma instância de \mbox{\hyperlink{classModel}{Model}}. 
+
+\begin{DoxyReturn}{Returns}
+retorna um ponteiro para o \mbox{\hyperlink{classModel}{Model}} criado. 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Model\+Impl.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModel_accd28300871325fce68d551cebf27220_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModel_accd28300871325fce68d551cebf27220_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classModel_a78fee10a8de9b9e62d590584fdab68fc}\label{classModel_a78fee10a8de9b9e62d590584fdab68fc}} 
+\index{Model@{Model}!createSystem@{createSystem}}
+\index{createSystem@{createSystem}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{createSystem()}{createSystem()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classSystem}{System}}$\ast$ Model\+::create\+System (\begin{DoxyParamCaption}\item[{double}]{ = {\ttfamily 0.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Método para criar um \mbox{\hyperlink{classSystem}{System}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Valor inicial do \mbox{\hyperlink{classSystem}{System}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna um ponteiro para o \mbox{\hyperlink{classSystem}{System}} criado. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classModelImpl_ab1858280fb9e381fd0b4a533ea417e3b}{Model\+Impl}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModel_a78fee10a8de9b9e62d590584fdab68fc_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classModel_aa8c013145cae0e5a5a5dd0059ebb0123}\label{classModel_aa8c013145cae0e5a5a5dd0059ebb0123}} 
@@ -229,6 +347,13 @@ Tempo atual da simulação.
 
 Implemented in \mbox{\hyperlink{classModelImpl_adaa71843b533e9ac10864369748d79c5}{Model\+Impl}}.
 
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classModel_a7a045ebb69213ab666550edaac1f207c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classModel_a8568b21dec4f8781179a64b44826e029}\label{classModel_a8568b21dec4f8781179a64b44826e029}} 
 \index{Model@{Model}!remove@{remove}}
 \index{remove@{remove}!Model@{Model}}
@@ -273,6 +398,13 @@ true se o sistema foi removido; false caso contrário.
 
 Implemented in \mbox{\hyperlink{classModelImpl_a0cbe8b57ba2c75b8684c6ad1680372d0}{Model\+Impl}}.
 
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classModel_aab07c39ea01c4296097674893858f12f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classModel_aa2c58d924e023fe497cefbc6547dbea6}\label{classModel_aa2c58d924e023fe497cefbc6547dbea6}} 
 \index{Model@{Model}!run@{run}}
 \index{run@{run}!Model@{Model}}
@@ -324,7 +456,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=340pt]{classModel_a9f47422d35598ad7658a8a051037bf71_icgraph}
+\includegraphics[width=344pt]{classModel_a9f47422d35598ad7658a8a051037bf71_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classModel_ad1e7dfe80b7f6601152b1c47dd78a22d}\label{classModel_ad1e7dfe80b7f6601152b1c47dd78a22d}} 
@@ -345,11 +477,12 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=333pt]{classModel_ad1e7dfe80b7f6601152b1c47dd78a22d_icgraph}
+\includegraphics[width=337pt]{classModel_ad1e7dfe80b7f6601152b1c47dd78a22d_icgraph}
 \end{center}
 \end{figure}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/\mbox{\hyperlink{Model_8h}{Model.\+h}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{Model_8h}{Model.\+h}}\item 
+src/\mbox{\hyperlink{ModelImpl_8cpp}{Model\+Impl.\+cpp}}\end{DoxyCompactItemize}

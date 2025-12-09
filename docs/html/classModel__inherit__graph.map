@@ -1,4 +1,4 @@
 <map id="Model" name="Model">
-<area shape="rect" id="node1" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação." alt="" coords="5,5,131,229"/>
-<area shape="rect" id="node2" href="$classModelImpl.html" title="Implementação concreta da classe Model." alt="" coords="5,277,131,575"/>
+<area shape="rect" id="node1" title="Interface abstrata para o gerenciamento de sistemas, fluxos e simulação." alt="" coords="5,5,131,273"/>
+<area shape="rect" id="node2" href="$classModelImpl.html" title="Implementação concreta da classe Model." alt="" coords="5,321,131,677"/>
 </map>

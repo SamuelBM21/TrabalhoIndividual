@@ -1,6 +1,0 @@
-<map id="unit_Model_removeFlow" name="unit_Model_removeFlow">
-<area shape="rect" id="node1" title="Testa o método removeFlow()." alt="" coords="5,56,168,83"/>
-<area shape="rect" id="node2" href="$classModel.html#abfb2ff6a7566fde6bea104ddd3c556ed" title="Adiciona um sistema ao modelo." alt="" coords="237,5,324,32"/>
-<area shape="rect" id="node3" href="$classModel.html#aa8c013145cae0e5a5a5dd0059ebb0123" title="Retorna iterador para o início da lista de fluxos." alt="" coords="216,56,345,83"/>
-<area shape="rect" id="node4" href="$classModel.html#aab07c39ea01c4296097674893858f12f" title="Remove um sistema do modelo." alt="" coords="227,107,335,133"/>
-</map>

@@ -1,7 +1,12 @@
 <map id="Model::add" name="Model::add">
-<area shape="rect" id="node1" title="Adiciona um sistema ao modelo." alt="" coords="308,64,395,91"/>
-<area shape="rect" id="node2" href="$funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="105,5,259,32"/>
-<area shape="rect" id="node4" href="$classunit__Model.html#acf138c79bbe68951f2036115e2fb2f65" title="Testa o iterador flowsBegin()." alt="" coords="104,57,260,98"/>
-<area shape="rect" id="node5" href="$classunit__Model.html#a6f9f52f2280812e2925b92cf9c18775e" title="Testa o iterador flowsEnd()." alt="" coords="104,122,260,163"/>
-<area shape="rect" id="node3" href="$funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title="Adiciona um sistema ao modelo." alt="" coords="511,165,597,192"/>
+<area shape="rect" id="node2" href="$classModel.html#a1120194b6bc1d4438e5d80039b493e49" title="Método template para criar um Flow de tipo específico." alt="" coords="333,165,463,192"/>
+<area shape="rect" id="node3" href="$funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="119,5,271,32"/>
+<area shape="rect" id="node5" href="$funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="110,56,279,83"/>
+<area shape="rect" id="node6" href="$funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="117,107,272,133"/>
+<area shape="rect" id="node7" href="$classunit__Model.html#acf138c79bbe68951f2036115e2fb2f65" title="Testa o iterador flowsBegin()." alt="" coords="117,158,273,199"/>
+<area shape="rect" id="node8" href="$classunit__Model.html#a6f9f52f2280812e2925b92cf9c18775e" title="Testa o iterador flowsEnd()." alt="" coords="117,223,273,265"/>
+<area shape="rect" id="node9" href="$classunit__Model.html#a3ecab106db06c39c132b2c6975b68111" title="Testa o método removeFlow()." alt="" coords="117,289,273,330"/>
+<area shape="rect" id="node10" href="$classunit__Model.html#ae903f6b0a917230da1e158eca7905122" title="Testa o método run()." alt="" coords="104,355,285,381"/>
+<area shape="rect" id="node4" href="$funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,56,83"/>
 </map>

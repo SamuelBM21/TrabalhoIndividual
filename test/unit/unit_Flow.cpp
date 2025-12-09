@@ -19,15 +19,15 @@
 
 using namespace std;
 
-class FlowTest : public FlowImpl {
+class TestFlow : public FlowImpl {
     public:
-        FlowTest():
+        TestFlow():
             FlowImpl() {}
             
-        FlowTest(System *source, System *target): 
+        TestFlow(System *source, System *target): 
             FlowImpl(source, target){}
 
-        FlowTest(const Flow& flow): FlowImpl(flow){}
+        TestFlow(const Flow& flow): FlowImpl(flow){}
             
         double execute(){
             return (getSource()->getValue())/2;
@@ -37,7 +37,7 @@ class FlowTest : public FlowImpl {
 
 void unit_Flow :: unit_Flow_constructor_default(){
 
-    FlowTest flow;
+    TestFlow flow;
 
     assert(flow.target == NULL);
     assert(flow.source == NULL);
@@ -49,7 +49,7 @@ void unit_Flow :: unit_Flow_constructor_with_source_target(){
     System *system1 = new SystemImpl();
     System *system2 = new SystemImpl();
 
-    FlowTest *flow = new FlowTest(system1, system2);
+    TestFlow *flow = new TestFlow(system1, system2);
 
     assert(flow->source == system1);
     assert(flow->target == system2);
@@ -65,8 +65,8 @@ void unit_Flow :: unit_Flow_copy_constructor(){
     System *system1 = new SystemImpl();
     System *system2 = new SystemImpl();
 
-    FlowTest *flow1 = new FlowTest(system1, system2);
-    FlowTest *flow2 = new FlowTest(*flow1);
+    FlowImpl *flow1 = new TestFlow(system1, system2);
+    FlowImpl *flow2 = new TestFlow(*flow1);
 
     assert(flow1->source == flow2->source);
     assert(flow1->target == flow2->target);
@@ -87,7 +87,7 @@ void unit_Flow :: unit_Flow_getSource(){
     System *system1 = new SystemImpl();
     System *system2 = new SystemImpl();
 
-    FlowTest flow;
+    TestFlow flow;
     flow.source = system1;
     assert(flow.getSource() == system1);
 
@@ -101,7 +101,7 @@ void unit_Flow :: unit_Flow_setSource(){
 
     System *system1 = new SystemImpl();
 
-    FlowTest flow;
+    TestFlow flow;
     flow.setSource(system1);
 
     assert(flow.source == system1);
@@ -113,7 +113,7 @@ void unit_Flow :: unit_Flow_setSource(){
 void unit_Flow :: unit_Flow_getTarget(){
     System *system2 = new SystemImpl();
 
-    FlowTest flow;
+    TestFlow flow;
     flow.target = system2;
     assert(flow.getTarget() == system2);
 
@@ -124,7 +124,7 @@ void unit_Flow :: unit_Flow_getTarget(){
 void unit_Flow :: unit_Flow_setTarget(){
     System *system1 = new SystemImpl();
 
-    FlowTest flow;
+    TestFlow flow;
     flow.setTarget(system1);
 
     assert(flow.target == system1);
@@ -137,11 +137,11 @@ void unit_Flow :: unit_Flow_execute(){
     System *system1 = new SystemImpl(100.0);
     System *system2 = new SystemImpl();
 
-    FlowTest *flow = new FlowTest(system1, system2);
+    FlowImpl *flow = new TestFlow(system1, system2);
 
     double result = flow->execute();
 
-    assert(round(fabs(result - 50.0) < 0.0001));
+    assert(round(fabs(result - 50.0)*10000) < 1);
 
     delete system1;
     delete system2;

@@ -1,5 +1,0 @@
-<map id="unit_Flow_constructor_with_source_target" name="unit_Flow_constructor_with_source_target">
-<area shape="rect" id="node1" title="Testa o construtor parametrizado de FlowImpl." alt="" coords="5,23,156,65"/>
-<area shape="rect" id="node2" href="$classFlow.html#aff381195663a5028494e3de9c6194f2c" title="Retorna o sistema de origem." alt="" coords="204,5,321,32"/>
-<area shape="rect" id="node3" href="$classFlow.html#a81aeceffcb2b425af124c3b0d1962786" title="Retorna o sistema de destino." alt="" coords="207,56,319,83"/>
-</map>

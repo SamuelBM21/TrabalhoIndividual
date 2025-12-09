@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['complexfuncionaltest_125',['complexFuncionalTest',['../funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527',1,'complexFuncionalTest():&#160;funcional_tests.cpp'],['../funcional__tests_8h.html#a943dfe0c597a01c9760c140715fed527',1,'complexFuncionalTest():&#160;funcional_tests.cpp']]],
-  ['complextest_126',['ComplexTest',['../classComplexTest.html#a6e00b865867a7b99cc97e0b1241ac0fa',1,'ComplexTest::ComplexTest()'],['../classComplexTest.html#a290b032fd0a4ae2b4628fecece68ec86',1,'ComplexTest::ComplexTest(System *source, System *target)'],['../classComplexTest.html#a030d7f8bb7d6a12d5bf28500d0de5120',1,'ComplexTest::ComplexTest(const Flow &amp;flow)']]]
+  ['complexfuncionaltest_129',['complexFuncionalTest',['../funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527',1,'complexFuncionalTest():&#160;funcional_tests.cpp'],['../funcional__tests_8h.html#a943dfe0c597a01c9760c140715fed527',1,'complexFuncionalTest():&#160;funcional_tests.cpp']]],
+  ['complextest_130',['ComplexTest',['../classComplexTest.html#a6e00b865867a7b99cc97e0b1241ac0fa',1,'ComplexTest::ComplexTest()'],['../classComplexTest.html#a290b032fd0a4ae2b4628fecece68ec86',1,'ComplexTest::ComplexTest(System *source, System *target)']]],
+  ['createflow_131',['createFlow',['../classModel.html#a1120194b6bc1d4438e5d80039b493e49',1,'Model']]],
+  ['createmodel_132',['createModel',['../classModel.html#accd28300871325fce68d551cebf27220',1,'Model::createModel()'],['../classModelImpl.html#a8a9167b35336431e394f0042271620cb',1,'ModelImpl::createModel()']]],
+  ['createsystem_133',['createSystem',['../classModel.html#a78fee10a8de9b9e62d590584fdab68fc',1,'Model::createSystem()'],['../classModelImpl.html#ab1858280fb9e381fd0b4a533ea417e3b',1,'ModelImpl::createSystem()']]]
 ];

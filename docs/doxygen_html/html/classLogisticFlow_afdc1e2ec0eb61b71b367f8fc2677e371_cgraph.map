@@ -1,5 +1,0 @@
-<map id="LogisticFlow::execute" name="LogisticFlow::execute">
-<area shape="rect" id="node1" title="Calcula o valor do fluxo (crescimento logístico baseado no target)." alt="" coords="5,31,155,57"/>
-<area shape="rect" id="node2" href="$classFlow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="209,5,321,32"/>
-<area shape="rect" id="node3" href="$classSystem.html#aa7d17369d1034e7d8643a63f69d1901d" title="Obtém o valor atual armazenado." alt="" coords="203,56,328,83"/>
-</map>

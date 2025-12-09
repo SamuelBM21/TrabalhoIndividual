@@ -1,5 +1,0 @@
-<map id="unit_System_setValue" name="unit_System_setValue">
-<area shape="rect" id="node1" title="Testa o método setValue()." alt="" coords="5,31,157,57"/>
-<area shape="rect" id="node2" href="$classSystem.html#a41b673faa6c199eb8e4f204639fab4f2" title="Retorna o valor atual armazenado no sistema." alt="" coords="205,5,331,32"/>
-<area shape="rect" id="node3" href="$classSystem.html#a6c88754c7762750119ca9b0b77453a5f" title="Define um novo valor para o sistema." alt="" coords="205,56,331,83"/>
-</map>
