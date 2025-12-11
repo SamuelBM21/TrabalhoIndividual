@@ -1,8 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems." alt="" coords="5,81,56,108"/>
 <area shape="rect" id="node2" href="$classFlowImpl.html" title="Implementação parcial da classe Flow." alt="" coords="104,81,179,108"/>
-<area shape="rect" id="node3" href="$classComplexTest.html" title=" " alt="" coords="237,5,335,32"/>
-<area shape="rect" id="node4" href="$classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="227,56,345,83"/>
-<area shape="rect" id="node5" href="$classFlowTest.html" title=" " alt="" coords="249,107,323,133"/>
-<area shape="rect" id="node6" href="$classLogisticFlow.html" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="239,157,333,184"/>
+<area shape="rect" id="node3" href="$classExponentialFlow.html" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="227,5,345,32"/>
+<area shape="rect" id="node4" href="$classLogisticFlow.html" title="Implementação de Flow para teste: crescimento logístico no target." alt="" coords="239,56,333,83"/>
+<area shape="rect" id="node5" href="$classTestFlow.html" title=" " alt="" coords="249,107,323,133"/>
+<area shape="rect" id="node6" href="$classUnitTestFlow.html" title=" " alt="" coords="237,157,335,184"/>
 </map>

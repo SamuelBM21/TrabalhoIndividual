@@ -1,0 +1,7 @@
+# --- Build Output ---
+# Ignora a pasta inteira onde geramos os .o, .so e executáveis
+bin/
+docs/
+
+# --- IDEs e Editores ---
+.vscode/

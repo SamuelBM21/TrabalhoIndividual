@@ -14,6 +14,7 @@
 
 using namespace std;
 
+// Classe auxiliar para testes de fluxo
 class UnitTestFlow : public FlowImpl {
 public:
     UnitTestFlow() : FlowImpl() {}
@@ -32,7 +33,7 @@ void unit_Model::unit_Model_constructor_default() {
     assert(model != nullptr); 
     assert(model->getClock() == 0);
 
-    delete model;
+    delete model; 
 }
 
 void unit_Model::unit_Model_getClock() {
@@ -42,7 +43,7 @@ void unit_Model::unit_Model_getClock() {
     model->run(0, 1);
     assert(model->getClock() == 1);
 
-    delete model;
+    delete model; 
 }
 
 void unit_Model::unit_Model_destructor() {
@@ -57,12 +58,14 @@ void unit_Model::unit_Model_removeSystem() {
     
     assert(model->systemsBegin() != model->systemsEnd());
 
+    // Remove o sistema do container do modelo
     bool result = model->remove(s1);
     assert(result == true);
 
     assert(model->systemsBegin() == model->systemsEnd());
 
-    delete s1;
+    delete s1; 
+    
     delete model;
 }
 
@@ -73,12 +76,14 @@ void unit_Model::unit_Model_removeFlow() {
 
     assert(model->flowsBegin() != model->flowsEnd());
 
+    // Remove o fluxo do container
     bool result = model->remove(flow);
     assert(result == true);
 
     assert(model->flowsBegin() == model->flowsEnd());
 
     delete flow;
+    
     delete model;
 }
 
@@ -90,8 +95,6 @@ void unit_Model::unit_Model_systemsBegin() {
     assert(*(model->systemsBegin()) == s1);
     assert(*(model->systemsBegin()) != s2);
 
-    delete s1;
-    delete s2;
     delete model;
 }
 
@@ -106,8 +109,6 @@ void unit_Model::unit_Model_systemsEnd() {
     assert(*it == s2);
     assert(*it != s1);
 
-    delete s1;
-    delete s2;
     delete model;
 }
 
@@ -119,8 +120,6 @@ void unit_Model::unit_Model_flowsBegin() {
     assert(*(model->flowsBegin()) == f1);
     assert(*(model->flowsBegin()) != f2);
 
-    delete f1;
-    delete f2;
     delete model;
 }
 
@@ -135,8 +134,6 @@ void unit_Model::unit_Model_flowsEnd() {
     assert(*it == f2);
     assert(*it != f1);
 
-    delete f1;
-    delete f2;
     delete model;
 }
 
@@ -147,7 +144,7 @@ void unit_Model::unit_Model_run() {
     System *system1 = model->createSystem(100.0);
     System *system2 = model->createSystem(0.0);
 
-    Flow *flow = model->createFlow<UnitTestFlow>(system1, system2);
+    model->createFlow<UnitTestFlow>(system1, system2);
 
     model->run(0, 1);
 
@@ -155,9 +152,6 @@ void unit_Model::unit_Model_run() {
     assert(round(fabs(system1->getValue() - 50.0)*10000) < 1);
     assert(round(fabs(system2->getValue() - 50.0)*10000) < 1);
 
-    delete flow;
-    delete system1;
-    delete system2;
     delete model;
 }
 

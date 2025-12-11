@@ -18,6 +18,7 @@
 #define MODELIMPL_H_
 
 #include "Model.h"
+#include "SystemImpl.h"
 
 /**
  * @class ModelImpl

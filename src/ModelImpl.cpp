@@ -21,7 +21,6 @@
 
 
 #include "ModelImpl.h"
-#include "SystemImpl.h"
 #include <algorithm> 
 
 using namespace std;
@@ -31,6 +30,20 @@ vector<Model*> ModelImpl::models;
 ModelImpl::ModelImpl() : systems(), flows() {}
 
 ModelImpl::~ModelImpl() {
+    for (Flow* flow : flows) {
+        delete flow;
+    }
+    flows.clear();
+
+    for (System* system : systems) {
+        delete system;
+    }
+    systems.clear();
+
+    auto it = std::find(models.begin(), models.end(), this);
+    if (it != models.end()) {
+        models.erase(it);
+    }
 }
 
 ModelImpl::ModelImpl(const Model& other) {
@@ -46,6 +59,13 @@ ModelImpl::ModelImpl(const Model& other) {
 ModelImpl& ModelImpl::operator=(const Model& other) {
     if (this == &other)
         return *this;
+
+    // Limpa o conteúdo atual antes de copiar
+    for(Flow* f : flows) delete f;
+    flows.clear();
+    
+    for(System* s : systems) delete s;
+    systems.clear();
 
     for(auto it = other.systemsBegin(); it != other.systemsEnd(); ++it){
         this->add(*it);
