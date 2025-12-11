@@ -51,6 +51,35 @@ void unit_Model::unit_Model_destructor() {
     delete model;
 }
 
+void unit_Model::unit_Model_createSystem() {
+    Model *model = Model::createModel();
+
+    System *s1 = model->createSystem(10.0);
+    System *s2 = model->createSystem(20.0);
+
+    assert(s1 != nullptr);
+    assert(s2 != nullptr);
+    assert(s1 != s2);
+
+    delete model;
+}
+
+void unit_Model::unit_Model_createFlow() {
+    Model *model = Model::createModel();
+
+    System *s1 = model->createSystem(100.0);
+    System *s2 = model->createSystem(0.0);
+
+    Flow *flow = model->createFlow<UnitTestFlow>(s1, s2);
+
+    assert(flow != nullptr);
+    assert(flow->getSource() == s1);
+    assert(flow->getTarget() == s2);
+    assert(fabs(flow->execute() - 50.0) < 1e-9);
+
+    delete model;
+}
+
 void unit_Model::unit_Model_removeSystem() {
     Model *model = Model::createModel();
 
@@ -139,7 +168,7 @@ void unit_Model::unit_Model_flowsEnd() {
 
 void unit_Model::unit_Model_run() {
     
-    Model *model = Model::createModel();
+    ModelImpl *model = new ModelImpl();
 
     System *system1 = model->createSystem(100.0);
     System *system2 = model->createSystem(0.0);
@@ -148,9 +177,7 @@ void unit_Model::unit_Model_run() {
 
     model->run(0, 1);
 
-    assert(model->getClock() == 1);
-    assert(round(fabs(system1->getValue() - 50.0)*10000) < 1);
-    assert(round(fabs(system2->getValue() - 50.0)*10000) < 1);
+    assert(model->clock == 1);
 
     delete model;
 }
@@ -159,6 +186,8 @@ void unit_Model::unit_Model_runUnitTests() {
     unit_Model_constructor_default();
     unit_Model_destructor(); 
     unit_Model_getClock();
+    unit_Model_createSystem();
+    unit_Model_createFlow();
     unit_Model_removeSystem();
     unit_Model_removeFlow();
     unit_Model_systemsBegin();

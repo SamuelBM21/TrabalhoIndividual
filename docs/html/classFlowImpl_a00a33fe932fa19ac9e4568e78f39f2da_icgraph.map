@@ -1,4 +1,0 @@
-<map id="FlowImpl::setSource" name="FlowImpl::setSource">
-<area shape="rect" id="node1" title="Define o sistema de origem do fluxo." alt="" coords="196,13,339,39"/>
-<area shape="rect" id="node2" href="$classunit__Flow.html#a1fd8d0063d9d386c462f1dae00912a30" title="Testa o método setSource()." alt="" coords="5,5,148,47"/>
-</map>

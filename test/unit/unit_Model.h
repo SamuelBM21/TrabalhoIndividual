@@ -53,6 +53,16 @@ public:
     void unit_Model_getClock(); 
 
     /**
+     * @brief Testa o método createSystem().
+     */
+    void unit_Model_createSystem();
+
+    /**
+     * @brief Testa o método createFlow().
+     */
+    void unit_Model_createFlow();
+
+    /**
      * @brief Testa o método removeSystem().
      */
     void unit_Model_removeSystem();

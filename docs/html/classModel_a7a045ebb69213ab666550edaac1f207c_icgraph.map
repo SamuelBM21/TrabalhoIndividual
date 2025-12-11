@@ -1,6 +1,0 @@
-<map id="Model::getClock" name="Model::getClock">
-<area shape="rect" id="node1" title="Retorna o valor atual do relógio do modelo." alt="" coords="235,78,352,105"/>
-<area shape="rect" id="node2" href="$classunit__Model.html#a4fad27a634c3b24a90fcbe7c11507bb4" title="Testa o construtor padrão de ModelImpl." alt="" coords="18,5,174,47"/>
-<area shape="rect" id="node3" href="$classunit__Model.html#a8e4cc0ff57fcbf3e9e5b967e9e5c8107" title="Testa o método getClock()." alt="" coords="18,71,174,112"/>
-<area shape="rect" id="node4" href="$classunit__Model.html#ae903f6b0a917230da1e158eca7905122" title="Testa o método run()." alt="" coords="5,137,187,163"/>
-</map>

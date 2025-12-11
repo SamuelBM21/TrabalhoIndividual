@@ -1,8 +1,0 @@
-<map id="src/ModelImpl.h" name="src/ModelImpl.h">
-<area shape="rect" id="node1" title="Implementação concreta da interface Model." alt="" coords="179,5,294,32"/>
-<area shape="rect" id="node2" href="$ModelImpl_8cpp.html" title="Implementação da classe ModelImpl." alt="" coords="5,87,135,114"/>
-<area shape="rect" id="node3" href="$funcional__tests_8h.html" title="Declaração de fluxos de teste e protótipos de testes funcionais." alt="" coords="159,80,315,121"/>
-<area shape="rect" id="node6" href="$unit__Model_8cpp.html" title="Implementação dos testes unitários da classe ModelImpl." alt="" coords="339,87,500,114"/>
-<area shape="rect" id="node4" href="$funcional__tests_8cpp.html" title="Implementação dos testes funcionais do simulador de sistemas." alt="" coords="68,169,224,211"/>
-<area shape="rect" id="node5" href="$funcional_2main_8cpp.html" title="Arquivo principal responsável por executar os testes funcionais do simulador." alt="" coords="249,177,406,203"/>
-</map>

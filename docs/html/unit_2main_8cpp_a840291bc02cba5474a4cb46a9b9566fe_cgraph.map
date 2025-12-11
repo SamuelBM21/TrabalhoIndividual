@@ -1,6 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,78,56,105"/>
-<area shape="rect" id="node2" href="$classunit__Flow.html#aa0caa169a2eb0842e0cfc8d4948295eb" title="Executa todos os testes unitários da classe FlowImpl." alt="" coords="121,5,263,47"/>
-<area shape="rect" id="node3" href="$classunit__Model.html#a6bb48486c73b1302bd30f76b54d72f4a" title="Executa todos os testes unitários da classe ModelImpl." alt="" coords="114,71,270,112"/>
-<area shape="rect" id="node4" href="$classunit__System.html#a133a86237dad34ceec7f84c235758c67" title="Testa o operador de atribuição (=)." alt="" coords="104,136,280,177"/>
-</map>

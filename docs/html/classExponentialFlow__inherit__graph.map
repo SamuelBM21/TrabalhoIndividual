@@ -1,5 +1,0 @@
-<map id="ExponentialFlow" name="ExponentialFlow">
-<area shape="rect" id="node1" title="Implementação de Flow para teste: fluxo proporcional ao source." alt="" coords="5,476,144,583"/>
-<area shape="rect" id="node2" href="$classFlowImpl.html" title="Implementação parcial da classe Flow." alt="" coords="23,204,126,428"/>
-<area shape="rect" id="node3" href="$classFlow.html" title="Interface abstrata que define um fluxo entre dois Systems." alt="" coords="24,5,125,156"/>
-</map>

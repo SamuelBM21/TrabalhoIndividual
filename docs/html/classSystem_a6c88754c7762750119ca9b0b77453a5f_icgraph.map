@@ -1,4 +1,0 @@
-<map id="System::setValue" name="System::setValue">
-<area shape="rect" id="node1" title="Define um novo valor para o sistema." alt="" coords="161,5,287,32"/>
-<area shape="rect" id="node2" href="$classModelImpl.html#a1087acda33cd4b26099cd383286a7175" title="Executa a simulação entre dois instantes de tempo." alt="" coords="5,5,113,32"/>
-</map>

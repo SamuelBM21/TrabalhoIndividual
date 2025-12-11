@@ -1,9 +1,0 @@
-<map id="Model::run" name="Model::run">
-<area shape="rect" id="node1" title="Executa a simulação entre dois instantes de tempo." alt="" coords="333,107,416,133"/>
-<area shape="rect" id="node2" href="$funcional__tests_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Teste funcional composto (cenário mais complexo)." alt="" coords="119,5,271,32"/>
-<area shape="rect" id="node4" href="$funcional__tests_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Teste funcional para verificar comportamento do fluxo exponencial." alt="" coords="110,56,279,83"/>
-<area shape="rect" id="node5" href="$funcional__tests_8cpp.html#a60914db64bde71b56d69320797266c29" title="Teste funcional para verificar comportamento do fluxo logístico." alt="" coords="117,107,272,133"/>
-<area shape="rect" id="node6" href="$classunit__Model.html#a8e4cc0ff57fcbf3e9e5b967e9e5c8107" title="Testa o método getClock()." alt="" coords="117,158,273,199"/>
-<area shape="rect" id="node7" href="$classunit__Model.html#ae903f6b0a917230da1e158eca7905122" title="Testa o método run()." alt="" coords="104,224,285,251"/>
-<area shape="rect" id="node3" href="$funcional_2main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,56,83"/>
-</map>

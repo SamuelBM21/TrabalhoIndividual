@@ -1,4 +1,0 @@
-<map id="FlowImpl::setTarget" name="FlowImpl::setTarget">
-<area shape="rect" id="node1" title="Define o sistema de destino do fluxo." alt="" coords="196,13,333,39"/>
-<area shape="rect" id="node2" href="$classunit__Flow.html#a30be3b81041c0f1143437777a05c4668" title="Testa o método setTarget()." alt="" coords="5,5,148,47"/>
-</map>

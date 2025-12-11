@@ -1,5 +1,0 @@
-<map id="ExponentialFlow::execute" name="ExponentialFlow::execute">
-<area shape="rect" id="node1" title="Calcula o valor do fluxo (proporcional ao source)." alt="" coords="5,31,177,57"/>
-<area shape="rect" id="node2" href="$classFlowImpl.html#a06c8ffdcfd36b04ddad091d2c043f5d0" title="Retorna o sistema de origem." alt="" coords="225,5,368,32"/>
-<area shape="rect" id="node3" href="$classSystem.html#a41b673faa6c199eb8e4f204639fab4f2" title="Retorna o valor atual armazenado no sistema." alt="" coords="234,56,359,83"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="src/ModelImpl.h" name="src/ModelImpl.h">
-<area shape="rect" id="node1" title="Implementação concreta da interface Model." alt="" coords="147,5,261,32"/>
-<area shape="rect" id="node2" href="$Model_8h.html" title="Interface abstrata para representação e execução de modelos na simulação." alt="" coords="106,80,174,107"/>
-<area shape="rect" id="node7" href="$SystemImpl_8h.html" title="Implementação concreta da interface System." alt="" coords="218,80,321,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,77,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="101,155,160,181"/>
-<area shape="rect" id="node5" href="$Flow_8h.html" title="Declaração da classe abstrata Flow, que modela um fluxo entre dois Systems." alt="" coords="184,155,243,181"/>
-<area shape="rect" id="node6" href="$System_8h.html" title="Interface abstrata que representa um elemento de armazenamento do modelo." alt="" coords="207,229,286,256"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="ModelImpl::ModelImpl" name="ModelImpl::ModelImpl">
-<area shape="rect" id="node1" title="Construtor de cópia privado." alt="" coords="5,107,156,133"/>
-<area shape="rect" id="node2" href="$classModelImpl.html#a40f404b04ed2c5a8fbddd016d0e80f77" title="Adiciona um sistema ao modelo." alt="" coords="223,5,333,32"/>
-<area shape="rect" id="node3" href="$classModel.html#aa8c013145cae0e5a5a5dd0059ebb0123" title="Retorna iterador para o início da lista de fluxos." alt="" coords="213,56,343,83"/>
-<area shape="rect" id="node4" href="$classModel.html#a96276bea30aebe88a14f67a17370bf1d" title="Retorna iterador para o fim da lista de fluxos." alt="" coords="219,107,337,133"/>
-<area shape="rect" id="node5" href="$classModel.html#a9f47422d35598ad7658a8a051037bf71" title="Retorna iterador para o início da lista de sistemas." alt="" coords="204,157,352,184"/>
-<area shape="rect" id="node6" href="$classModel.html#ad1e7dfe80b7f6601152b1c47dd78a22d" title="Retorna iterador para o fim da lista de sistemas." alt="" coords="209,208,347,235"/>
-</map>

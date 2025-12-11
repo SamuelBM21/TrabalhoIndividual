@@ -1,4 +1,0 @@
-<map id="System" name="System">
-<area shape="rect" id="node1" title="Interface para um elemento de armazenamento dentro do modelo." alt="" coords="18,5,113,112"/>
-<area shape="rect" id="node2" href="$classSystemImpl.html" title="Implementação concreta da classe System." alt="" coords="5,160,125,325"/>
-</map>
