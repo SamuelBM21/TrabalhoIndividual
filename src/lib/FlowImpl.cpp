@@ -1,68 +1,57 @@
-/**
- * @file FlowImpl.cpp
- * @brief Implementação parcial da classe Flow.
- *
- * Este arquivo contém a implementação da classe FlowImpl, que fornece a
- * infraestrutura básica para representar um fluxo entre dois Systems.
- * 
- * FlowImpl implementa:
- *  - Construtores (padrão, parametrizado e cópia);
- *  - Operador de atribuição;
- *  - Métodos de acesso e modificação de source e target.
- *
- * O método execute() permanece abstrato, pois cada fluxo concreto deve
- * definir sua própria equação matemática.
- *
- * FlowImpl é usada como classe base para fluxos específicos utilizados pelo
- * Model durante a simulação.
- *
- * @author Samuel
- * @date 2025
- */
-
 #include "../include/FlowImpl.h"
 
-using namespace std;
+// --- Implementação do FlowBody ---
 
-FlowImpl::FlowImpl() : source(nullptr), target(nullptr) {}
+FlowBody::FlowBody() : source(nullptr), target(nullptr) {}
 
-FlowImpl::FlowImpl( System* source, System* target)
-    :source(source), target(target) {}
+FlowBody::~FlowBody() {}
 
-FlowImpl::~FlowImpl(){};
-
-FlowImpl::FlowImpl(const Flow &flow){
-    if(this == &flow) return;
-    source = flow.getSource();
-    target = flow.getTarget();
-}
-
-// Source / Target
-bool FlowImpl::setSource(System* s) {
+void FlowBody::setSource(System* s) {
     source = s;
-    return true;
 }
 
-System* FlowImpl::getSource() const {
+System* FlowBody::getSource() const {
     return source;
 }
 
-bool FlowImpl::setTarget(System* t) {
+void FlowBody::setTarget(System* t) {
     target = t;
-    return true;
 }
 
-System* FlowImpl::getTarget() const {
+System* FlowBody::getTarget() const {
     return target;
 }
 
-FlowImpl& FlowImpl::operator= (const Flow &flow){
+// --- Implementação do FlowHandle ---
 
-    if(this == &flow)
-        return *this;
+FlowHandle::FlowHandle() {
+    // Handle cria body padrão
+}
 
-    source = flow.getSource();
-    target = flow.getTarget();
+FlowHandle::FlowHandle(System* source, System* target) {
+    pImpl_->detach();
+    pImpl_ = new FlowBody();
+    pImpl_->setSource(source);
+    pImpl_->setTarget(target);
+    pImpl_->attach();
+}
 
-    return *this;
+FlowHandle::~FlowHandle() {}
+
+bool FlowHandle::setSource(System* s) {
+    pImpl_->setSource(s);
+    return true;
+}
+
+System* FlowHandle::getSource() const {
+    return pImpl_->getSource();
+}
+
+bool FlowHandle::setTarget(System* t) {
+    pImpl_->setTarget(t);
+    return true;
+}
+
+System* FlowHandle::getTarget() const {
+    return pImpl_->getTarget();
 }

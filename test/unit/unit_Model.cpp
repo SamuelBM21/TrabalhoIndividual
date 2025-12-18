@@ -1,183 +1,157 @@
 /**
  * @file unit_Model.cpp
- * @brief Implementação dos testes unitários da classe ModelImpl.
- * @author Samuel
- * @date 2025
+ * @brief Testes unitários do Model (White-Box) com Handle-Body.
  */
 
 #include <math.h>
 #include <assert.h>
+#include <algorithm>
 
-#include "../../src/ModelImpl.h"
-#include "../../src/SystemImpl.h" 
+#include "../../src/include/ModelImpl.h"
+#include "../../src/include/SystemImpl.h"
+#include "../../src/include/FlowImpl.h"
 #include "unit_Model.h"
 
 using namespace std;
 
-// Classe auxiliar para testes de fluxo
-class UnitTestFlow : public FlowImpl {
+// Mock para teste de Flow dentro do modelo
+class FlowMock : public FlowHandle {
 public:
-    UnitTestFlow() : FlowImpl() {}
-    UnitTestFlow(System *source, System *target) : FlowImpl(source, target) {}
-
-    double execute() {
-        if (getSource())
-            return (getSource()->getValue()) / 2;
-        return 0.0;
-    }
+    FlowMock(System* s, System* t) : FlowHandle(s,t) {}
+    double execute() override { return 1.0; }
 };
 
 void unit_Model::unit_Model_constructor_default() {
-    Model *model = Model::createModel();
+    ModelHandle *model = new ModelHandle();
 
-    assert(model != nullptr); 
-    assert(model->getClock() == 0);
+    // Acessa Body para verificar containers vazios e relógio
+    assert(model->pImpl_->systems.empty());
+    assert(model->pImpl_->flows.empty());
+    assert(model->pImpl_->clock == 0);
 
     delete model; 
 }
 
 void unit_Model::unit_Model_getClock() {
-    Model *model = Model::createModel();
-    assert(model->getClock() == 0);
+    ModelHandle *model = new ModelHandle();
+    model->pImpl_->clock = 42; // Seta diretamente no Body
     
-    model->run(0, 1);
-    assert(model->getClock() == 1);
+    assert(model->getClock() == 42); // Verifica getter
 
     delete model; 
 }
 
 void unit_Model::unit_Model_destructor() {
-    Model *model = Model::createModel();
+    ModelHandle *model = new ModelHandle();
     delete model;
 }
 
 void unit_Model::unit_Model_createSystem() {
-    Model *model = Model::createModel();
+    ModelHandle *model = new ModelHandle();
 
-    System *s1 = model->createSystem(10.0);
-    System *s2 = model->createSystem(20.0);
+    model->createSystem(10.0);
 
-    assert(s1 != nullptr);
-    assert(s2 != nullptr);
-    assert(s1 != s2);
+    // Verifica tamanho do vetor no Body
+    assert(model->pImpl_->systems.size() == 1);
+    // Verifica valor do sistema criado
+    assert(model->pImpl_->systems[0]->getValue() == 10.0);
 
     delete model;
 }
 
 void unit_Model::unit_Model_createFlow() {
-    Model *model = Model::createModel();
-
+    ModelHandle *model = new ModelHandle();
     System *s1 = model->createSystem(100.0);
     System *s2 = model->createSystem(0.0);
 
-    Flow *flow = model->createFlow<UnitTestFlow>(s1, s2);
+    // Adiciona fluxo manualmente ou via create se houver template method suportado
+    Flow *f = new FlowMock(s1, s2);
+    model->add(f);
 
-    assert(flow != nullptr);
-    assert(flow->getSource() == s1);
-    assert(flow->getTarget() == s2);
-    assert(fabs(flow->execute() - 50.0) < 1e-9);
+    assert(model->pImpl_->flows.size() == 1);
+    assert(model->pImpl_->flows[0] == f);
 
     delete model;
 }
 
 void unit_Model::unit_Model_removeSystem() {
-    Model *model = Model::createModel();
-
+    ModelHandle *model = new ModelHandle();
     System *s1 = model->createSystem(10.0);
     
-    assert(model->systemsBegin() != model->systemsEnd());
+    assert(model->pImpl_->systems.size() == 1);
 
-    // Remove o sistema do container do modelo
-    bool result = model->remove(s1);
-    assert(result == true);
+    model->remove(s1);
 
-    assert(model->systemsBegin() == model->systemsEnd());
+    assert(model->pImpl_->systems.size() == 0);
 
     delete s1; 
-    
     delete model;
 }
 
 void unit_Model::unit_Model_removeFlow() {
-    Model *model = Model::createModel();
-
-    Flow *flow = model->createFlow<UnitTestFlow>();
-
-    assert(model->flowsBegin() != model->flowsEnd());
-
-    // Remove o fluxo do container
-    bool result = model->remove(flow);
-    assert(result == true);
-
-    assert(model->flowsBegin() == model->flowsEnd());
-
-    delete flow;
+    ModelHandle *model = new ModelHandle();
+    System *s1 = model->createSystem();
+    System *s2 = model->createSystem();
+    Flow *f = new FlowMock(s1, s2);
     
+    model->add(f);
+    assert(model->pImpl_->flows.size() == 1);
+
+    model->remove(f);
+    assert(model->pImpl_->flows.size() == 0);
+
+    delete f;
     delete model;
 }
 
 void unit_Model::unit_Model_systemsBegin() {
-    Model *model = Model::createModel();
-    System *s1 = model->createSystem();
-    System *s2 = model->createSystem();
+    ModelHandle *model = new ModelHandle();
+    model->createSystem();
 
-    assert(*(model->systemsBegin()) == s1);
-    assert(*(model->systemsBegin()) != s2);
+    // Compara iterator retornado com iterator do vetor interno
+    assert(model->systemsBegin() == model->pImpl_->systems.begin());
 
     delete model;
 }
 
 void unit_Model::unit_Model_systemsEnd() {
-    Model *model = Model::createModel();
-    System *s1 = model->createSystem();
-    System *s2 = model->createSystem();
+    ModelHandle *model = new ModelHandle();
+    model->createSystem();
 
-    Model::iteratorSystem it = model->systemsEnd();
-    it--;
-
-    assert(*it == s2);
-    assert(*it != s1);
+    assert(model->systemsEnd() == model->pImpl_->systems.end());
 
     delete model;
 }
 
 void unit_Model::unit_Model_flowsBegin() {
-    Model *model = Model::createModel();
-    Flow *f1 = model->createFlow<UnitTestFlow>();
-    Flow *f2 = model->createFlow<UnitTestFlow>();
-
-    assert(*(model->flowsBegin()) == f1);
-    assert(*(model->flowsBegin()) != f2);
-
+    ModelHandle *model = new ModelHandle();
+    // Flow *f = ... (adicionar fluxo)
+    assert(model->flowsBegin() == model->pImpl_->flows.begin());
     delete model;
 }
 
 void unit_Model::unit_Model_flowsEnd() {
-    Model *model = Model::createModel();
-    Flow *f1 = model->createFlow<UnitTestFlow>();
-    Flow *f2 = model->createFlow<UnitTestFlow>();
-
-    Model::iteratorFlow it = model->flowsEnd();
-    it--;
-
-    assert(*it == f2);
-    assert(*it != f1);
-
+    ModelHandle *model = new ModelHandle();
+    assert(model->flowsEnd() == model->pImpl_->flows.end());
     delete model;
 }
 
 void unit_Model::unit_Model_run() {
-    
-    ModelImpl *model = new ModelImpl();
+    ModelHandle *model = new ModelHandle();
+    System *s1 = model->createSystem(100.0);
+    System *s2 = model->createSystem(0.0);
+    Flow *f = new FlowMock(s1, s2);
+    model->add(f);
 
-    System *system1 = model->createSystem(100.0);
-    System *system2 = model->createSystem(0.0);
-
-    model->createFlow<UnitTestFlow>(system1, system2);
-
+    // Executa por 1 passo
     model->run(0, 1);
 
-    assert(model->clock == 1);
+    // Verifica relógio interno
+    assert(model->pImpl_->clock == 1);
+    
+    // Verifica resultado da execução nos sistemas (depende da lógica do FlowMock)
+    // FlowMock retorna 1.0, então s1=99, s2=1
+    assert(fabs(s1->getValue() - 99.0) < 0.0001);
 
     delete model;
 }

@@ -1,139 +1,79 @@
 /**
  * @file ModelImpl.h
- * @brief Implementação concreta da interface Model.
- *
- * A classe ModelImpl fornece uma implementação padrão do mecanismo de simulação,
- * armazenando listas de Systems e Flows e aplicando os fluxos ao longo do tempo.
- *
- * Esta classe é responsável por:
- *  - Gerenciar a memória e organização interna dos objetos do modelo;
- *  - Fornecer iteradores constantes para acesso às coleções;
- *  - Executar a simulação conforme a lógica definida nos Flows.
- *
+ * @brief Implementação do padrão Handle/Body para Model.
  * @author Samuel
- * @date 2025
  */
 
 #ifndef MODELIMPL_H_
 #define MODELIMPL_H_
 
 #include "Model.h"
-#include "SystemImpl.h"
+#include "HandleBody.h"
+#include "SystemImpl.h" 
+#include "FlowImpl.h"
+#include <vector>
 
-/**
- * @class ModelImpl
- * @brief Implementação concreta da classe Model.
- *
- * Armazena e manipula conjuntos de Systems e Flows, além de executar o
- * processo de simulação. É a implementação padrão usada na aplicação.
- */
-class ModelImpl : public Model {
-protected:
-    /**
-     * @brief Lista de sistemas pertencentes ao modelo.
-     */
-    std::vector<System*> systems;
-
-    /**
-     * @brief Lista de fluxos pertencentes ao modelo.
-     */
-    std::vector<Flow*> flows;
-
-    /*
-    * @brief Lista estática de todos os modelos criados.
-    */
-    static std::vector<Model*> models;
-
-    /// Relógio interno do modelo, representando o tempo atual da simulação.
-    int clock = 0;
-
-    /** @copydoc Model::add(System*) */
-    bool add(System* s) override;
-
-    /** @copydoc Model::add(Flow*) */
-    bool add(Flow* f) override;
-
-    /**
-     * @brief Adiciona um modelo ao conjunto de modelos.
-     *
-     * @param m Ponteiro para o modelo a ser inserido.
-     * @return true se o modelo foi adicionado; false caso contrário.
-     */
-    static bool add(Model* m);
-
+// ----------------------------------------------------------------------------
+// ModelBody: Implementação interna (Pode ter métodos públicos pois é encapsulada)
+// ----------------------------------------------------------------------------
+class ModelBody : public Body {
 public:
-    /**
-     * @brief Construtor padrão.
-     *
-     * Inicializa o modelo vazio, sem sistemas e sem fluxos.
-     */
-    ModelImpl();
+    std::vector<System*> systems;
+    std::vector<Flow*> flows;
+    int clock;
 
-    /**
-     * @brief Destrutor.
-     *
-     * Realiza a liberação dos sistemas e fluxos associados ao modelo.
-     */
-    ~ModelImpl();
+    ModelBody();
+    virtual ~ModelBody();
 
-    /**
-     * @copydoc Model::getClock()
-     */
-    int getClock() const override;
+    void add(System* s);
+    void add(Flow* f);
+    
+    // Iteradores e Run
+    typedef std::vector<System*>::iterator iteratorSystem;
+    typedef std::vector<Flow*>::iterator iteratorFlow;
 
-    /** @copydoc Model::systemsBegin() */
-    iteratorSystem systemsBegin() const override;
+    iteratorSystem systemsBegin();
+    iteratorSystem systemsEnd();
+    iteratorFlow flowsBegin();
+    iteratorFlow flowsEnd();
 
-    /** @copydoc Model::systemsEnd() */
-    iteratorSystem systemsEnd() const override;
+    void run(int start, int end);
+};
 
-    /** @copydoc Model::flowsBegin() */
-    iteratorFlow flowsBegin() const override;
+// ----------------------------------------------------------------------------
+// ModelHandle: Interface pública (Restringe o acesso ao add)
+// ----------------------------------------------------------------------------
+class ModelHandle : public Model, public Handle<ModelBody> {
+public:
+    ModelHandle();
+    virtual ~ModelHandle();
 
-    /** @copydoc Model::flowsEnd() */
-    iteratorFlow flowsEnd() const override;
-
-    /**
-     * @copydoc Model::createModel()
-     */
+    // Factories (Única forma pública de adicionar elementos)
     static Model* createModel();
+    System* createSystem(double value = 0.0) override;
 
-    /**
-     * @copydoc Model::createSystem(double)
-     */
-    System* createSystem(double value = 0.0) override;  
-
-    /** @copydoc Model::remove(System*) */
-    bool remove(System* s) override;
-
-    /** @copydoc Model::remove(Flow*) */
-    bool remove(Flow* f) override;
-
-    /** @copydoc Model::run(int,int) */
+    // Métodos de execução e acesso
+    int getClock() const override;
     bool run(int startTime, int endTime) override;
 
+    // Iteradores
+    iteratorSystem systemsBegin() const override;
+    iteratorSystem systemsEnd() const override;
+    iteratorFlow flowsBegin() const override;
+    iteratorFlow flowsEnd() const override;
+
+    // Remoção
+    bool remove(System* s) override;
+    bool remove(Flow* f) override;
+
+protected:
+    // MÉTODOS RESTRITOS: 
+    bool add(System* s) override;
+    bool add(Flow* f) override;
+
 private:
-    /**
-     * @brief Construtor de cópia privado.
-     *
-     * Impede cópia direta fora da classe.  
-     * Implementações internas podem utilizá-lo para duplicar modelos.
-     *
-     * @param other Modelo a ser copiado.
-     */
-    ModelImpl(const Model& other);
-
-    /**
-     * @brief Operador de atribuição privado.
-     *
-     * Utilizado internamente para redefinir o conteúdo do modelo.
-     *
-     * @param other Modelo a ser copiado.
-     * @return Referência para o objeto atual.
-     */
-    ModelImpl& operator=(const Model& other);
-
-    friend class unit_Model;
+    // Permite que os testes unitários acessem os métodos protegidos
+    friend class unit_Model; 
 };
 
 #endif // MODELIMPL_H_

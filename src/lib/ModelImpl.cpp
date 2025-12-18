@@ -1,173 +1,134 @@
-/**
- * @file ModelImpl.cpp
- * @brief Implementação da classe ModelImpl.
- *
- * Este arquivo contém a implementação da estrutura principal do simulador:
- * a classe ModelImpl. Ela gerencia coleções de Systems e Flows, controla
- * a evolução temporal da simulação e coordena a execução dos fluxos.
- *
- * Entre as responsabilidades implementadas aqui estão:
- *  - Armazenar e organizar Systems e Flows;
- *  - Realizar o loop de simulação passo a passo;
- *  - Garantir que os fluxos sejam aplicados corretamente;
- *  - Manter consistência e gerenciamento de memória.
- *
- * ModelImpl constitui o núcleo coordenador da Teoria Geral de Sistemas
- * dentro deste software, realizando a integração entre suas entidades.
- *
- * @author Samuel
- * @date 2025
- */
-
-
 #include "../include/ModelImpl.h"
-#include <algorithm> 
+#include "../include/SystemImpl.h" 
+#include "../include/FlowImpl.h"
+#include <algorithm>
 
 using namespace std;
 
-vector<Model*> ModelImpl::models;
 
-ModelImpl::ModelImpl() : systems(), flows() {}
+ModelBody::ModelBody() : clock(0) {}
 
-ModelImpl::~ModelImpl() {
-    for (Flow* flow : flows) {
-        delete flow;
-    }
-    flows.clear();
-
-    for (System* system : systems) {
-        delete system;
-    }
+ModelBody::~ModelBody() {
+    // Limpa a memória dos componentes se o Model for o dono deles
+    for (System* s : systems) delete s;
+    for (Flow* f : flows) delete f;
     systems.clear();
-
-    auto it = std::find(models.begin(), models.end(), this);
-    if (it != models.end()) {
-        models.erase(it);
-    }
-}
-
-ModelImpl::ModelImpl(const Model& other) {
-    for(auto it = other.systemsBegin(); it != other.systemsEnd(); ++it){
-        this->add(*it);
-    }
-
-    for(auto it = other.flowsBegin(); it != other.flowsEnd(); ++it){
-        this->add(*it);
-    }
-}
-
-ModelImpl& ModelImpl::operator=(const Model& other) {
-    if (this == &other)
-        return *this;
-
-    // Limpa o conteúdo atual antes de copiar
-    for(Flow* f : flows) delete f;
     flows.clear();
-    
-    for(System* s : systems) delete s;
-    systems.clear();
-
-    for(auto it = other.systemsBegin(); it != other.systemsEnd(); ++it){
-        this->add(*it);
-    }
-
-    for(auto it = other.flowsBegin(); it != other.flowsEnd(); ++it){
-        this->add(*it);
-    }
-
-    return *this;
 }
 
-int ModelImpl :: getClock() const {
-    return clock;
-}
-
-ModelImpl::iteratorSystem ModelImpl::systemsBegin() const { 
-    return systems.begin(); 
-}
-
-ModelImpl::iteratorSystem ModelImpl::systemsEnd() const { 
-    return systems.end(); 
-}
-
-ModelImpl::iteratorFlow ModelImpl::flowsBegin() const { 
-    return flows.begin(); 
-}
-
-ModelImpl::iteratorFlow ModelImpl::flowsEnd() const { 
-    return flows.end(); 
-}
-
-Model* ModelImpl::createModel(){
-    Model* model = new ModelImpl();
-    add(model); 
-    return model;
-}
-
-Model* Model::createModel(){
-    return ModelImpl::createModel();
-}
-
-
-System* ModelImpl::createSystem(double value){
-    System* system = new SystemImpl(value);
-    add(system);
-    return system;
-}
-
-
-bool ModelImpl::add(System* s) {
+void ModelBody::add(System* s) {
     systems.push_back(s);
-    return true;
 }
 
-bool ModelImpl::add(Flow* f) {
+void ModelBody::add(Flow* f) {
     flows.push_back(f);
-    return true;
 }
 
-bool ModelImpl::add(Model* m) {
-    models.push_back(m);
-    return true;
-}
+ModelBody::iteratorSystem ModelBody::systemsBegin() { return systems.begin(); }
+ModelBody::iteratorSystem ModelBody::systemsEnd() { return systems.end(); }
+ModelBody::iteratorFlow ModelBody::flowsBegin() { return flows.begin(); }
+ModelBody::iteratorFlow ModelBody::flowsEnd() { return flows.end(); }
 
-bool ModelImpl::remove(System* s) {
-    auto it = find(systems.begin(), systems.end(), s);
-    if (it != systems.end()) {
-        systems.erase(it);
-        return true;
-    }
-    return false;
-}
-
-bool ModelImpl::remove(Flow* f) {
-    auto it = find(flows.begin(), flows.end(), f);
-    if (it != flows.end()) {
-        flows.erase(it);
-        return true;
-    }
-    return false;
-}
-
-bool ModelImpl::run(int startTime, int endTime) {
-    for (int time = startTime; time < endTime; time++) {
+void ModelBody::run(int start, int end) {
+    for (int time = start; time < end; time++) {
         clock = time;
-        int n = flows.size();
-        vector<double> results(n);
+        vector<double> results;
 
-        for (int i = 0; i < n; i++)
-            results[i] = flows[i]->execute();
+        // Fase 1: Execução (cálculo)
+        for (Flow* f : flows) {
+            results.push_back(f->execute());
+        }
 
-        for (int i = 0; i < n; i++) {
-            Flow* f = flows[i];
-
-            if (f->getSource())
-                f->getSource()->setValue(f->getSource()->getValue() - results[i]);
-
-            if (f->getTarget())
-                f->getTarget()->setValue(f->getTarget()->getValue() + results[i]);
+        // Fase 2: Atualização
+        int i = 0;
+        for (Flow* f : flows) {
+            double val = results[i];
+            if (f->getSource()) {
+                f->getSource()->setValue(f->getSource()->getValue() - val);
+            }
+            if (f->getTarget()) {
+                f->getTarget()->setValue(f->getTarget()->getValue() + val);
+            }
+            i++;
         }
     }
-    clock++;
+    clock = end; // Ajusta relógio final
+}
+
+// --- Implementação do ModelHandle ---
+
+ModelHandle::ModelHandle() {
+    // Body criado automaticamente
+}
+
+ModelHandle::~ModelHandle() {}
+
+Model* ModelHandle::createModel() {
+    return new ModelHandle();
+}
+
+System* ModelHandle::createSystem(double value) {
+    // IMPORTANTE: Criamos um SystemHandle aqui para manter o padrão
+    System* s = new SystemHandle(value);
+    add(s);
+    return s;
+}
+
+bool ModelHandle::add(System* s) {
+    pImpl_->add(s);
     return true;
+}
+
+bool ModelHandle::add(Flow* f) {
+    pImpl_->add(f);
+    return true;
+}
+
+int ModelHandle::getClock() const {
+    return pImpl_->clock;
+}
+
+bool ModelHandle::run(int startTime, int endTime) {
+    pImpl_->run(startTime, endTime);
+    return true;
+}
+
+bool ModelHandle::remove(System* s) {
+    auto& sysVec = pImpl_->systems;
+    auto it = std::find(sysVec.begin(), sysVec.end(), s);
+    if (it != sysVec.end()) {
+        sysVec.erase(it);
+        return true;
+    }
+    return false;
+}
+
+bool ModelHandle::remove(Flow* f) {
+    auto& flowVec = pImpl_->flows;
+    auto it = std::find(flowVec.begin(), flowVec.end(), f);
+    if (it != flowVec.end()) {
+        flowVec.erase(it);
+        return true;
+    }
+    return false;
+}
+
+Model::iteratorSystem ModelHandle::systemsBegin() const {
+    return pImpl_->systemsBegin();
+}
+
+Model::iteratorSystem ModelHandle::systemsEnd() const {
+    return pImpl_->systemsEnd();
+}
+
+Model::iteratorFlow ModelHandle::flowsBegin() const {
+    return pImpl_->flowsBegin();
+}
+
+Model::iteratorFlow ModelHandle::flowsEnd() const {
+    return pImpl_->flowsEnd();
+}
+
+Model* Model::createModel() {
+    return ModelHandle::createModel();
 }

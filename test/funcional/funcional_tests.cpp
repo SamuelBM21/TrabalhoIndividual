@@ -1,60 +1,45 @@
 /**
  * @file funcional_tests.cpp
- * @brief Implementação dos testes funcionais do simulador de sistemas.
- *
- * Este arquivo contém três testes principais utilizados para verificar
- * a integridade e o comportamento dinâmico do simulador:
- *
- * - **ExponentialFuncionalTest:**  
- *   Valida a transferência proporcional baseada no valor do sistema de origem.
- *
- * - **LogisticalFuncionalTest:**  
- *   Avalia a dinâmica logística (crescimento limitado) sobre o sistema de destino.
- *
- * - **ComplexFuncionalTest:**  
- *   Teste mais robusto que envolve múltiplos sistemas e múltiplos fluxos,
- *   validando interação em larga escala e comportamento combinado.
- *
- * Cada teste:
- *  - Instancia um Model.
- *  - Cria Systems e Flows.
- *  - Executa a simulação usando Model::run().
- *  - Aplica asserts garantindo que os valores finais sejam os esperados.
- *
- * Esses testes são essenciais para verificar a corretude da simulação,
- * especialmente após mudanças estruturais, refatorações ou otimizações.
- *
+ * @brief Implementação dos testes funcionais com limpeza de memória adequada.
  * @author Samuel
  * @date 2025
  */
 
 #include "funcional_tests.h"
-
 #include <math.h>
 #include <assert.h>
+#include <iostream>
 
 using namespace std;
 
 void exponentialFuncionalTest(){
-    cout << "ExponentialFuncionalTest:\n";
+    cout << "ExponentialFuncionalTest: ";
 
+    // 1. Cria o Modelo (ModelHandle é criado internamente)
     Model *model = Model::createModel();
     
+    // 2. Cria Sistemas (SystemHandle criado internamente e adicionado ao ModelBody)
     System *pop1 = model->createSystem(100.0);
     System *pop2 = model->createSystem(0.0);
     
+    // 3. Cria Fluxo Exponencial
     model->createFlow<ExponentialFlow>(pop1, pop2);
 
+    // 4. Executa
     model->run(0, 100);
 
+    // 5. Verifica
     assert(round(fabs(pop1->getValue() - 36.6032)*10000) < 1);
     assert(round(fabs(pop2->getValue() - 63.3968)*10000) < 1);
 
-    cout << "Passou!\n" << endl;
+    // 6. Limpeza (O destrutor do ModelHandle deletará os handles de pop1, pop2 e flow)
+    delete model;
+
+    cout << "Passou!" << endl;
 }
 
 void logisticalFuncionalTest(){
-    cout << "LogisticalFuncionalTest:\n";
+    cout << "LogisticalFuncionalTest: ";
 
     Model *model = Model::createModel();
 
@@ -68,12 +53,14 @@ void logisticalFuncionalTest(){
     assert(round(fabs(pop1->getValue() - 88.2167)*10000) < 1);
     assert(round(fabs(pop2->getValue() - 21.7833)*10000) < 1);
 
-    cout << "Passou!\n" << endl;
+    delete model;
+
+    cout << "Passou!" << endl;
 }
 
 
 void complexFuncionalTest(){
-    cout << "ComplexFuncionalTest:\n";
+    cout << "ComplexFuncionalTest: ";
 
     Model *model = Model::createModel();
 
@@ -98,5 +85,7 @@ void complexFuncionalTest(){
     assert(round(fabs(pop4->getValue() - 56.1728)*10000) < 1);
     assert(round(fabs(pop5->getValue() - 16.4612)*10000) < 1);
 
-    cout << "Passou!\n" << endl;
+    delete model;
+
+    cout << "Passou!" << endl;
 }

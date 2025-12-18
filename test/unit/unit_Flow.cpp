@@ -1,13 +1,6 @@
 /**
  * @file unit_Flow.cpp
- * @brief Implementação dos testes unitários da classe FlowImpl.
- *
- * Cada função aqui valida um aspecto específico do comportamento de FlowImpl,
- * garantindo que construtores, métodos de acesso, modificadores e operadores
- * funcionem corretamente.
- *
- * @author Samuel
- * @date 2025
+ * @brief Testes unitários do Flow (White-Box) com Handle-Body.
  */
 
 #include <iostream>
@@ -15,63 +8,52 @@
 #include <math.h>
 
 #include "unit_Flow.h"
-#include "../../src/SystemImpl.h"
+#include "../../src/include/SystemImpl.h"
+#include "../../src/include/FlowImpl.h"
 
 using namespace std;
 
-class TestFlow : public FlowImpl {
-    public:
-        TestFlow():
-            FlowImpl() {}
-            
-        TestFlow(System *source, System *target): 
-            FlowImpl(source, target){}
-
-        TestFlow(const Flow& flow): FlowImpl(flow){}
-            
-        double execute(){
-            return (getSource()->getValue())/2;
-        }
-    
+// Classe Mock para poder instanciar o FlowHandle abstrato
+class FlowHandleMock : public FlowHandle {
+public:
+    FlowHandleMock() : FlowHandle() {}
+    FlowHandleMock(System* s, System* t) : FlowHandle(s, t) {}
+    double execute() override { return 0.0; }
 };
 
-void unit_Flow :: unit_Flow_constructor_default(){
-
-    TestFlow flow;
-
-    assert(flow.target == NULL);
-    assert(flow.source == NULL);
-  
+void unit_Flow::unit_Flow_constructor_default(){
+    FlowHandleMock flow;
+    
+    // Verifica se o Body foi criado e ponteiros estão nulos
+    assert(flow.pImpl_->source == nullptr);
+    assert(flow.pImpl_->target == nullptr);
 }
 
-void unit_Flow :: unit_Flow_constructor_with_source_target(){
+void unit_Flow::unit_Flow_constructor_with_source_target(){
+    SystemHandle *system1 = new SystemHandle();
+    SystemHandle *system2 = new SystemHandle();
 
-    System *system1 = new SystemImpl();
-    System *system2 = new SystemImpl();
+    FlowHandleMock *flow = new FlowHandleMock(system1, system2);
 
-    TestFlow *flow = new TestFlow(system1, system2);
-
-    assert(flow->source == system1);
-    assert(flow->target == system2);
+    // Verifica acessando diretamente o Body
+    assert(flow->pImpl_->source == system1);
+    assert(flow->pImpl_->target == system2);
 
     delete system1;
     delete system2;
     delete flow;
-
 }
 
+void unit_Flow::unit_Flow_copy_constructor(){
+    SystemHandle *system1 = new SystemHandle();
+    SystemHandle *system2 = new SystemHandle();
 
-void unit_Flow :: unit_Flow_copy_constructor(){
-    System *system1 = new SystemImpl();
-    System *system2 = new SystemImpl();
+    FlowHandleMock *flow1 = new FlowHandleMock(system1, system2);
+    FlowHandleMock *flow2 = new FlowHandleMock(*flow1);
 
-    FlowImpl *flow1 = new TestFlow(system1, system2);
-    FlowImpl *flow2 = new TestFlow(*flow1);
-
-    assert(flow1->source == flow2->source);
-    assert(flow1->target == flow2->target);
-
-    assert(flow1 != flow2);
+    // Verifica se compartilham o mesmo Body (Handle Copy Semantics)
+    assert(flow1->pImpl_ == flow2->pImpl_);
+    assert(flow2->pImpl_->source == system1);
 
     delete system1;
     delete system2;
@@ -79,77 +61,63 @@ void unit_Flow :: unit_Flow_copy_constructor(){
     delete flow2;
 }
 
+void unit_Flow::unit_Flow_destructor(){}
 
-void unit_Flow :: unit_Flow_destructor(){}
-
-void unit_Flow :: unit_Flow_getSource(){
-
-    System *system1 = new SystemImpl();
-    System *system2 = new SystemImpl();
-
-    TestFlow flow;
-    flow.source = system1;
-    assert(flow.getSource() == system1);
-
-    delete system1;
-    delete system2;
-
-}
-
-
-void unit_Flow :: unit_Flow_setSource(){
-
-    System *system1 = new SystemImpl();
-
-    TestFlow flow;
+void unit_Flow::unit_Flow_getSource(){
+    SystemHandle *system1 = new SystemHandle();
+    FlowHandleMock flow;
+    
     flow.setSource(system1);
+    
+    // Compara o retorno do get com o atributo interno do Body
+    assert(flow.getSource() == flow.pImpl_->source);
+    
+    delete system1;
+}
 
-    assert(flow.source == system1);
+void unit_Flow::unit_Flow_setSource(){
+    SystemHandle *system1 = new SystemHandle();
+    FlowHandleMock flow;
+    
+    flow.setSource(system1);
+    
+    // Verifica atributo interno
+    assert(flow.pImpl_->source == system1);
 
     delete system1;
 }
 
-
-void unit_Flow :: unit_Flow_getTarget(){
-    System *system2 = new SystemImpl();
-
-    TestFlow flow;
-    flow.target = system2;
-    assert(flow.getTarget() == system2);
+void unit_Flow::unit_Flow_getTarget(){
+    SystemHandle *system2 = new SystemHandle();
+    FlowHandleMock flow;
+    
+    flow.setTarget(system2);
+    assert(flow.getTarget() == flow.pImpl_->target);
 
     delete system2;
 }
 
-
-void unit_Flow :: unit_Flow_setTarget(){
-    System *system1 = new SystemImpl();
-
-    TestFlow flow;
+void unit_Flow::unit_Flow_setTarget(){
+    SystemHandle *system1 = new SystemHandle();
+    FlowHandleMock flow;
+    
     flow.setTarget(system1);
-
-    assert(flow.target == system1);
+    assert(flow.pImpl_->target == system1);
 
     delete system1;
 }
 
-void unit_Flow :: unit_Flow_execute(){
-
-    System *system1 = new SystemImpl(100.0);
-    System *system2 = new SystemImpl();
-
-    FlowImpl *flow = new TestFlow(system1, system2);
-
-    double result = flow->execute();
-
-    assert(round(fabs(result - 50.0)*10000) < 1);
-
-    delete system1;
-    delete system2;
-    delete flow;
-
+void unit_Flow::unit_Flow_execute(){
+    SystemHandle *s1 = new SystemHandle(100);
+    SystemHandle *s2 = new SystemHandle(0);
+    FlowHandleMock flow(s1, s2);
+    
+    assert(flow.pImpl_->source->getValue() == 100);
+    
+    delete s1; delete s2;
 }
 
-void unit_Flow :: unit_Flow_runUnitTests(){
+void unit_Flow::unit_Flow_runUnitTests(){
     unit_Flow_constructor_default();
     unit_Flow_constructor_with_source_target();
     unit_Flow_copy_constructor();

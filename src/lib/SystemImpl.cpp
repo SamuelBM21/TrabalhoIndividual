@@ -1,56 +1,40 @@
-/**
- * @file SystemImpl.cpp
- * @brief Implementação da classe SystemImpl.
- *
- * Este arquivo contém a implementação da classe SystemImpl, responsável por
- * armazenar e manipular o valor interno de um System no simulador.
- *
- * SystemImpl fornece:
- *  - Construtores (padrão, parametrizado e cópia);
- *  - Operador de atribuição;
- *  - Métodos setValue() e getValue();
- *  - Regras básicas de consistência e encapsulamento.
- *
- * Esta classe é utilizada diretamente pelo Model e pelos Flows para compor
- * a dinâmica dos estoques durante a simulação baseada na Teoria Geral de
- * Sistemas.
- *
- * @author Samuel
- * @date 2025
- */
-
-
 #include "../include/SystemImpl.h"
 
-using namespace std;
+// --- Implementação do SystemBody ---
 
-SystemImpl::SystemImpl() : value(0.0) {}
+SystemBody::SystemBody(double v) : value(v) {}
 
-SystemImpl::SystemImpl(double value) : value(value) {}
+SystemBody::~SystemBody() {}
 
-SystemImpl::SystemImpl(const System& other) : value(other.getValue()) {}
-
-SystemImpl& SystemImpl::operator=(const System& other) {
-    if (this == &other) 
-        return *this;
-    value = other.getValue();
-    return *this;
+void SystemBody::setValue(double v) {
+    value = v;
 }
 
-SystemImpl::~SystemImpl() {}
-
-double SystemImpl::getValue() const {
+double SystemBody::getValue() const {
     return value;
 }
 
-bool SystemImpl::setValue(double value){
-    this->value = value;
+// --- Implementação do SystemHandle ---
+
+SystemHandle::SystemHandle() {
+    // O template Handle<T> cria automaticamente o Body padrão
+}
+
+SystemHandle::SystemHandle(double value) {
+    // Como o construtor do Handle<T> cria um Body padrão, 
+    // precisamos descartá-lo para criar um com o valor desejado.
+    pImpl_->detach();
+    pImpl_ = new SystemBody(value);
+    pImpl_->attach();
+}
+
+SystemHandle::~SystemHandle() {}
+
+bool SystemHandle::setValue(double v) {
+    pImpl_->setValue(v);
     return true;
 }
 
-
-
-
-
-
-
+double SystemHandle::getValue() const {
+    return pImpl_->getValue();
+}

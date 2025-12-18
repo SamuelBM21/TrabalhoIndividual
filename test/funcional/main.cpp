@@ -28,5 +28,6 @@ using namespace std;
 int main(void){
     exponentialFuncionalTest();
     logisticalFuncionalTest();
-    complexFuncionalTest();
+    complexFuncionalTest();  
+    return 0;
 }
