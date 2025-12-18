@@ -22,7 +22,7 @@
 #ifndef _UNIT_FLOW_H_
 #define _UNIT_FLOW_H_
 
-#include "../../src/FlowImpl.h"
+#include "../../src/include/FlowImpl.h"
 
 /**
  * @class unit_Flow

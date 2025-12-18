@@ -18,9 +18,8 @@
 #ifndef _FUNCTIONAL_TESTS_H_
 #define _FUNCTIONAL_TESTS_H_
 
-#include "../../src/ModelImpl.h"  
-#include "../../src/FlowImpl.h"  
-#include "../../src/SystemImpl.h"  
+#include "../../src/include/Model.h"  
+#include "../../src/include/FlowImpl.h"  
 
 /**
  * @class ExponentialFlow

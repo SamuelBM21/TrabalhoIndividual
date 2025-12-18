@@ -23,7 +23,7 @@
 #ifndef _UNIT_MODEL_H_
 #define _UNIT_MODEL_H_
 
-#include "../../src/FlowImpl.h"
+#include "../../src/include/FlowImpl.h"
 
 /**
  * @class unit_Model
