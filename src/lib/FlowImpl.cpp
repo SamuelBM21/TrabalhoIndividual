@@ -1,3 +1,7 @@
+/*
+    @file FlowImpl.cpp
+    @brief Implementação das classes FlowBody e FlowHandle utilizando o padrão Handle/Body.
+*/
 #include "../include/FlowImpl.h"
 
 // --- Implementação do FlowBody ---

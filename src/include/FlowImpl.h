@@ -4,7 +4,10 @@
 #include "Flow.h"
 #include "HandleBody.h"
 
-// Classe de Implementação (Body)
+/*  
+    @class FlowBody: Implementação concreta do Flow (Usa Handle/Body)
+    @brief Classe que implementa a lógica interna do fluxo, utilizando o padrão Handle/Body.
+*/
 class FlowBody : public Body {
 private:
     System* source;
@@ -22,7 +25,10 @@ public:
     friend class unit_Flow; // Para testes unitários
 };
 
-// Classe Handle
+/*
+    @class FlowHandle: Interface pública do Flow (Usa Handle/Body)
+    @brief Classe que implementa a interface pública do fluxo, utilizando o padrão Handle/Body.
+*/
 class FlowHandle : public Flow, public Handle<FlowBody> {
 public:
     FlowHandle();

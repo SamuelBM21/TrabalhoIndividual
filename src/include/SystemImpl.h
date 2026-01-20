@@ -1,10 +1,19 @@
+/*
+    @file SystemImpl.h
+    @brief Declaração das classes SystemBody e SystemHandle utilizando o padrão Handle/Body.
+*/
 #ifndef SYSTEMIMPL_H_
 #define SYSTEMIMPL_H_
 
 #include "System.h"
 #include "HandleBody.h"
 
-// Classe de Implementação (Body)
+
+/*
+    @class SystemBody: Implementação concreta do System (Usa Handle/Body)
+    @brief Classe que implementa a lógica interna do sistema, utilizando o padrão Handle/Body.
+*/
+
 class SystemBody : public Body {
 private:
     double value;
@@ -18,7 +27,10 @@ public:
     friend class unit_System; // Para testes unitários
 };
 
-// Classe Handle (Bridge)
+/*
+    @class SystemHandle: Interface pública do System (Usa Handle/Body)
+    @brief Classe que implementa a interface pública do sistema, utilizando o padrão Handle/Body.
+*/
 class SystemHandle : public System, public Handle<SystemBody> {
 public:
     SystemHandle();

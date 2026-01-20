@@ -1,3 +1,7 @@
+/*
+    @file ModelImpl.cpp
+    @brief Implementação das classes ModelBody e ModelHandle utilizando o padrão Handle/Body.
+*/
 #include "../include/ModelImpl.h"
 #include "../include/SystemImpl.h" 
 #include "../include/FlowImpl.h"

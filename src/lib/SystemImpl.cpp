@@ -1,6 +1,9 @@
-#include "../include/SystemImpl.h"
+/*
+    @file SystemImpl.cpp
+    @brief Implementação das classes SystemBody e SystemHandle utilizando o padrão Handle/Body.
+*/
 
-// --- Implementação do SystemBody ---
+#include "../include/SystemImpl.h"
 
 SystemBody::SystemBody(double v) : value(v) {}
 

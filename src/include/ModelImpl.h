@@ -13,9 +13,10 @@
 #include "FlowImpl.h"
 #include <vector>
 
-// ----------------------------------------------------------------------------
-// ModelBody: Implementação interna (Pode ter métodos públicos pois é encapsulada)
-// ----------------------------------------------------------------------------
+/*
+    @class ModelBody: Implementação concreta do Model (Usa Handle/Body)
+    @brief Classe que implementa a lógica interna do modelo, utilizando o padrão Handle/Body.
+*/
 class ModelBody : public Body {
 public:
     std::vector<System*> systems;
@@ -40,9 +41,11 @@ public:
     void run(int start, int end);
 };
 
-// ----------------------------------------------------------------------------
-// ModelHandle: Interface pública (Restringe o acesso ao add)
-// ----------------------------------------------------------------------------
+/*
+    @class ModelHandle: Interface pública do Model (Usa Handle/Body)
+    @brief Classe que implementa a interface pública do modelo, utilizando o padrão Handle/Body.
+    
+*/
 class ModelHandle : public Model, public Handle<ModelBody> {
 public:
     ModelHandle();
